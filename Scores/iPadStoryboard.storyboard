@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="IpM-bF-tuP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Games Table View Controller - Scores-->
+        <scene sceneID="xQe-4K-eJd">
+            <objects>
+                <tableViewController id="Waw-Qa-Jrz" customClass="AJGamesTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="PHO-Vb-VLW">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="100" id="78G-iq-DKS" customClass="AJGameTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="768" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="748" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCF-5t-Tb8">
+                                            <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfj-ZG-sg5">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="39" id="5oi-sl-NNY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                            <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOW-Ef-uiu">
+                                            <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="EOg-Qh-Xb4"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" type="default" id="03N-Qt-oDc"/>
+                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" type="default" id="33F-pb-2mg"/>
+                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="bottom" secondItem="78G-iq-DKS" secondAttribute="bottom" type="default" id="9Ap-Pz-PcX"/>
+                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" type="default" id="SOY-zi-SkB"/>
+                                    <constraint firstItem="Wfj-ZG-sg5" firstAttribute="bottom" secondItem="78G-iq-DKS" secondAttribute="bottom" type="default" id="pRk-Cz-f1b"/>
+                                    <constraint firstItem="Wfj-ZG-sg5" firstAttribute="leading" secondItem="MOW-Ef-uiu" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="vIA-ZZ-Ra3"/>
+                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="MOW-Ef-uiu" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zfl-VI-Q57"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="gameLabel" destination="TCF-5t-Tb8" id="TCT-E6-fdm"/>
+                                    <outlet property="playersLabel" destination="Wfj-ZG-sg5" id="1iy-1z-1X0"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Waw-Qa-Jrz" id="uea-kU-U6n"/>
+                            <outlet property="delegate" destination="Waw-Qa-Jrz" id="tXb-MX-she"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Scores" id="yEm-x4-NjA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nl1-UI-H7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1612" y="-683"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S4K-GL-TpD">
+            <objects>
+                <navigationController id="IpM-bF-tuP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jDO-XD-udM">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Waw-Qa-Jrz" kind="relationship" relationship="rootViewController" id="PGi-X4-GyJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RCm-iy-ykc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="-683"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="AJGameTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGameTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="AJGamesTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGamesTableViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
