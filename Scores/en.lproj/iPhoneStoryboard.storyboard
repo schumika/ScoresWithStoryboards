@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--Games Table View Controller - Title-->
+        <!--Games Table View Controller - Scores-->
         <scene sceneID="SIn-h2-lFn">
             <objects>
                 <tableViewController id="2TO-YW-IhU" customClass="AJGamesTableViewController" sceneMemberID="viewController">
@@ -62,7 +62,7 @@
                             <outlet property="delegate" destination="2TO-YW-IhU" id="itf-e1-Cpg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="iDm-Ml-DIa"/>
+                    <navigationItem key="navigationItem" title="Scores" id="iDm-Ml-DIa"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vD-VL-tLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
