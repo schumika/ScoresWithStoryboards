@@ -20,6 +20,7 @@
 		527EF9E417E9DDB800FBC5CE /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527EF9E317E9DDB800FBC5CE /* iPadStoryboard.storyboard */; };
 		527EF9E717E9E16F00FBC5CE /* AJGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */; };
 		527EF9EA17E9E33F00FBC5CE /* AJGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */; };
+		A9528A1F17EB64D400060B08 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9528A1E17EB64D400060B08 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJGamesTableViewController.m; sourceTree = "<group>"; };
 		527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJGameTableViewCell.h; sourceTree = "<group>"; };
 		527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJGameTableViewCell.m; sourceTree = "<group>"; };
+		A9528A1E17EB64D400060B08 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9528A1F17EB64D400060B08 /* CoreData.framework in Frameworks */,
 				527EF9C117E9DD7500FBC5CE /* UIKit.framework in Frameworks */,
 				527EF9C317E9DD7500FBC5CE /* Foundation.framework in Frameworks */,
 				527EF9C517E9DD7500FBC5CE /* CoreGraphics.framework in Frameworks */,
@@ -78,6 +81,7 @@
 		527EF9BF17E9DD7500FBC5CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A9528A1E17EB64D400060B08 /* CoreData.framework */,
 				527EF9C017E9DD7500FBC5CE /* UIKit.framework */,
 				527EF9C217E9DD7500FBC5CE /* Foundation.framework */,
 				527EF9C417E9DD7500FBC5CE /* CoreGraphics.framework */,
@@ -313,6 +317,7 @@
 				527EF9E217E9DD7600FBC5CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
