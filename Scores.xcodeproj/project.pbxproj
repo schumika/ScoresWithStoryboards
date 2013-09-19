@@ -39,10 +39,10 @@
 		527EF9D617E9DD7600FBC5CE /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		527EF9D917E9DD7600FBC5CE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 		527EF9E317E9DDB800FBC5CE /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
-		527EF9E517E9E16F00FBC5CE /* AJGamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJGamesTableViewController.h; sourceTree = "<group>"; };
-		527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJGamesTableViewController.m; sourceTree = "<group>"; };
-		527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJGameTableViewCell.h; sourceTree = "<group>"; };
-		527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJGameTableViewCell.m; sourceTree = "<group>"; };
+		527EF9E517E9E16F00FBC5CE /* AJGamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJGamesTableViewController.h; path = Classes/Controllers/AJGamesTableViewController.h; sourceTree = "<group>"; };
+		527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJGamesTableViewController.m; path = Classes/Controllers/AJGamesTableViewController.m; sourceTree = "<group>"; };
+		527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJGameTableViewCell.h; path = Classes/TableViewCells/AJGameTableViewCell.h; sourceTree = "<group>"; };
+		527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJGameTableViewCell.m; path = Classes/TableViewCells/AJGameTableViewCell.m; sourceTree = "<group>"; };
 		A9528A1E17EB64D400060B08 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -94,12 +94,11 @@
 			children = (
 				527EF9CF17E9DD7500FBC5CE /* AJAppDelegate.h */,
 				527EF9D017E9DD7500FBC5CE /* AJAppDelegate.m */,
-				527EF9E517E9E16F00FBC5CE /* AJGamesTableViewController.h */,
-				527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */,
 				527EF9D817E9DD7600FBC5CE /* iPhoneStoryboard.storyboard */,
 				527EF9E317E9DDB800FBC5CE /* iPadStoryboard.storyboard */,
-				527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */,
-				527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */,
+				A9528A2017EB65FE00060B08 /* Controllers */,
+				A9528A2217EB662700060B08 /* Model */,
+				A9528A2117EB660B00060B08 /* TableViewCells */,
 				527EF9C717E9DD7500FBC5CE /* Supporting Files */,
 			);
 			path = Scores;
@@ -117,6 +116,31 @@
 				527EF9D617E9DD7600FBC5CE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A9528A2017EB65FE00060B08 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				527EF9E517E9E16F00FBC5CE /* AJGamesTableViewController.h */,
+				527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A9528A2117EB660B00060B08 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */,
+				527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		A9528A2217EB662700060B08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
