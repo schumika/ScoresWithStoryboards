@@ -8,6 +8,8 @@
 
 #import "AJGamesTableViewController.h"
 #import "AJGameTableViewCell.h"
+#import "AJGame+Additions.h"
+#import "AJScoresManager.h"
 
 @interface AJGamesTableViewController ()
 
@@ -20,22 +22,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    NSMutableArray *array = [NSMutableArray array];
-    for (int gameId = 0; gameId < 30; gameId++) {
-        NSDictionary *gameDict = [NSDictionary dictionaryWithObjects:@[[NSString stringWithFormat:@"game %d", gameId], [NSString stringWithFormat:@"players: %d", gameId * 4]]
-                                                             forKeys:@[@"gameName", @"gamePlayers"]];
-        [array addObject:gameDict];
-    }
     
-    self.gamesArray = array;
+    self.games = [[AJScoresManager sharedInstance] getGamesArray];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.gamesArray count];
+    return [self.games count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -43,7 +38,7 @@
     static NSString *CellIdentifier = @"GameCell";
     AJGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    [cell setGameDictionary:self.gamesArray[indexPath.row]];
+    [cell setGameDictionary:[(AJGame *)self.games[indexPath.row] toDictionary]];
     
     return cell;
 }

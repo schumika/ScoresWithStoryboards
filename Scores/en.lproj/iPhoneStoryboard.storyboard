@@ -34,7 +34,6 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s01-F5-9EM">
-                                            <color key="backgroundColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="63" id="gyK-du-vhH"/>
                                             </constraints>
@@ -52,6 +51,7 @@
                                     <constraint firstItem="s01-F5-9EM" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" type="default" id="njQ-Rn-ONR"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="gameImageView" destination="s01-F5-9EM" id="B1M-Uh-ptL"/>
                                     <outlet property="gameLabel" destination="JYv-CU-daZ" id="zYa-e8-yD3"/>
                                     <outlet property="playersLabel" destination="XZH-8K-2em" id="OZU-fh-Yz9"/>
                                 </connections>
@@ -91,6 +91,7 @@
         <class className="AJGameTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGameTableViewCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="gameImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
             </relationships>

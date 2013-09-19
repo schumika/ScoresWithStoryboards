@@ -21,6 +21,19 @@
 		527EF9E717E9E16F00FBC5CE /* AJGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */; };
 		527EF9EA17E9E33F00FBC5CE /* AJGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */; };
 		A9528A1F17EB64D400060B08 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9528A1E17EB64D400060B08 /* CoreData.framework */; };
+		A9528A2517EB66ED00060B08 /* Scores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9528A2317EB66ED00060B08 /* Scores.xcdatamodeld */; };
+		A9528A3117EB68D800060B08 /* AJGame.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A3017EB68D800060B08 /* AJGame.m */; };
+		A9528A3417EB68D800060B08 /* AJPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A3317EB68D800060B08 /* AJPlayer.m */; };
+		A9528A3717EB68D800060B08 /* AJScore.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A3617EB68D800060B08 /* AJScore.m */; };
+		A9528A3B17EB695F00060B08 /* AJScoresManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A3A17EB695F00060B08 /* AJScoresManager.m */; };
+		A9528A3E17EB6AF000060B08 /* AJGame+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A3D17EB6AEF00060B08 /* AJGame+Additions.m */; };
+		A9528A4117EB6B6400060B08 /* AJDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A4017EB6B6400060B08 /* AJDefines.m */; };
+		A9528A4517EB6FB900060B08 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A4417EB6FB900060B08 /* UIColor+Additions.m */; };
+		A9528A4817EB71DA00060B08 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A4717EB71DA00060B08 /* UIImage+Additions.m */; };
+		A9528A4B17EB723A00060B08 /* cards_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4A17EB723A00060B08 /* cards_icon.png */; };
+		A9528A4D17EB724200060B08 /* main_tile_default_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4C17EB724200060B08 /* main_tile_default_pic.png */; };
+		A9528A5017EB730500060B08 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4E17EB730500060B08 /* mask.png */; };
+		A9528A5117EB730500060B08 /* mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4F17EB730500060B08 /* mask@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +57,27 @@
 		527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJGameTableViewCell.h; path = Classes/TableViewCells/AJGameTableViewCell.h; sourceTree = "<group>"; };
 		527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJGameTableViewCell.m; path = Classes/TableViewCells/AJGameTableViewCell.m; sourceTree = "<group>"; };
 		A9528A1E17EB64D400060B08 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A9528A2417EB66ED00060B08 /* Scores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scores.xcdatamodel; sourceTree = "<group>"; };
+		A9528A2F17EB68D800060B08 /* AJGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJGame.h; path = Classes/Model/AJGame.h; sourceTree = "<group>"; };
+		A9528A3017EB68D800060B08 /* AJGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJGame.m; path = Classes/Model/AJGame.m; sourceTree = "<group>"; };
+		A9528A3217EB68D800060B08 /* AJPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJPlayer.h; path = Classes/Model/AJPlayer.h; sourceTree = "<group>"; };
+		A9528A3317EB68D800060B08 /* AJPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJPlayer.m; path = Classes/Model/AJPlayer.m; sourceTree = "<group>"; };
+		A9528A3517EB68D800060B08 /* AJScore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJScore.h; path = Classes/Model/AJScore.h; sourceTree = "<group>"; };
+		A9528A3617EB68D800060B08 /* AJScore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJScore.m; path = Classes/Model/AJScore.m; sourceTree = "<group>"; };
+		A9528A3917EB695F00060B08 /* AJScoresManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJScoresManager.h; path = Classes/Utils/AJScoresManager.h; sourceTree = "<group>"; };
+		A9528A3A17EB695F00060B08 /* AJScoresManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJScoresManager.m; path = Classes/Utils/AJScoresManager.m; sourceTree = "<group>"; };
+		A9528A3C17EB6AEF00060B08 /* AJGame+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AJGame+Additions.h"; path = "Classes/Model/AJGame+Additions.h"; sourceTree = "<group>"; };
+		A9528A3D17EB6AEF00060B08 /* AJGame+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AJGame+Additions.m"; path = "Classes/Model/AJGame+Additions.m"; sourceTree = "<group>"; };
+		A9528A3F17EB6B6400060B08 /* AJDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJDefines.h; path = Classes/Utils/AJDefines.h; sourceTree = "<group>"; };
+		A9528A4017EB6B6400060B08 /* AJDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJDefines.m; path = Classes/Utils/AJDefines.m; sourceTree = "<group>"; };
+		A9528A4317EB6FB900060B08 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		A9528A4417EB6FB900060B08 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		A9528A4617EB71DA00060B08 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		A9528A4717EB71DA00060B08 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		A9528A4A17EB723A00060B08 /* cards_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cards_icon.png; path = Images/cards_icon.png; sourceTree = "<group>"; };
+		A9528A4C17EB724200060B08 /* main_tile_default_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_tile_default_pic.png; path = Images/main_tile_default_pic.png; sourceTree = "<group>"; };
+		A9528A4E17EB730500060B08 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mask.png; path = Images/mask.png; sourceTree = "<group>"; };
+		A9528A4F17EB730500060B08 /* mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mask@2x.png"; path = "Images/mask@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +132,8 @@
 				527EF9E317E9DDB800FBC5CE /* iPadStoryboard.storyboard */,
 				A9528A2017EB65FE00060B08 /* Controllers */,
 				A9528A2217EB662700060B08 /* Model */,
+				A9528A4217EB6F4E00060B08 /* Categories */,
+				A9528A3817EB693900060B08 /* Utils */,
 				A9528A2117EB660B00060B08 /* TableViewCells */,
 				527EF9C717E9DD7500FBC5CE /* Supporting Files */,
 			);
@@ -107,6 +143,7 @@
 		527EF9C717E9DD7500FBC5CE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9528A4917EB722F00060B08 /* Images */,
 				527EF9C817E9DD7500FBC5CE /* Scores-Info.plist */,
 				527EF9C917E9DD7500FBC5CE /* InfoPlist.strings */,
 				527EF9CC17E9DD7500FBC5CE /* main.m */,
@@ -139,8 +176,50 @@
 		A9528A2217EB662700060B08 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A9528A2F17EB68D800060B08 /* AJGame.h */,
+				A9528A3017EB68D800060B08 /* AJGame.m */,
+				A9528A3C17EB6AEF00060B08 /* AJGame+Additions.h */,
+				A9528A3D17EB6AEF00060B08 /* AJGame+Additions.m */,
+				A9528A3517EB68D800060B08 /* AJScore.h */,
+				A9528A3617EB68D800060B08 /* AJScore.m */,
+				A9528A3217EB68D800060B08 /* AJPlayer.h */,
+				A9528A3317EB68D800060B08 /* AJPlayer.m */,
+				A9528A2317EB66ED00060B08 /* Scores.xcdatamodeld */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		A9528A3817EB693900060B08 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A9528A3917EB695F00060B08 /* AJScoresManager.h */,
+				A9528A3A17EB695F00060B08 /* AJScoresManager.m */,
+				A9528A3F17EB6B6400060B08 /* AJDefines.h */,
+				A9528A4017EB6B6400060B08 /* AJDefines.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		A9528A4217EB6F4E00060B08 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				A9528A4617EB71DA00060B08 /* UIImage+Additions.h */,
+				A9528A4717EB71DA00060B08 /* UIImage+Additions.m */,
+				A9528A4317EB6FB900060B08 /* UIColor+Additions.h */,
+				A9528A4417EB6FB900060B08 /* UIColor+Additions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		A9528A4917EB722F00060B08 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A9528A4E17EB730500060B08 /* mask.png */,
+				A9528A4F17EB730500060B08 /* mask@2x.png */,
+				A9528A4A17EB723A00060B08 /* cards_icon.png */,
+				A9528A4C17EB724200060B08 /* main_tile_default_pic.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +280,10 @@
 				527EF9D717E9DD7600FBC5CE /* Default-568h@2x.png in Resources */,
 				527EF9DA17E9DD7600FBC5CE /* iPhoneStoryboard.storyboard in Resources */,
 				527EF9E417E9DDB800FBC5CE /* iPadStoryboard.storyboard in Resources */,
+				A9528A4B17EB723A00060B08 /* cards_icon.png in Resources */,
+				A9528A4D17EB724200060B08 /* main_tile_default_pic.png in Resources */,
+				A9528A5017EB730500060B08 /* mask.png in Resources */,
+				A9528A5117EB730500060B08 /* mask@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,6 +298,15 @@
 				527EF9D117E9DD7500FBC5CE /* AJAppDelegate.m in Sources */,
 				527EF9E717E9E16F00FBC5CE /* AJGamesTableViewController.m in Sources */,
 				527EF9EA17E9E33F00FBC5CE /* AJGameTableViewCell.m in Sources */,
+				A9528A2517EB66ED00060B08 /* Scores.xcdatamodeld in Sources */,
+				A9528A3117EB68D800060B08 /* AJGame.m in Sources */,
+				A9528A3417EB68D800060B08 /* AJPlayer.m in Sources */,
+				A9528A3717EB68D800060B08 /* AJScore.m in Sources */,
+				A9528A3B17EB695F00060B08 /* AJScoresManager.m in Sources */,
+				A9528A3E17EB6AF000060B08 /* AJGame+Additions.m in Sources */,
+				A9528A4117EB6B6400060B08 /* AJDefines.m in Sources */,
+				A9528A4517EB6FB900060B08 /* UIColor+Additions.m in Sources */,
+				A9528A4817EB71DA00060B08 /* UIImage+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +436,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A9528A2317EB66ED00060B08 /* Scores.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A9528A2417EB66ED00060B08 /* Scores.xcdatamodel */,
+			);
+			currentVersion = A9528A2417EB66ED00060B08 /* Scores.xcdatamodel */;
+			path = Scores.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 527EF9B517E9DD7400FBC5CE /* Project object */;
 }

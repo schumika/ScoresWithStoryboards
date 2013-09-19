@@ -34,24 +34,24 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOW-Ef-uiu">
-                                            <color key="backgroundColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="100" id="EOg-Qh-Xb4"/>
+                                                <constraint firstAttribute="height" constant="80" id="865-TW-gNe"/>
+                                                <constraint firstAttribute="width" constant="80" id="o48-Sc-4sS"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" type="default" id="03N-Qt-oDc"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" type="default" id="33F-pb-2mg"/>
-                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="bottom" secondItem="78G-iq-DKS" secondAttribute="bottom" type="default" id="9Ap-Pz-PcX"/>
-                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" type="default" id="SOY-zi-SkB"/>
+                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="Wfj-ZG-sg5" secondAttribute="leading" type="default" id="HGQ-Je-zDD"/>
+                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="centerY" secondItem="78G-iq-DKS" secondAttribute="centerY" type="default" id="WEN-O1-RnD"/>
+                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="10" id="mHO-yP-hHz"/>
+                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="108" id="nIC-HD-4mB"/>
                                     <constraint firstItem="Wfj-ZG-sg5" firstAttribute="bottom" secondItem="78G-iq-DKS" secondAttribute="bottom" type="default" id="pRk-Cz-f1b"/>
-                                    <constraint firstItem="Wfj-ZG-sg5" firstAttribute="leading" secondItem="MOW-Ef-uiu" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="vIA-ZZ-Ra3"/>
-                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="MOW-Ef-uiu" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zfl-VI-Q57"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="gameImageView" destination="MOW-Ef-uiu" id="DFh-ns-kX5"/>
                                     <outlet property="gameLabel" destination="TCF-5t-Tb8" id="TCT-E6-fdm"/>
                                     <outlet property="playersLabel" destination="Wfj-ZG-sg5" id="1iy-1z-1X0"/>
                                 </connections>
@@ -91,6 +91,7 @@
         <class className="AJGameTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGameTableViewCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="gameImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
             </relationships>
