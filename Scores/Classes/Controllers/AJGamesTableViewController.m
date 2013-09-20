@@ -11,13 +11,14 @@
 #import "AJGame+Additions.h"
 #import "AJScoresManager.h"
 
-@interface AJGamesTableViewController ()
+@interface AJGamesTableViewController () <UITextFieldDelegate>
+
+@property (nonatomic, assign) BOOL showsAddGameSection;
+@property (weak, nonatomic) IBOutlet UITextField *addNewGameTextField;
 
 @end
 
 @implementation AJGamesTableViewController
-
-
 
 - (void)viewDidLoad
 {
@@ -26,7 +27,17 @@
     self.games = [[AJScoresManager sharedInstance] getGamesArray];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+}
+
 #pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -36,21 +47,21 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"GameCell";
+
     AJGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
     [cell setGameDictionary:[(AJGame *)self.games[indexPath.row] toDictionary]];
     
     return cell;
+
 }
 
-/*
-// Override to support conditional editing of the table view.
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+
 
 /*
 // Override to support editing the table view.
@@ -73,14 +84,49 @@
 }
 */
 
-/*
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
+
+
+#pragma mark - Actions
+
+- (IBAction)editButtonClicked:(UIBarButtonItem *)sender {
+    if ([sender.title isEqualToString:@"Edit"]) {
+        [self.tableView setEditing:YES animated:YES];
+        [sender setTitle:@"Done"];
+    } else {
+        [self.tableView setEditing:NO animated:YES];
+        [sender setTitle:@"Edit"];
+    }
+
+}
+
+- (IBAction)addButtonClicked:(id)sender {
+    if (!self.showsAddGameSection) {
+        self.showsAddGameSection = YES;
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        [self.addNewGameTextField becomeFirstResponder];
+    }
+}
+
+#pragma mark - TextFieldDelegate
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [self.addNewGameTextField resignFirstResponder];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    self.showsAddGameSection = NO;
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    textField.text = @"";
+    
+    return YES;
+}
 
 #pragma mark - Table view delegate
 

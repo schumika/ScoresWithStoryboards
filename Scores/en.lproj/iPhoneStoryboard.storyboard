@@ -9,12 +9,34 @@
             <objects>
                 <tableViewController id="2TO-YW-IhU" customClass="AJGamesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="leo-Mq-vmo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="D6D-v9-oKQ">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Game Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="87c-bH-ejb">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="BSd-bl-uyh"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="2TO-YW-IhU" id="87n-Nd-1FA"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="87c-bH-ejb" firstAttribute="leading" secondItem="D6D-v9-oKQ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Dcg-ob-xK8"/>
+                                <constraint firstAttribute="trailing" secondItem="87c-bH-ejb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LhJ-5a-wLN"/>
+                                <constraint firstItem="87c-bH-ejb" firstAttribute="centerY" secondItem="D6D-v9-oKQ" secondAttribute="centerY" type="default" id="gbn-Vs-HGt"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="60" id="of5-1d-7U9" customClass="AJGameTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="60" id="of5-1d-7U9" customClass="AJGameTableViewCell">
+                                <rect key="frame" x="0.0" y="66" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="59"/>
@@ -29,12 +51,16 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Players" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZH-8K-2em">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19" id="RDa-Va-Mvg"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s01-F5-9EM">
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="59" id="atD-aN-Iox"/>
                                                 <constraint firstAttribute="width" constant="63" id="gyK-du-vhH"/>
                                             </constraints>
                                         </imageView>
@@ -46,8 +72,7 @@
                                     <constraint firstItem="JYv-CU-daZ" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" type="default" id="7uZ-Dv-Yrp"/>
                                     <constraint firstItem="s01-F5-9EM" firstAttribute="leading" secondItem="of5-1d-7U9" secondAttribute="leading" type="default" id="Vh4-ny-L9f"/>
                                     <constraint firstItem="XZH-8K-2em" firstAttribute="leading" secondItem="s01-F5-9EM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="XmB-Hd-zgn"/>
-                                    <constraint firstAttribute="bottom" secondItem="XZH-8K-2em" secondAttribute="bottom" constant="1" id="YND-vf-YRw"/>
-                                    <constraint firstItem="s01-F5-9EM" firstAttribute="bottom" secondItem="XZH-8K-2em" secondAttribute="bottom" type="default" id="f4j-h1-UL7"/>
+                                    <constraint firstItem="XZH-8K-2em" firstAttribute="bottom" secondItem="of5-1d-7U9" secondAttribute="bottom" type="default" id="nZo-VH-svG"/>
                                     <constraint firstItem="s01-F5-9EM" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" type="default" id="njQ-Rn-ONR"/>
                                 </constraints>
                                 <connections>
@@ -62,7 +87,24 @@
                             <outlet property="delegate" destination="2TO-YW-IhU" id="itf-e1-Cpg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Scores" id="iDm-Ml-DIa"/>
+                    <toolbarItems>
+                        <barButtonItem systemItem="add" id="ova-cu-xfq">
+                            <connections>
+                                <action selector="addButtonClicked:" destination="2TO-YW-IhU" id="VjS-iW-PsG"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Scores" id="iDm-Ml-DIa">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="bgg-YK-kyf">
+                            <connections>
+                                <action selector="editButtonClicked:" destination="2TO-YW-IhU" id="ScU-XQ-UgI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addNewGameTextField" destination="87c-bH-ejb" id="2lB-DG-pZd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vD-VL-tLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,13 +113,17 @@
         <!--Navigation Controller-->
         <scene sceneID="R20-CZ-pgM">
             <objects>
-                <navigationController id="JQE-hu-vuC" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="JQE-hu-vuC" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WHP-ML-dw9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="eds-it-NWE">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="2TO-YW-IhU" kind="relationship" relationship="rootViewController" id="5CY-1V-89T"/>
                     </connections>
@@ -87,22 +133,6 @@
             <point key="canvasLocation" x="626" y="182"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="AJGameTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGameTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="gameImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AJGamesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGamesTableViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
