@@ -7,89 +7,104 @@
 //
 
 #import "AJGamesTableViewController.h"
+#import "AJTextFieldTableViewCell.h"
 #import "AJGameTableViewCell.h"
 #import "AJGame+Additions.h"
 #import "AJScoresManager.h"
 
+#import "NSString+Additions.h"
+
 @interface AJGamesTableViewController () <UITextFieldDelegate>
 
-@property (nonatomic, assign) BOOL showsAddGameSection;
+@property (nonatomic, assign) BOOL showsAddNewGameCell;
 @property (weak, nonatomic) IBOutlet UITextField *addNewGameTextField;
 
 @end
+
 
 @implementation AJGamesTableViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.games = [[AJScoresManager sharedInstance] getGamesArray];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    self.navigationController.toolbarHidden = YES;
+    [self loadDataAndUpdateUI:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if ([self.games count] > 0) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] atScrollPosition:UITableViewScrollPositionTop animated:NO];
+    }
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.games count];
+    return (section == 0) ? self.showsAddNewGameCell : [self.games count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"GameCell";
-
-    AJGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    [cell setGameDictionary:[(AJGame *)self.games[indexPath.row] toDictionary]];
+    static NSString *NewGameCellIdentifier = @"NewGameCell";
     
-    return cell;
-
+    if (indexPath.section == 0) {
+        AJTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewGameCellIdentifier forIndexPath:indexPath];
+        return cell;
+    } else {
+        AJGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        [cell setGameDictionary:[(AJGame *)self.games[indexPath.row] toDictionary]];
+        
+        return cell;
+    }
 }
 
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 1);
 }
 
 
-/*
-// Override to support editing the table view.
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    if (tableView.editing == UITableViewCellEditingStyleDelete) {
+        [self deleteGameFromCellWithIndexPath:indexPath];
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    NSMutableArray *mutableArray = [[NSMutableArray alloc] initWithArray:self.games];
+    AJGame *gameToMove = mutableArray[fromIndexPath.row];
+    [mutableArray removeObjectAtIndex:fromIndexPath.row];
+    [mutableArray insertObject:gameToMove atIndex:toIndexPath.row];
+    [self setGames:mutableArray];
+    
+    [self updateRowIdsForGames];
+    [self loadDataAndUpdateUI:YES];
 }
-*/
 
 
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 1);
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
@@ -98,47 +113,77 @@
 - (IBAction)editButtonClicked:(UIBarButtonItem *)sender {
     if ([sender.title isEqualToString:@"Edit"]) {
         [self.tableView setEditing:YES animated:YES];
+        self.showsAddNewGameCell = NO;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
         [sender setTitle:@"Done"];
+        [sender setStyle:UIBarButtonItemStyleDone];
     } else {
         [self.tableView setEditing:NO animated:YES];
         [sender setTitle:@"Edit"];
+        [sender setStyle:UIBarButtonItemStyleBordered];
     }
 
 }
 
 - (IBAction)addButtonClicked:(id)sender {
-    if (!self.showsAddGameSection) {
-        self.showsAddGameSection = YES;
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-        [self.addNewGameTextField becomeFirstResponder];
-    }
+    self.showsAddNewGameCell = YES;
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    [[(AJTextFieldTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] textField] becomeFirstResponder];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 #pragma mark - TextFieldDelegate
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-    [self.addNewGameTextField resignFirstResponder];
-}
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    self.showsAddGameSection = NO;
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    self.showsAddNewGameCell = NO;
+    [self.addNewGameTextField resignFirstResponder];
+    
+    NSString *text = textField.text;
+    if (![NSString isNilOrEmpty:text]) {
+        int maxNo = [self.tableView numberOfRowsInSection:1];
+        [[AJScoresManager sharedInstance] addGameWithName:text andRowId:maxNo+1];
+        [textField setText:nil];
+        
+        [self loadDataAndUpdateUI:YES];
+    } else {
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
     textField.text = @"";
     
     return YES;
 }
 
-#pragma mark - Table view delegate
+#pragma mark - Private methods
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (void)loadDataAndUpdateUI:(BOOL)updateUI {
+    self.games = [[AJScoresManager sharedInstance] getGamesArray];
+    if (updateUI) {
+        [self.tableView reloadData];
+    }
+}
+
+- (void)updateRowIdsForGames {
+    int numberOfGames = [self.games count];
+    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
+    for (AJGame *game in self.games) {
+        game.rowId = numberOfGames - [self.games indexOfObject:game];
+        [mutableArray addObject:game];
+    }
+    [self setGames:mutableArray];
+    
+    [[AJScoresManager sharedInstance] saveContext];
+}
+
+- (void)deleteGameFromCellWithIndexPath:(NSIndexPath*)indexPath {
+    [self.tableView beginUpdates];
+    [[AJScoresManager sharedInstance] deleteGame:self.games[indexPath.row]];
+    [self loadDataAndUpdateUI:NO];
+    [self updateRowIdsForGames];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+    [self.tableView endUpdates];
+    
+    [self.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.3];
 }
 
 @end

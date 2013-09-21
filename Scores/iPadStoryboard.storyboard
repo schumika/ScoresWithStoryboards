@@ -13,8 +13,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="100" id="78G-iq-DKS" customClass="AJGameTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="NewGameCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewGameCell" id="h8y-Zy-thg" customClass="AJTextFieldTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="768" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Game Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="meu-Ik-vFi">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="aa1-XX-HdD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="Waw-Qa-Jrz" id="qbQ-sZ-puq"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="meu-Ik-vFi" firstAttribute="centerY" secondItem="h8y-Zy-thg" secondAttribute="centerY" type="default" id="aco-0T-y6i"/>
+                                    <constraint firstAttribute="trailing" secondItem="meu-Ik-vFi" secondAttribute="trailing" constant="20" type="default" id="mS7-8Y-Qrt"/>
+                                    <constraint firstItem="meu-Ik-vFi" firstAttribute="leading" secondItem="h8y-Zy-thg" secondAttribute="leading" constant="20" type="default" id="pJF-Km-vsj"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="textField" destination="meu-Ik-vFi" id="J3l-7n-xcu"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="100" id="78G-iq-DKS" customClass="AJGameTableViewCell">
+                                <rect key="frame" x="0.0" y="122" width="768" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="748" height="99"/>
@@ -62,7 +91,18 @@
                             <outlet property="delegate" destination="Waw-Qa-Jrz" id="tXb-MX-she"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Scores" id="yEm-x4-NjA"/>
+                    <navigationItem key="navigationItem" title="Scores" id="yEm-x4-NjA">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="chg-nu-gdu">
+                            <connections>
+                                <action selector="editButtonClicked:" destination="Waw-Qa-Jrz" id="cSX-5H-ky4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bUQ-5J-Ceb">
+                            <connections>
+                                <action selector="addButtonClicked:" destination="Waw-Qa-Jrz" id="YrA-SQ-Nm8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nl1-UI-H7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,6 +138,17 @@
         </class>
         <class className="AJGamesTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGamesTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addButtonClicked:"/>
+                <relationship kind="action" name="editButtonClicked:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="addNewGameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AJTextFieldTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTextFieldTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>

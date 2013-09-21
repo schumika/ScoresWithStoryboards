@@ -34,6 +34,8 @@
 		A9528A4D17EB724200060B08 /* main_tile_default_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4C17EB724200060B08 /* main_tile_default_pic.png */; };
 		A9528A5017EB730500060B08 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4E17EB730500060B08 /* mask.png */; };
 		A9528A5117EB730500060B08 /* mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4F17EB730500060B08 /* mask@2x.png */; };
+		A987B9E417ED677E0070CA82 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A987B9E317ED677E0070CA82 /* NSString+Additions.m */; };
+		A987B9E717ED7E9D0070CA82 /* AJTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A987B9E617ED7E9D0070CA82 /* AJTextFieldTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,10 @@
 		A9528A4C17EB724200060B08 /* main_tile_default_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_tile_default_pic.png; path = Images/main_tile_default_pic.png; sourceTree = "<group>"; };
 		A9528A4E17EB730500060B08 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mask.png; path = Images/mask.png; sourceTree = "<group>"; };
 		A9528A4F17EB730500060B08 /* mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mask@2x.png"; path = "Images/mask@2x.png"; sourceTree = "<group>"; };
+		A987B9E217ED677E0070CA82 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		A987B9E317ED677E0070CA82 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		A987B9E517ED7E9D0070CA82 /* AJTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		A987B9E617ED7E9D0070CA82 /* AJTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJTextFieldTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,8 @@
 			children = (
 				527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */,
 				527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */,
+				A987B9E517ED7E9D0070CA82 /* AJTextFieldTableViewCell.h */,
+				A987B9E617ED7E9D0070CA82 /* AJTextFieldTableViewCell.m */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -203,6 +211,8 @@
 		A9528A4217EB6F4E00060B08 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				A987B9E217ED677E0070CA82 /* NSString+Additions.h */,
+				A987B9E317ED677E0070CA82 /* NSString+Additions.m */,
 				A9528A4617EB71DA00060B08 /* UIImage+Additions.h */,
 				A9528A4717EB71DA00060B08 /* UIImage+Additions.m */,
 				A9528A4317EB6FB900060B08 /* UIColor+Additions.h */,
@@ -307,6 +317,8 @@
 				A9528A4117EB6B6400060B08 /* AJDefines.m in Sources */,
 				A9528A4517EB6FB900060B08 /* UIColor+Additions.m in Sources */,
 				A9528A4817EB71DA00060B08 /* UIImage+Additions.m in Sources */,
+				A987B9E417ED677E0070CA82 /* NSString+Additions.m in Sources */,
+				A987B9E717ED7E9D0070CA82 /* AJTextFieldTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

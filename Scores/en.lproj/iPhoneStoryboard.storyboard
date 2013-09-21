@@ -9,34 +9,41 @@
             <objects>
                 <tableViewController id="2TO-YW-IhU" customClass="AJGamesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="leo-Mq-vmo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="D6D-v9-oKQ">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Game Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="87c-bH-ejb">
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="BSd-bl-uyh"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="2TO-YW-IhU" id="87n-Nd-1FA"/>
-                                    </connections>
-                                </textField>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="87c-bH-ejb" firstAttribute="leading" secondItem="D6D-v9-oKQ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Dcg-ob-xK8"/>
-                                <constraint firstAttribute="trailing" secondItem="87c-bH-ejb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="LhJ-5a-wLN"/>
-                                <constraint firstItem="87c-bH-ejb" firstAttribute="centerY" secondItem="D6D-v9-oKQ" secondAttribute="centerY" type="default" id="gbn-Vs-HGt"/>
-                            </constraints>
-                        </view>
                         <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" indentationWidth="10" reuseIdentifier="NewGameCell" id="3Kf-YR-Twl" customClass="AJTextFieldTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Game Name..." textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="i3f-j0-Jga">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="a82-fz-C5R"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="2TO-YW-IhU" id="w2i-NU-alR"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="i3f-j0-Jga" secondAttribute="trailing" constant="20" type="default" id="Ist-B6-sHS"/>
+                                    <constraint firstItem="i3f-j0-Jga" firstAttribute="centerY" secondItem="3Kf-YR-Twl" secondAttribute="centerY" type="default" id="LG9-ED-ucU"/>
+                                    <constraint firstItem="i3f-j0-Jga" firstAttribute="leading" secondItem="3Kf-YR-Twl" secondAttribute="leading" constant="20" type="default" id="heR-Tb-hPO"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="textField" destination="i3f-j0-Jga" id="IeT-lj-VBK"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="60" id="of5-1d-7U9" customClass="AJGameTableViewCell">
-                                <rect key="frame" x="0.0" y="66" width="320" height="60"/>
+                                <rect key="frame" x="0.0" y="82" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="59"/>
@@ -87,28 +94,24 @@
                             <outlet property="delegate" destination="2TO-YW-IhU" id="itf-e1-Cpg"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem systemItem="add" id="ova-cu-xfq">
-                            <connections>
-                                <action selector="addButtonClicked:" destination="2TO-YW-IhU" id="VjS-iW-PsG"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Scores" id="iDm-Ml-DIa">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="bgg-YK-kyf">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="bgg-YK-kyf">
                             <connections>
                                 <action selector="editButtonClicked:" destination="2TO-YW-IhU" id="ScU-XQ-UgI"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ova-cu-xfq">
+                            <connections>
+                                <action selector="addButtonClicked:" destination="2TO-YW-IhU" id="VjS-iW-PsG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="addNewGameTextField" destination="87c-bH-ejb" id="2lB-DG-pZd"/>
-                    </connections>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vD-VL-tLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1152" y="182"/>
+            <point key="canvasLocation" x="1105" y="182"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R20-CZ-pgM">
