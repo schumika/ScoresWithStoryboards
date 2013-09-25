@@ -38,5 +38,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>LDBrushStroke.ttf</string>
+		<string>Faranvale.otf</string>
+	</array>
 </dict>
 </plist>

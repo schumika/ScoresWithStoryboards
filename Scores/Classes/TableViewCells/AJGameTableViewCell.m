@@ -12,7 +12,6 @@
 
 @interface AJGameTableViewCell()
 
-@property (weak, nonatomic) IBOutlet UILabel *gameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playersLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *gameImageView;
 

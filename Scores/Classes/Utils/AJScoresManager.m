@@ -101,7 +101,6 @@
 
 - (void)addGameWithName:(NSString *)name andRowId:(int)rowId {
     AJGame *game = [AJGame createGameWithName:name inManagedObjectContext:self.managedObjectContext];
-    game.color = [[UIColor AJPurpleColor] toHexString:YES];
     game.rowId = rowId;
     
     [self saveContext];

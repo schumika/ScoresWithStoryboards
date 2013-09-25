@@ -25,7 +25,7 @@
                                                 <constraint firstAttribute="height" constant="30" id="a82-fz-C5R"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                             <connections>
                                                 <outlet property="delegate" destination="2TO-YW-IhU" id="w2i-NU-alR"/>
                                             </connections>
@@ -145,6 +145,31 @@
     <resources>
         <image name="separator.png" width="320" height="2"/>
     </resources>
+    <classes>
+        <class className="AJGameTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGameTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gameImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="AJGamesTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGamesTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addNewGameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AJTextFieldTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTextFieldTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

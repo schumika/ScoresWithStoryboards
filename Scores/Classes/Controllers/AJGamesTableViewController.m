@@ -13,6 +13,7 @@
 #import "AJScoresManager.h"
 
 #import "NSString+Additions.h"
+#import "UIFont+Additions.h"
 
 @interface AJGamesTableViewController () <UITextFieldDelegate>
 
@@ -64,9 +65,11 @@
     
     if (indexPath.section == 0) {
         AJTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewGameCellIdentifier forIndexPath:indexPath];
+        cell.textField.font = [UIFont faranvaleFontWithSize:30.0];
         return cell;
     } else {
         AJGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        cell.gameLabel.font = [UIFont faranvaleFontWithSize:35.0];
         [cell setGameDictionary:[(AJGame *)self.games[indexPath.row] toDictionary]];
         
         return cell;
