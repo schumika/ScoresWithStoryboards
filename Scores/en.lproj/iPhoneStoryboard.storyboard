@@ -147,36 +147,6 @@
     <resources>
         <image name="separator.png" width="320" height="2"/>
     </resources>
-    <classes>
-        <class className="AJGameTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGameTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="gameImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AJGamesTableViewController" superclassName="AJTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGamesTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addButtonClicked:"/>
-                <relationship kind="action" name="editButtonClicked:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="addNewGameTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AJTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTableViewController.h"/>
-        </class>
-        <class className="AJTextFieldTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTextFieldTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

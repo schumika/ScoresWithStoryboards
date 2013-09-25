@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="IpM-bF-tuP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="IpM-bF-tuP">
     <dependencies>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Games Table View Controller - Scores-->
@@ -22,7 +22,6 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Game Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="meu-Ik-vFi">
-                                            <rect key="frame" x="20" y="35" width="728" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="aa1-XX-HdD"/>
                                             </constraints>
@@ -32,10 +31,19 @@
                                                 <outlet property="delegate" destination="Waw-Qa-Jrz" id="qbQ-sZ-puq"/>
                                             </connections>
                                         </textField>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="1tj-R1-ql4">
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="CHx-az-7Br"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="1tj-R1-ql4" firstAttribute="trailing" secondItem="h8y-Zy-thg" secondAttribute="trailing" type="default" id="A71-AJ-M6d"/>
+                                    <constraint firstItem="1tj-R1-ql4" firstAttribute="leading" secondItem="h8y-Zy-thg" secondAttribute="leading" type="default" id="Azp-rp-AC8"/>
+                                    <constraint firstAttribute="bottom" secondItem="1tj-R1-ql4" secondAttribute="bottom" constant="1" id="USv-Io-LcW"/>
                                     <constraint firstItem="meu-Ik-vFi" firstAttribute="centerY" secondItem="h8y-Zy-thg" secondAttribute="centerY" type="default" id="aco-0T-y6i"/>
                                     <constraint firstAttribute="trailing" secondItem="meu-Ik-vFi" secondAttribute="trailing" constant="20" type="default" id="mS7-8Y-Qrt"/>
                                     <constraint firstItem="meu-Ik-vFi" firstAttribute="leading" secondItem="h8y-Zy-thg" secondAttribute="leading" constant="20" type="default" id="pJF-Km-vsj"/>
@@ -52,34 +60,40 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCF-5t-Tb8">
-                                            <rect key="frame" x="108" y="0.0" width="109" height="54"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfj-ZG-sg5">
-                                            <rect key="frame" x="108" y="61" width="61" height="39"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="39" id="5oi-sl-NNY"/>
+                                                <constraint firstAttribute="height" constant="39" id="yg9-st-WmS"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOW-Ef-uiu">
-                                            <rect key="frame" x="10" y="10" width="80" height="80"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="80" id="865-TW-gNe"/>
                                                 <constraint firstAttribute="width" constant="80" id="o48-Sc-4sS"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="m41-Gy-F4L">
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="r20-90-AXv"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" type="default" id="33F-pb-2mg"/>
+                                    <constraint firstItem="m41-Gy-F4L" firstAttribute="trailing" secondItem="78G-iq-DKS" secondAttribute="trailing" type="default" id="FeD-Mt-IiX"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="Wfj-ZG-sg5" secondAttribute="leading" type="default" id="HGQ-Je-zDD"/>
+                                    <constraint firstItem="m41-Gy-F4L" firstAttribute="top" secondItem="MOW-Ef-uiu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="I6w-Kj-Ojh"/>
+                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="MOW-Ef-uiu" secondAttribute="top" type="default" id="Utd-CL-gUr"/>
                                     <constraint firstItem="MOW-Ef-uiu" firstAttribute="centerY" secondItem="78G-iq-DKS" secondAttribute="centerY" type="default" id="WEN-O1-RnD"/>
+                                    <constraint firstItem="m41-Gy-F4L" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" type="default" id="bVu-TQ-Lcc"/>
+                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" constant="10" id="hkk-AG-gqp"/>
                                     <constraint firstItem="MOW-Ef-uiu" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="10" id="mHO-yP-hHz"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="108" id="nIC-HD-4mB"/>
                                     <constraint firstItem="Wfj-ZG-sg5" firstAttribute="bottom" secondItem="78G-iq-DKS" secondAttribute="bottom" type="default" id="pRk-Cz-f1b"/>
@@ -132,6 +146,39 @@
             <point key="canvasLocation" x="638" y="-683"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="separator.png" width="320" height="2"/>
+    </resources>
+    <classes>
+        <class className="AJGameTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGameTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gameImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="AJGamesTableViewController" superclassName="AJTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGamesTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addButtonClicked:"/>
+                <relationship kind="action" name="editButtonClicked:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="addNewGameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="AJTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTableViewController.h"/>
+        </class>
+        <class className="AJTextFieldTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTextFieldTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
