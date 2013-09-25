@@ -34,6 +34,9 @@
     
     self.navigationController.toolbarHidden = YES;
     [self loadDataAndUpdateUI:YES];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    [self.tableView setBackgroundView:imageView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
