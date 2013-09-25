@@ -25,6 +25,9 @@
 		A907C84717EDBC2C009D1BFC /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A907C84417EDBC2C009D1BFC /* background@2x.png */; };
 		A907C84A17EDBCC2009D1BFC /* separator.png in Resources */ = {isa = PBXBuildFile; fileRef = A907C84817EDBCC2009D1BFC /* separator.png */; };
 		A907C84B17EDBCC2009D1BFC /* separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A907C84917EDBCC2009D1BFC /* separator@2x.png */; };
+		52C3988717F304C4006C08B2 /* LDBrushStroke.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C3988617F304C4006C08B2 /* LDBrushStroke.ttf */; };
+		52C3988B17F305D3006C08B2 /* UIFont+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3988A17F305D3006C08B2 /* UIFont+Additions.m */; };
+		52C3988D17F3079F006C08B2 /* Faranvale.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52C3988C17F3079F006C08B2 /* Faranvale.otf */; };
 		A9528A1F17EB64D400060B08 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9528A1E17EB64D400060B08 /* CoreData.framework */; };
 		A9528A2517EB66ED00060B08 /* Scores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9528A2317EB66ED00060B08 /* Scores.xcdatamodeld */; };
 		A9528A3117EB68D800060B08 /* AJGame.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A3017EB68D800060B08 /* AJGame.m */; };
@@ -68,6 +71,10 @@
 		A907C84417EDBC2C009D1BFC /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "Images/background@2x.png"; sourceTree = "<group>"; };
 		A907C84817EDBCC2009D1BFC /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
 		A907C84917EDBCC2009D1BFC /* separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator@2x.png"; sourceTree = "<group>"; };
+		52C3988617F304C4006C08B2 /* LDBrushStroke.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LDBrushStroke.ttf; path = Fonts/LDBrushStroke.ttf; sourceTree = "<group>"; };
+		52C3988917F305D3006C08B2 /* UIFont+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Additions.h"; sourceTree = "<group>"; };
+		52C3988A17F305D3006C08B2 /* UIFont+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Additions.m"; sourceTree = "<group>"; };
+		52C3988C17F3079F006C08B2 /* Faranvale.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Faranvale.otf; path = Fonts/Faranvale.otf; sourceTree = "<group>"; };
 		A9528A1E17EB64D400060B08 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A9528A2417EB66ED00060B08 /* Scores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scores.xcdatamodel; sourceTree = "<group>"; };
 		A9528A2F17EB68D800060B08 /* AJGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJGame.h; path = Classes/Model/AJGame.h; sourceTree = "<group>"; };
@@ -159,6 +166,7 @@
 		527EF9C717E9DD7500FBC5CE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				52C3988817F304C9006C08B2 /* Fonts */,
 				A9528A4917EB722F00060B08 /* Images */,
 				527EF9C817E9DD7500FBC5CE /* Scores-Info.plist */,
 				527EF9C917E9DD7500FBC5CE /* InfoPlist.strings */,
@@ -169,6 +177,15 @@
 				527EF9D617E9DD7600FBC5CE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52C3988817F304C9006C08B2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				52C3988C17F3079F006C08B2 /* Faranvale.otf */,
+				52C3988617F304C4006C08B2 /* LDBrushStroke.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		A9528A2017EB65FE00060B08 /* Controllers */ = {
@@ -221,6 +238,8 @@
 		A9528A4217EB6F4E00060B08 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				52C3988917F305D3006C08B2 /* UIFont+Additions.h */,
+				52C3988A17F305D3006C08B2 /* UIFont+Additions.m */,
 				A987B9E217ED677E0070CA82 /* NSString+Additions.h */,
 				A987B9E317ED677E0070CA82 /* NSString+Additions.m */,
 				A9528A4617EB71DA00060B08 /* UIImage+Additions.h */,
@@ -314,6 +333,8 @@
 				A907C84717EDBC2C009D1BFC /* background@2x.png in Resources */,
 				A907C84A17EDBCC2009D1BFC /* separator.png in Resources */,
 				A907C84B17EDBCC2009D1BFC /* separator@2x.png in Resources */,
+				52C3988717F304C4006C08B2 /* LDBrushStroke.ttf in Resources */,
+				52C3988D17F3079F006C08B2 /* Faranvale.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +360,7 @@
 				A9528A4817EB71DA00060B08 /* UIImage+Additions.m in Sources */,
 				A987B9E417ED677E0070CA82 /* NSString+Additions.m in Sources */,
 				A987B9E717ED7E9D0070CA82 /* AJTextFieldTableViewCell.m in Sources */,
+				52C3988B17F305D3006C08B2 /* UIFont+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
