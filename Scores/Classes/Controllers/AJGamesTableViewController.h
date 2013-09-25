@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AJTableViewController.h"
 
-@interface AJGamesTableViewController : UITableViewController
+@interface AJGamesTableViewController : AJTableViewController
 
 @property (nonatomic, strong) NSArray *games;
 

@@ -20,14 +20,14 @@
 		527EF9E417E9DDB800FBC5CE /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527EF9E317E9DDB800FBC5CE /* iPadStoryboard.storyboard */; };
 		527EF9E717E9E16F00FBC5CE /* AJGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */; };
 		527EF9EA17E9E33F00FBC5CE /* AJGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */; };
+		52C3988717F304C4006C08B2 /* LDBrushStroke.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C3988617F304C4006C08B2 /* LDBrushStroke.ttf */; };
+		52C3988B17F305D3006C08B2 /* UIFont+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3988A17F305D3006C08B2 /* UIFont+Additions.m */; };
+		52C3988D17F3079F006C08B2 /* Faranvale.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52C3988C17F3079F006C08B2 /* Faranvale.otf */; };
 		A907C84517EDBC2C009D1BFC /* background-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A907C84217EDBC2C009D1BFC /* background-568h@2x.png */; };
 		A907C84617EDBC2C009D1BFC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = A907C84317EDBC2C009D1BFC /* background.png */; };
 		A907C84717EDBC2C009D1BFC /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A907C84417EDBC2C009D1BFC /* background@2x.png */; };
 		A907C84A17EDBCC2009D1BFC /* separator.png in Resources */ = {isa = PBXBuildFile; fileRef = A907C84817EDBCC2009D1BFC /* separator.png */; };
 		A907C84B17EDBCC2009D1BFC /* separator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A907C84917EDBCC2009D1BFC /* separator@2x.png */; };
-		52C3988717F304C4006C08B2 /* LDBrushStroke.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C3988617F304C4006C08B2 /* LDBrushStroke.ttf */; };
-		52C3988B17F305D3006C08B2 /* UIFont+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3988A17F305D3006C08B2 /* UIFont+Additions.m */; };
-		52C3988D17F3079F006C08B2 /* Faranvale.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52C3988C17F3079F006C08B2 /* Faranvale.otf */; };
 		A9528A1F17EB64D400060B08 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9528A1E17EB64D400060B08 /* CoreData.framework */; };
 		A9528A2517EB66ED00060B08 /* Scores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A9528A2317EB66ED00060B08 /* Scores.xcdatamodeld */; };
 		A9528A3117EB68D800060B08 /* AJGame.m in Sources */ = {isa = PBXBuildFile; fileRef = A9528A3017EB68D800060B08 /* AJGame.m */; };
@@ -42,6 +42,11 @@
 		A9528A4D17EB724200060B08 /* main_tile_default_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4C17EB724200060B08 /* main_tile_default_pic.png */; };
 		A9528A5017EB730500060B08 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4E17EB730500060B08 /* mask.png */; };
 		A9528A5117EB730500060B08 /* mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4F17EB730500060B08 /* mask@2x.png */; };
+		A962D66217F373E500E606B8 /* AJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A962D66117F373E500E606B8 /* AJTableViewController.m */; };
+		A962D66717F3743F00E606B8 /* nav-bar-clear-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = A962D66317F3743F00E606B8 /* nav-bar-clear-landscape.png */; };
+		A962D66817F3743F00E606B8 /* nav-bar-clear-landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A962D66417F3743F00E606B8 /* nav-bar-clear-landscape@2x.png */; };
+		A962D66917F3743F00E606B8 /* nav-bar-clear.png in Resources */ = {isa = PBXBuildFile; fileRef = A962D66517F3743F00E606B8 /* nav-bar-clear.png */; };
+		A962D66A17F3743F00E606B8 /* nav-bar-clear@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A962D66617F3743F00E606B8 /* nav-bar-clear@2x.png */; };
 		A987B9E417ED677E0070CA82 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A987B9E317ED677E0070CA82 /* NSString+Additions.m */; };
 		A987B9E717ED7E9D0070CA82 /* AJTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A987B9E617ED7E9D0070CA82 /* AJTextFieldTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -66,15 +71,15 @@
 		527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJGamesTableViewController.m; path = Classes/Controllers/AJGamesTableViewController.m; sourceTree = "<group>"; };
 		527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJGameTableViewCell.h; path = Classes/TableViewCells/AJGameTableViewCell.h; sourceTree = "<group>"; };
 		527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJGameTableViewCell.m; path = Classes/TableViewCells/AJGameTableViewCell.m; sourceTree = "<group>"; };
+		52C3988617F304C4006C08B2 /* LDBrushStroke.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LDBrushStroke.ttf; path = Fonts/LDBrushStroke.ttf; sourceTree = "<group>"; };
+		52C3988917F305D3006C08B2 /* UIFont+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Additions.h"; sourceTree = "<group>"; };
+		52C3988A17F305D3006C08B2 /* UIFont+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Additions.m"; sourceTree = "<group>"; };
+		52C3988C17F3079F006C08B2 /* Faranvale.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Faranvale.otf; path = Fonts/Faranvale.otf; sourceTree = "<group>"; };
 		A907C84217EDBC2C009D1BFC /* background-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-568h@2x.png"; path = "Images/background-568h@2x.png"; sourceTree = "<group>"; };
 		A907C84317EDBC2C009D1BFC /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Images/background.png; sourceTree = "<group>"; };
 		A907C84417EDBC2C009D1BFC /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "Images/background@2x.png"; sourceTree = "<group>"; };
 		A907C84817EDBCC2009D1BFC /* separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = separator.png; sourceTree = "<group>"; };
 		A907C84917EDBCC2009D1BFC /* separator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "separator@2x.png"; sourceTree = "<group>"; };
-		52C3988617F304C4006C08B2 /* LDBrushStroke.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LDBrushStroke.ttf; path = Fonts/LDBrushStroke.ttf; sourceTree = "<group>"; };
-		52C3988917F305D3006C08B2 /* UIFont+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Additions.h"; sourceTree = "<group>"; };
-		52C3988A17F305D3006C08B2 /* UIFont+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Additions.m"; sourceTree = "<group>"; };
-		52C3988C17F3079F006C08B2 /* Faranvale.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Faranvale.otf; path = Fonts/Faranvale.otf; sourceTree = "<group>"; };
 		A9528A1E17EB64D400060B08 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A9528A2417EB66ED00060B08 /* Scores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Scores.xcdatamodel; sourceTree = "<group>"; };
 		A9528A2F17EB68D800060B08 /* AJGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJGame.h; path = Classes/Model/AJGame.h; sourceTree = "<group>"; };
@@ -97,6 +102,12 @@
 		A9528A4C17EB724200060B08 /* main_tile_default_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_tile_default_pic.png; path = Images/main_tile_default_pic.png; sourceTree = "<group>"; };
 		A9528A4E17EB730500060B08 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mask.png; path = Images/mask.png; sourceTree = "<group>"; };
 		A9528A4F17EB730500060B08 /* mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mask@2x.png"; path = "Images/mask@2x.png"; sourceTree = "<group>"; };
+		A962D66017F373E500E606B8 /* AJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJTableViewController.h; path = Classes/Controllers/AJTableViewController.h; sourceTree = "<group>"; };
+		A962D66117F373E500E606B8 /* AJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJTableViewController.m; path = Classes/Controllers/AJTableViewController.m; sourceTree = "<group>"; };
+		A962D66317F3743F00E606B8 /* nav-bar-clear-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-clear-landscape.png"; sourceTree = "<group>"; };
+		A962D66417F3743F00E606B8 /* nav-bar-clear-landscape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-clear-landscape@2x.png"; sourceTree = "<group>"; };
+		A962D66517F3743F00E606B8 /* nav-bar-clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-clear.png"; sourceTree = "<group>"; };
+		A962D66617F3743F00E606B8 /* nav-bar-clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-clear@2x.png"; sourceTree = "<group>"; };
 		A987B9E217ED677E0070CA82 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		A987B9E317ED677E0070CA82 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		A987B9E517ED7E9D0070CA82 /* AJTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJTextFieldTableViewCell.h; sourceTree = "<group>"; };
@@ -193,6 +204,8 @@
 			children = (
 				527EF9E517E9E16F00FBC5CE /* AJGamesTableViewController.h */,
 				527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */,
+				A962D66017F373E500E606B8 /* AJTableViewController.h */,
+				A962D66117F373E500E606B8 /* AJTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +266,10 @@
 		A9528A4917EB722F00060B08 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A962D66317F3743F00E606B8 /* nav-bar-clear-landscape.png */,
+				A962D66417F3743F00E606B8 /* nav-bar-clear-landscape@2x.png */,
+				A962D66517F3743F00E606B8 /* nav-bar-clear.png */,
+				A962D66617F3743F00E606B8 /* nav-bar-clear@2x.png */,
 				A907C84817EDBCC2009D1BFC /* separator.png */,
 				A907C84917EDBCC2009D1BFC /* separator@2x.png */,
 				A907C84217EDBC2C009D1BFC /* background-568h@2x.png */,
@@ -335,6 +352,10 @@
 				A907C84B17EDBCC2009D1BFC /* separator@2x.png in Resources */,
 				52C3988717F304C4006C08B2 /* LDBrushStroke.ttf in Resources */,
 				52C3988D17F3079F006C08B2 /* Faranvale.otf in Resources */,
+				A962D66717F3743F00E606B8 /* nav-bar-clear-landscape.png in Resources */,
+				A962D66817F3743F00E606B8 /* nav-bar-clear-landscape@2x.png in Resources */,
+				A962D66917F3743F00E606B8 /* nav-bar-clear.png in Resources */,
+				A962D66A17F3743F00E606B8 /* nav-bar-clear@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +382,7 @@
 				A987B9E417ED677E0070CA82 /* NSString+Additions.m in Sources */,
 				A987B9E717ED7E9D0070CA82 /* AJTextFieldTableViewCell.m in Sources */,
 				52C3988B17F305D3006C08B2 /* UIFont+Additions.m in Sources */,
+				A962D66217F373E500E606B8 /* AJTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

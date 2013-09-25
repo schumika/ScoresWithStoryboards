@@ -74,7 +74,9 @@
                                                 <constraint firstAttribute="width" constant="55" id="chb-n5-SrP"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="nHF-LP-Ngp"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="nHF-LP-Ngp">
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -154,11 +156,16 @@
                 <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="AJGamesTableViewController" superclassName="UITableViewController">
+        <class className="AJGamesTableViewController" superclassName="AJTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGamesTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="addButtonClicked:"/>
+                <relationship kind="action" name="editButtonClicked:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="addNewGameTextField" candidateClass="UITextField"/>
             </relationships>
+        </class>
+        <class className="AJTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTableViewController.h"/>
         </class>
         <class className="AJTextFieldTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTextFieldTableViewCell.h"/>
