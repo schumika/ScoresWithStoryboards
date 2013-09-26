@@ -12,10 +12,13 @@
 #import "AJGame+Additions.h"
 #import "AJScoresManager.h"
 
+#import "UIBarButtonItem+Additions.h"
 #import "NSString+Additions.h"
 #import "UIFont+Additions.h"
 
 @interface AJGamesTableViewController () <UITextFieldDelegate>
+
+@property (nonatomic, strong) UIBarButtonItem *editBarButtonItem;
 
 @property (nonatomic, assign) BOOL showsAddNewGameCell;
 @property (weak, nonatomic) IBOutlet UITextField *addNewGameTextField;
@@ -28,6 +31,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.editBarButtonItem = [UIBarButtonItem clearBarButtonItemWithTitle:@"Edit" target:self action:@selector(editButtonClicked:)];
+    self.navigationItem.leftBarButtonItem = self.editBarButtonItem;
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem clearBarButtonItemWithTitle:@"+" target:self action:@selector(addButtonClicked:)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,6 +53,8 @@
     if ([self.games count] > 0) {
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1] atScrollPosition:UITableViewScrollPositionTop animated:NO];
     }
+    
+    self.titleViewText = @"Scores";
 }
 
 #pragma mark - Table view data source
@@ -65,11 +74,11 @@
     
     if (indexPath.section == 0) {
         AJTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewGameCellIdentifier forIndexPath:indexPath];
-        cell.textField.font = [UIFont faranvaleFontWithSize:30.0];
+        cell.textField.font = [UIFont faranvaleFontWithSize:25.0];
         return cell;
     } else {
         AJGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        cell.gameLabel.font = [UIFont faranvaleFontWithSize:35.0];
+        cell.gameLabel.font = [UIFont faranvaleFontWithSize:30.0];
         [cell setGameDictionary:[(AJGame *)self.games[indexPath.row] toDictionary]];
         
         return cell;
@@ -117,16 +126,14 @@
 #pragma mark - Actions
 
 - (IBAction)editButtonClicked:(UIBarButtonItem *)sender {
-    if ([sender.title isEqualToString:@"Edit"]) {
+    if ([[self.editBarButtonItem buttonTitle] isEqualToString:@"Edit"]) {
         [self.tableView setEditing:YES animated:YES];
         self.showsAddNewGameCell = NO;
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-        [sender setTitle:@"Done"];
-        [sender setStyle:UIBarButtonItemStyleDone];
+        [self.editBarButtonItem setButtonTitle:@"Done"];
     } else {
         [self.tableView setEditing:NO animated:YES];
-        [sender setTitle:@"Edit"];
-        [sender setStyle:UIBarButtonItemStyleBordered];
+        [self.editBarButtonItem setButtonTitle:@"Edit"];
     }
 
 }

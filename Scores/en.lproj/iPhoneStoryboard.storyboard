@@ -45,11 +45,11 @@
                                     <outlet property="textField" destination="i3f-j0-Jga" id="IeT-lj-VBK"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" showsReorderControl="YES" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="60" id="of5-1d-7U9" customClass="AJGameTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="60" id="of5-1d-7U9" customClass="AJGameTableViewCell">
                                 <rect key="frame" x="0.0" y="82" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYv-CU-daZ">
@@ -75,20 +75,23 @@
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="nHF-LP-Ngp">
-                                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
+                                            <rect key="contentStretch" x="0.10000000000000001" y="0.10000000000000001" width="1" height="0.0"/>
                                         </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="disclosure.png" translatesAutoresizingMaskIntoConstraints="NO" id="KrZ-c4-GiC"/>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="JYv-CU-daZ" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" type="default" id="7uZ-Dv-Yrp"/>
                                     <constraint firstItem="XZH-8K-2em" firstAttribute="leading" secondItem="JYv-CU-daZ" secondAttribute="leading" type="default" id="9j1-pT-LFO"/>
+                                    <constraint firstItem="KrZ-c4-GiC" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" constant="20" type="default" id="DkC-Sm-NPT"/>
+                                    <constraint firstItem="JYv-CU-daZ" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" constant="5" id="FE0-WN-6rk"/>
                                     <constraint firstItem="JYv-CU-daZ" firstAttribute="leading" secondItem="of5-1d-7U9" secondAttribute="leading" constant="71" id="HwN-Mm-uHx"/>
-                                    <constraint firstAttribute="bottom" secondItem="nHF-LP-Ngp" secondAttribute="bottom" constant="1" id="OJS-6S-68Y"/>
+                                    <constraint firstAttribute="bottom" secondItem="nHF-LP-Ngp" secondAttribute="bottom" constant="1" id="OV2-2z-VaF"/>
                                     <constraint firstItem="nHF-LP-Ngp" firstAttribute="leading" secondItem="of5-1d-7U9" secondAttribute="leading" type="default" id="Qqd-gn-Mxj"/>
-                                    <constraint firstItem="XZH-8K-2em" firstAttribute="bottom" secondItem="s01-F5-9EM" secondAttribute="bottom" type="default" id="cxn-xv-LkU"/>
-                                    <constraint firstItem="s01-F5-9EM" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" type="default" id="njQ-Rn-ONR"/>
-                                    <constraint firstItem="s01-F5-9EM" firstAttribute="leading" secondItem="of5-1d-7U9" secondAttribute="leading" constant="4" id="yZD-gP-E67"/>
+                                    <constraint firstAttribute="bottom" secondItem="XZH-8K-2em" secondAttribute="bottom" constant="6" id="icB-mt-YDL"/>
+                                    <constraint firstItem="s01-F5-9EM" firstAttribute="leading" secondItem="of5-1d-7U9" secondAttribute="leading" type="default" id="ioK-97-NTd"/>
+                                    <constraint firstItem="KrZ-c4-GiC" firstAttribute="trailing" secondItem="of5-1d-7U9" secondAttribute="trailing" type="default" id="rxD-km-NsI"/>
+                                    <constraint firstItem="KrZ-c4-GiC" firstAttribute="centerY" secondItem="s01-F5-9EM" secondAttribute="centerY" type="default" id="tC0-tO-cCR"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="gameImageView" destination="s01-F5-9EM" id="B1M-Uh-ptL"/>
@@ -103,18 +106,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Scores" id="iDm-Ml-DIa">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="bgg-YK-kyf">
-                            <connections>
-                                <action selector="editButtonClicked:" destination="2TO-YW-IhU" id="ScU-XQ-UgI"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ova-cu-xfq">
-                            <connections>
-                                <action selector="addButtonClicked:" destination="2TO-YW-IhU" id="VjS-iW-PsG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Scores" id="iDm-Ml-DIa"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vD-VL-tLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -145,6 +137,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="disclosure.png" width="20" height="20"/>
         <image name="separator.png" width="320" height="2"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

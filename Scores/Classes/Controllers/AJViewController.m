@@ -1,22 +1,21 @@
 //
-//  AJTableViewViewController.m
+//  AJViewController.m
 //  Scores
 //
-//  Created by Anca Calugar on 9/25/13.
+//  Created by Anca Calugar on 9/26/13.
 //  Copyright (c) 2013 AJ. All rights reserved.
 //
 
-#import "AJTableViewController.h"
-
+#import "AJViewController.h"
 #import "UIBarButtonItem+Additions.h"
 #import "UIFont+Additions.h"
 #import "UIColor+Additions.h"
 
-@interface AJTableViewController ()
+@interface AJViewController ()
 @property (nonatomic, strong) UILabel *titleView;
 @end
 
-@implementation AJTableViewController
+@implementation AJViewController
 
 - (void)viewDidLoad
 {
@@ -64,5 +63,6 @@
 - (IBAction)backButtonClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 @end

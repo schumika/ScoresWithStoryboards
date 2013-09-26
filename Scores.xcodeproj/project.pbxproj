@@ -20,6 +20,20 @@
 		527EF9E417E9DDB800FBC5CE /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527EF9E317E9DDB800FBC5CE /* iPadStoryboard.storyboard */; };
 		527EF9E717E9E16F00FBC5CE /* AJGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */; };
 		527EF9EA17E9E33F00FBC5CE /* AJGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */; };
+		527F01BF17F412380077F704 /* UIBarButtonItem+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F01BE17F412380077F704 /* UIBarButtonItem+Additions.m */; };
+		527F01CB17F414D10077F704 /* Default-Landscape@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01C317F414D10077F704 /* Default-Landscape@2x~ipad.png */; };
+		527F01CC17F414D10077F704 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01C417F414D10077F704 /* Default-Landscape~ipad.png */; };
+		527F01CD17F414D10077F704 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01C517F414D10077F704 /* Default-Portrait@2x~ipad.png */; };
+		527F01CE17F414D10077F704 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01C617F414D10077F704 /* Default-Portrait~ipad.png */; };
+		527F01CF17F414D10077F704 /* icon_iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01C717F414D10077F704 /* icon_iPad.png */; };
+		527F01D017F414D10077F704 /* icon_iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01C817F414D10077F704 /* icon_iPad@2x.png */; };
+		527F01D117F414D10077F704 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01C917F414D10077F704 /* icon.png */; };
+		527F01D217F414D10077F704 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01CA17F414D10077F704 /* icon@2x.png */; };
+		527F01D517F416290077F704 /* AJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F01D417F416290077F704 /* AJViewController.m */; };
+		527F01D817F4178D0077F704 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01D617F4178D0077F704 /* back.png */; };
+		527F01D917F4178D0077F704 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01D717F4178D0077F704 /* back@2x.png */; };
+		527F01DC17F437B60077F704 /* disclosure.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01DA17F437B60077F704 /* disclosure.png */; };
+		527F01DD17F437B60077F704 /* disclosure@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 527F01DB17F437B60077F704 /* disclosure@2x.png */; };
 		52C3988717F304C4006C08B2 /* LDBrushStroke.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52C3988617F304C4006C08B2 /* LDBrushStroke.ttf */; };
 		52C3988B17F305D3006C08B2 /* UIFont+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C3988A17F305D3006C08B2 /* UIFont+Additions.m */; };
 		52C3988D17F3079F006C08B2 /* Faranvale.otf in Resources */ = {isa = PBXBuildFile; fileRef = 52C3988C17F3079F006C08B2 /* Faranvale.otf */; };
@@ -71,6 +85,22 @@
 		527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJGamesTableViewController.m; path = Classes/Controllers/AJGamesTableViewController.m; sourceTree = "<group>"; };
 		527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJGameTableViewCell.h; path = Classes/TableViewCells/AJGameTableViewCell.h; sourceTree = "<group>"; };
 		527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJGameTableViewCell.m; path = Classes/TableViewCells/AJGameTableViewCell.m; sourceTree = "<group>"; };
+		527F01BD17F412380077F704 /* UIBarButtonItem+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Additions.h"; sourceTree = "<group>"; };
+		527F01BE17F412380077F704 /* UIBarButtonItem+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Additions.m"; sourceTree = "<group>"; };
+		527F01C317F414D10077F704 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
+		527F01C417F414D10077F704 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		527F01C517F414D10077F704 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
+		527F01C617F414D10077F704 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		527F01C717F414D10077F704 /* icon_iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_iPad.png; sourceTree = "<group>"; };
+		527F01C817F414D10077F704 /* icon_iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_iPad@2x.png"; sourceTree = "<group>"; };
+		527F01C917F414D10077F704 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		527F01CA17F414D10077F704 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		527F01D317F416290077F704 /* AJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJViewController.h; path = Classes/Controllers/AJViewController.h; sourceTree = "<group>"; };
+		527F01D417F416290077F704 /* AJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJViewController.m; path = Classes/Controllers/AJViewController.m; sourceTree = "<group>"; };
+		527F01D617F4178D0077F704 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		527F01D717F4178D0077F704 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		527F01DA17F437B60077F704 /* disclosure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disclosure.png; sourceTree = "<group>"; };
+		527F01DB17F437B60077F704 /* disclosure@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "disclosure@2x.png"; sourceTree = "<group>"; };
 		52C3988617F304C4006C08B2 /* LDBrushStroke.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = LDBrushStroke.ttf; path = Fonts/LDBrushStroke.ttf; sourceTree = "<group>"; };
 		52C3988917F305D3006C08B2 /* UIFont+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Additions.h"; sourceTree = "<group>"; };
 		52C3988A17F305D3006C08B2 /* UIFont+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Additions.m"; sourceTree = "<group>"; };
@@ -183,6 +213,14 @@
 				527EF9C917E9DD7500FBC5CE /* InfoPlist.strings */,
 				527EF9CC17E9DD7500FBC5CE /* main.m */,
 				527EF9CE17E9DD7500FBC5CE /* Scores-Prefix.pch */,
+				527F01C317F414D10077F704 /* Default-Landscape@2x~ipad.png */,
+				527F01C417F414D10077F704 /* Default-Landscape~ipad.png */,
+				527F01C517F414D10077F704 /* Default-Portrait@2x~ipad.png */,
+				527F01C617F414D10077F704 /* Default-Portrait~ipad.png */,
+				527F01C717F414D10077F704 /* icon_iPad.png */,
+				527F01C817F414D10077F704 /* icon_iPad@2x.png */,
+				527F01C917F414D10077F704 /* icon.png */,
+				527F01CA17F414D10077F704 /* icon@2x.png */,
 				527EF9D217E9DD7500FBC5CE /* Default.png */,
 				527EF9D417E9DD7600FBC5CE /* Default@2x.png */,
 				527EF9D617E9DD7600FBC5CE /* Default-568h@2x.png */,
@@ -202,10 +240,12 @@
 		A9528A2017EB65FE00060B08 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				527EF9E517E9E16F00FBC5CE /* AJGamesTableViewController.h */,
-				527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */,
+				527F01D317F416290077F704 /* AJViewController.h */,
+				527F01D417F416290077F704 /* AJViewController.m */,
 				A962D66017F373E500E606B8 /* AJTableViewController.h */,
 				A962D66117F373E500E606B8 /* AJTableViewController.m */,
+				527EF9E517E9E16F00FBC5CE /* AJGamesTableViewController.h */,
+				527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -259,6 +299,8 @@
 				A9528A4717EB71DA00060B08 /* UIImage+Additions.m */,
 				A9528A4317EB6FB900060B08 /* UIColor+Additions.h */,
 				A9528A4417EB6FB900060B08 /* UIColor+Additions.m */,
+				527F01BD17F412380077F704 /* UIBarButtonItem+Additions.h */,
+				527F01BE17F412380077F704 /* UIBarButtonItem+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -266,6 +308,10 @@
 		A9528A4917EB722F00060B08 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				527F01DA17F437B60077F704 /* disclosure.png */,
+				527F01DB17F437B60077F704 /* disclosure@2x.png */,
+				527F01D617F4178D0077F704 /* back.png */,
+				527F01D717F4178D0077F704 /* back@2x.png */,
 				A962D66317F3743F00E606B8 /* nav-bar-clear-landscape.png */,
 				A962D66417F3743F00E606B8 /* nav-bar-clear-landscape@2x.png */,
 				A962D66517F3743F00E606B8 /* nav-bar-clear.png */,
@@ -356,6 +402,18 @@
 				A962D66817F3743F00E606B8 /* nav-bar-clear-landscape@2x.png in Resources */,
 				A962D66917F3743F00E606B8 /* nav-bar-clear.png in Resources */,
 				A962D66A17F3743F00E606B8 /* nav-bar-clear@2x.png in Resources */,
+				527F01CB17F414D10077F704 /* Default-Landscape@2x~ipad.png in Resources */,
+				527F01CC17F414D10077F704 /* Default-Landscape~ipad.png in Resources */,
+				527F01CD17F414D10077F704 /* Default-Portrait@2x~ipad.png in Resources */,
+				527F01CE17F414D10077F704 /* Default-Portrait~ipad.png in Resources */,
+				527F01CF17F414D10077F704 /* icon_iPad.png in Resources */,
+				527F01D017F414D10077F704 /* icon_iPad@2x.png in Resources */,
+				527F01D117F414D10077F704 /* icon.png in Resources */,
+				527F01D217F414D10077F704 /* icon@2x.png in Resources */,
+				527F01D817F4178D0077F704 /* back.png in Resources */,
+				527F01D917F4178D0077F704 /* back@2x.png in Resources */,
+				527F01DC17F437B60077F704 /* disclosure.png in Resources */,
+				527F01DD17F437B60077F704 /* disclosure@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +441,8 @@
 				A987B9E717ED7E9D0070CA82 /* AJTextFieldTableViewCell.m in Sources */,
 				52C3988B17F305D3006C08B2 /* UIFont+Additions.m in Sources */,
 				A962D66217F373E500E606B8 /* AJTableViewController.m in Sources */,
+				527F01BF17F412380077F704 /* UIBarButtonItem+Additions.m in Sources */,
+				527F01D517F416290077F704 /* AJViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
