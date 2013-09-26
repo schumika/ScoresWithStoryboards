@@ -8,7 +8,7 @@
 
 #import "AJTextFieldTableViewCell.h"
 
-@implementation AJTextFieldTableViewCell
 
+@implementation AJTextFieldTableViewCell
 
 @end

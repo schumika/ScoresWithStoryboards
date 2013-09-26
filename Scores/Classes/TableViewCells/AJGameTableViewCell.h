@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AJSeparatorTableViewCell.h"
 
-@interface AJGameTableViewCell : UITableViewCell
+@interface AJGameTableViewCell : AJSeparatorTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *gameLabel;
 @property (nonatomic, strong) NSDictionary *gameDictionary;

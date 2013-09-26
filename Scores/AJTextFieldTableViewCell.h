@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AJSeparatorTableViewCell.h"
 
-@interface AJTextFieldTableViewCell : UITableViewCell
+@interface AJTextFieldTableViewCell : AJSeparatorTableViewCell
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end

@@ -40,6 +40,16 @@
     self.navigationItem.titleView = self.titleView;
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    
+    if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+        self.titleView.font = [UIFont faranvaleFontWithSize:30.0];
+    } else {
+        self.titleView.font = [UIFont faranvaleFontWithSize:40.0];
+    }
+}
+
 #pragma mark - UI related
 
 - (void)setTitleViewText:(NSString *)titleViewText {
