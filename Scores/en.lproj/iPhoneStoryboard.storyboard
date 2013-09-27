@@ -44,11 +44,11 @@
                                     <outlet property="textField" destination="i3f-j0-Jga" id="IeT-lj-VBK"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" showsReorderControl="YES" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="60" id="of5-1d-7U9" customClass="AJGameTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" showsReorderControl="YES" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="60" id="of5-1d-7U9" customClass="AJGameTableViewCell">
                                 <rect key="frame" x="0.0" y="82" width="320" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYv-CU-daZ">
@@ -79,12 +79,12 @@
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="XZH-8K-2em" secondAttribute="bottom" constant="8" id="6eS-Ey-8yZ"/>
                                     <constraint firstItem="XZH-8K-2em" firstAttribute="leading" secondItem="JYv-CU-daZ" secondAttribute="leading" type="default" id="9j1-pT-LFO"/>
+                                    <constraint firstItem="JYv-CU-daZ" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" constant="3" id="GUl-H2-2WP"/>
                                     <constraint firstItem="JYv-CU-daZ" firstAttribute="leading" secondItem="of5-1d-7U9" secondAttribute="leading" constant="71" id="HwN-Mm-uHx"/>
-                                    <constraint firstAttribute="bottom" secondItem="XZH-8K-2em" secondAttribute="bottom" constant="9" id="J3w-7u-M51"/>
-                                    <constraint firstItem="JYv-CU-daZ" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" constant="2" id="ViP-s6-vLa"/>
+                                    <constraint firstItem="s01-F5-9EM" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" constant="1" id="flr-iQ-442"/>
                                     <constraint firstItem="s01-F5-9EM" firstAttribute="leading" secondItem="of5-1d-7U9" secondAttribute="leading" type="default" id="ioK-97-NTd"/>
-                                    <constraint firstItem="s01-F5-9EM" firstAttribute="top" secondItem="of5-1d-7U9" secondAttribute="top" type="default" id="rAq-fd-qTM"/>
                                     <constraint firstItem="KrZ-c4-GiC" firstAttribute="trailing" secondItem="of5-1d-7U9" secondAttribute="trailing" type="default" id="rxD-km-NsI"/>
                                     <constraint firstItem="KrZ-c4-GiC" firstAttribute="centerY" secondItem="s01-F5-9EM" secondAttribute="centerY" type="default" id="tC0-tO-cCR"/>
                                 </constraints>
@@ -93,6 +93,7 @@
                                     <outlet property="gameImageView" destination="s01-F5-9EM" id="B1M-Uh-ptL"/>
                                     <outlet property="gameLabel" destination="JYv-CU-daZ" id="zYa-e8-yD3"/>
                                     <outlet property="playersLabel" destination="XZH-8K-2em" id="OZU-fh-Yz9"/>
+                                    <segue destination="hEO-dd-woW" kind="push" identifier="GamePlayers" id="Iij-We-qjG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -108,6 +109,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vD-VL-tLr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1108" y="182"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="inF-gh-Ke7">
+            <objects>
+                <tableViewController id="hEO-dd-woW" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lly-qH-CrI">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="FUQ-C5-DBr">
+                                <rect key="frame" x="0.0" y="22" width="320" height="75"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hEO-dd-woW" id="oAG-Y5-1bu"/>
+                            <outlet property="delegate" destination="hEO-dd-woW" id="BVJ-qm-CD2"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="2dc-zb-yw2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mgg-xf-rOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1601" y="182"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R20-CZ-pgM">

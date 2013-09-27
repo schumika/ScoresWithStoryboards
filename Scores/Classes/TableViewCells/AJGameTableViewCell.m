@@ -9,9 +9,10 @@
 #import "AJGameTableViewCell.h"
 #import "UIColor+Additions.h"
 #import "UIImage+Additions.h"
+#import "UIFont+Additions.h"
 
 @interface AJGameTableViewCell()
-
+@property (weak, nonatomic) IBOutlet UILabel *gameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playersLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *gameImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *disclosureIndicatorImageView;
@@ -35,6 +36,12 @@
                                     multiplier:cellConstraint.multiplier
                                       constant:cellConstraint.constant];
         [self.contentView addConstraint:contentViewConstraint];
+    }
+    
+    if (CGRectGetHeight(self.contentView.frame) == 90.0) {
+        self.gameLabel.font = [UIFont faranvaleFontWithSize:40.0];
+    } else {
+        self.gameLabel.font = [UIFont faranvaleFontWithSize:30.0];
     }
 }
 

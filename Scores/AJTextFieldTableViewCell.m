@@ -7,8 +7,19 @@
 //
 
 #import "AJTextFieldTableViewCell.h"
+#import "UIFont+Additions.h"
 
 
 @implementation AJTextFieldTableViewCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    
+    if (CGRectGetHeight(self.contentView.frame) == 90.0) {
+        self.textField.font = [UIFont faranvaleFontWithSize:35.0];
+    } else {
+        self.textField.font = [UIFont faranvaleFontWithSize:25.0];
+    }
+}
 
 @end

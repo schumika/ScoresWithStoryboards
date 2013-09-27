@@ -11,7 +11,6 @@
 
 @interface AJGameTableViewCell : AJSeparatorTableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *gameLabel;
 @property (nonatomic, strong) NSDictionary *gameDictionary;
 
 @end

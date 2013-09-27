@@ -9,16 +9,16 @@
         <scene sceneID="xQe-4K-eJd">
             <objects>
                 <tableViewController id="Waw-Qa-Jrz" customClass="AJGamesTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="PHO-Vb-VLW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="PHO-Vb-VLW">
                         <rect key="frame" x="0.0" y="64" width="768" height="960"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="NewGameCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewGameCell" id="h8y-Zy-thg" customClass="AJTextFieldTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="768" height="100"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="NewGameCell" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewGameCell" rowHeight="90" id="h8y-Zy-thg" customClass="AJTextFieldTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Game Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="meu-Ik-vFi">
@@ -31,19 +31,11 @@
                                                 <outlet property="delegate" destination="Waw-Qa-Jrz" id="qbQ-sZ-puq"/>
                                             </connections>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="1tj-R1-ql4">
-                                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="CHx-az-7Br"/>
-                                            </constraints>
-                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="1tj-R1-ql4" firstAttribute="trailing" secondItem="h8y-Zy-thg" secondAttribute="trailing" type="default" id="A71-AJ-M6d"/>
-                                    <constraint firstItem="1tj-R1-ql4" firstAttribute="leading" secondItem="h8y-Zy-thg" secondAttribute="leading" type="default" id="Azp-rp-AC8"/>
-                                    <constraint firstAttribute="bottom" secondItem="1tj-R1-ql4" secondAttribute="bottom" constant="1" id="USv-Io-LcW"/>
                                     <constraint firstItem="meu-Ik-vFi" firstAttribute="centerY" secondItem="h8y-Zy-thg" secondAttribute="centerY" type="default" id="aco-0T-y6i"/>
                                     <constraint firstAttribute="trailing" secondItem="meu-Ik-vFi" secondAttribute="trailing" constant="20" type="default" id="mS7-8Y-Qrt"/>
                                     <constraint firstItem="meu-Ik-vFi" firstAttribute="leading" secondItem="h8y-Zy-thg" secondAttribute="leading" constant="20" type="default" id="pJF-Km-vsj"/>
@@ -52,14 +44,14 @@
                                     <outlet property="textField" destination="meu-Ik-vFi" id="J3l-7n-xcu"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="100" id="78G-iq-DKS" customClass="AJGameTableViewCell">
-                                <rect key="frame" x="0.0" y="122" width="768" height="100"/>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="90" id="78G-iq-DKS" customClass="AJGameTableViewCell">
+                                <rect key="frame" x="0.0" y="112" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="748" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCF-5t-Tb8">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCF-5t-Tb8">
                                             <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,31 +66,31 @@
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOW-Ef-uiu">
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="80" id="QDn-Yc-Taf"/>
                                                 <constraint firstAttribute="width" constant="80" id="o48-Sc-4sS"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="m41-Gy-F4L">
-                                            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="disclosure.png" translatesAutoresizingMaskIntoConstraints="NO" id="sjo-3P-PDz">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="r20-90-AXv"/>
+                                                <constraint firstAttribute="height" constant="23" id="YYe-NA-Fc2"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="m41-Gy-F4L" firstAttribute="trailing" secondItem="78G-iq-DKS" secondAttribute="trailing" type="default" id="FeD-Mt-IiX"/>
+                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="centerY" secondItem="sjo-3P-PDz" secondAttribute="centerY" type="default" id="Be4-8T-LRU"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="Wfj-ZG-sg5" secondAttribute="leading" type="default" id="HGQ-Je-zDD"/>
-                                    <constraint firstItem="m41-Gy-F4L" firstAttribute="top" secondItem="MOW-Ef-uiu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="I6w-Kj-Ojh"/>
-                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="MOW-Ef-uiu" secondAttribute="top" type="default" id="Utd-CL-gUr"/>
-                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="centerY" secondItem="78G-iq-DKS" secondAttribute="centerY" type="default" id="WEN-O1-RnD"/>
-                                    <constraint firstItem="m41-Gy-F4L" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" type="default" id="bVu-TQ-Lcc"/>
-                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" constant="10" id="hkk-AG-gqp"/>
+                                    <constraint firstItem="MOW-Ef-uiu" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" constant="4" id="ZyZ-iO-HoL"/>
+                                    <constraint firstItem="sjo-3P-PDz" firstAttribute="trailing" secondItem="78G-iq-DKS" secondAttribute="trailing" type="default" id="Zzv-xG-p7H"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wfj-ZG-sg5" secondAttribute="bottom" constant="1" id="c3D-Jn-N1R"/>
                                     <constraint firstItem="MOW-Ef-uiu" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="10" id="mHO-yP-hHz"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="108" id="nIC-HD-4mB"/>
-                                    <constraint firstItem="Wfj-ZG-sg5" firstAttribute="bottom" secondItem="78G-iq-DKS" secondAttribute="bottom" type="default" id="pRk-Cz-f1b"/>
+                                    <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" constant="7" id="xMF-tx-iUp"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="disclosureIndicatorImageView" destination="sjo-3P-PDz" id="Lyk-Ew-yxb"/>
                                     <outlet property="gameImageView" destination="MOW-Ef-uiu" id="DFh-ns-kX5"/>
                                     <outlet property="gameLabel" destination="TCF-5t-Tb8" id="TCT-E6-fdm"/>
                                     <outlet property="playersLabel" destination="Wfj-ZG-sg5" id="1iy-1z-1X0"/>
@@ -147,12 +139,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="separator.png" width="320" height="2"/>
+        <image name="disclosure.png" width="20" height="20"/>
     </resources>
     <classes>
-        <class className="AJGameTableViewCell" superclassName="UITableViewCell">
+        <class className="AJGameTableViewCell" superclassName="AJSeparatorTableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGameTableViewCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="disclosureIndicatorImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="gameImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
@@ -166,10 +159,19 @@
                 <relationship kind="outlet" name="addNewGameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
+        <class className="AJSeparatorTableViewCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJSeparatorTableViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="customSeparatorView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
         <class className="AJTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonClicked:"/>
+            </relationships>
         </class>
-        <class className="AJTextFieldTableViewCell" superclassName="UITableViewCell">
+        <class className="AJTextFieldTableViewCell" superclassName="AJSeparatorTableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTextFieldTableViewCell.h"/>
             <relationships>
                 <relationship kind="outlet" name="textField" candidateClass="UITextField"/>

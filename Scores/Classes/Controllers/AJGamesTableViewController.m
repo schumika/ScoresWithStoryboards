@@ -74,11 +74,9 @@
     
     if (indexPath.section == 0) {
         AJTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewGameCellIdentifier forIndexPath:indexPath];
-        cell.textField.font = [UIFont faranvaleFontWithSize:25.0];
         return cell;
     } else {
         AJGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        cell.gameLabel.font = [UIFont faranvaleFontWithSize:30.0];
         [cell setGameDictionary:[(AJGame *)self.games[indexPath.row] toDictionary]];
         
         return cell;
