@@ -86,6 +86,7 @@
                                     <constraint firstItem="KrZ-c4-GiC" firstAttribute="centerY" secondItem="s01-F5-9EM" secondAttribute="centerY" type="default" id="tC0-tO-cCR"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="disclosureIndicatorImageView" destination="KrZ-c4-GiC" id="FvH-T8-5qT"/>
                                     <outlet property="gameImageView" destination="s01-F5-9EM" id="B1M-Uh-ptL"/>
                                     <outlet property="gameLabel" destination="JYv-CU-daZ" id="zYa-e8-yD3"/>
                                     <outlet property="playersLabel" destination="XZH-8K-2em" id="OZU-fh-Yz9"/>

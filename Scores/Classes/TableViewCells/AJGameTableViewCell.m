@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *playersLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *gameImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *disclosureIndicatorImageView;
 
 @end
 
@@ -35,6 +36,12 @@
                                       constant:cellConstraint.constant];
         [self.contentView addConstraint:contentViewConstraint];
     }
+}
+
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    [super setEditing:editing animated:animated];
+    
+    self.disclosureIndicatorImageView.hidden = editing;
 }
 
 - (void)setGameDictionary:(NSDictionary *)gameDictionary {
