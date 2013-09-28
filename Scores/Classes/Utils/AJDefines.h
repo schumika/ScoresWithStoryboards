@@ -16,6 +16,11 @@ typedef enum {
     AJPlayersSortingByNameDESC
 } AJPlayersSortingType;
 
+typedef enum {
+    AJScoresSortingByRoundASC = 0,
+    AJScoresSortingByRoundDESC,
+} AJScoresSortingType;
+
 extern NSString const * kAJNameKey;
 extern NSString const * kAJColorStringKey;
 extern NSString const * kAJPictureDataKey;

@@ -11,6 +11,4 @@
 
 @interface AJGamesTableViewController : AJTableViewController
 
-@property (nonatomic, strong) NSArray *games;
-
 @end

@@ -12,6 +12,8 @@
 
 + (AJGame *)createGameWithName:(NSString *)name inManagedObjectContext:(NSManagedObjectContext *)context;
 
+// public methods
 - (NSDictionary *)toDictionary;
+- (NSArray *)orderedPlayersArray;
 
 @end

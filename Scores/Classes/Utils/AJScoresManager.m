@@ -9,6 +9,7 @@
 #import "AJScoresManager.h"
 #import "UIColor+Additions.h"
 #import "AJGame+Additions.h"
+#import "AJPlayer+Additions.h"
 
 @interface AJScoresManager ()
 
@@ -111,6 +112,42 @@
     
     [self saveContext];
 }
+
+- (NSArray *)getAllPlayersForGame:(AJGame *)game {
+    NSError *error = nil;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"AJPlayer"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"game.name = %@ AND game.rowId = %@", game.name, game.rowId];
+    fetchRequest.predicate = predicate;
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES]];
+    
+    return [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+}
+
+- (AJPlayer *)createPlayerWithName:(NSString *)playerName forGame:(AJGame *)game {
+    AJPlayer *player = [AJPlayer createPlayerWithName:playerName forGame:game];
+    player.color = [[UIColor AJGreenColor] toHexString:YES];
+    
+    if (![self saveContext]) return nil;
+    
+    return player;
+}
+
+- (void)deletePlayer:(AJPlayer *)player {
+    [[self managedObjectContext] deleteObject:player];
+    
+    [self saveContext];
+}
+
+- (void)deleteAllPlayersForGame:(AJGame *)game {
+    NSArray *playersForGame = [self getAllPlayersForGame:game];
+    
+    for (AJPlayer *player in playersForGame) {
+        [[self managedObjectContext] deleteObject:player];
+    }
+    
+    [self saveContext];
+}
+
 
 #pragma mark - Other public methods
 

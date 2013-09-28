@@ -7,7 +7,7 @@
 //
 
 #import "AJGame+Additions.h"
-
+#import "AJPlayer+Additions.h"
 #import "UIColor+Additions.h"
 #import "UIImage+Additions.h"
 
@@ -44,5 +44,34 @@
     
     return displayDictionary;
 }
+
+- (NSArray *)orderedPlayersArray {
+    NSMutableArray *orderedArray = [NSMutableArray arrayWithArray:[self.players allObjects]];
+    
+    int playersSortingType = self.sortOrder;
+    if (playersSortingType == AJPlayersSortingNone) return orderedArray;
+    
+    BOOL isSortingByTotal = (playersSortingType == AJPlayersSortingByTotalASC || playersSortingType == AJPlayersSortingByTotalDESC);
+    BOOL isSortingASC = (playersSortingType == AJPlayersSortingByTotalASC || playersSortingType == AJPlayersSortingByNameASC);
+    
+    [orderedArray sortUsingComparator:^NSComparisonResult(AJPlayer *player1, AJPlayer *player2) {
+        if (isSortingByTotal) {
+            if (player1.totalScore < player2.totalScore) {
+                return isSortingASC ? NSOrderedAscending : NSOrderedDescending;
+            } else {
+                return isSortingASC ? NSOrderedDescending : NSOrderedAscending;
+            }
+        } else {
+            if ([player1.name compare:player2.name] == NSOrderedAscending) {
+                return isSortingASC ? NSOrderedAscending : NSOrderedDescending;
+            } else {
+                return isSortingASC ? NSOrderedDescending : NSOrderedAscending;
+            }
+        }
+    }];
+    
+    return orderedArray;
+}
+
 
 @end

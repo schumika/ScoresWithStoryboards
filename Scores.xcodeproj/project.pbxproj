@@ -57,6 +57,9 @@
 		A9528A4D17EB724200060B08 /* main_tile_default_pic.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4C17EB724200060B08 /* main_tile_default_pic.png */; };
 		A9528A5017EB730500060B08 /* mask.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4E17EB730500060B08 /* mask.png */; };
 		A9528A5117EB730500060B08 /* mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9528A4F17EB730500060B08 /* mask@2x.png */; };
+		A954E69617F601B100BAF445 /* AJPlayerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A954E69517F601B100BAF445 /* AJPlayerTableViewCell.m */; };
+		A954E69917F604E200BAF445 /* AJPlayersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A954E69817F604E200BAF445 /* AJPlayersViewController.m */; };
+		A954E69C17F606D100BAF445 /* AJPlayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = A954E69B17F606D100BAF445 /* AJPlayer+Additions.m */; };
 		A962D66217F373E500E606B8 /* AJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A962D66117F373E500E606B8 /* AJTableViewController.m */; };
 		A962D66717F3743F00E606B8 /* nav-bar-clear-landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = A962D66317F3743F00E606B8 /* nav-bar-clear-landscape.png */; };
 		A962D66817F3743F00E606B8 /* nav-bar-clear-landscape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A962D66417F3743F00E606B8 /* nav-bar-clear-landscape@2x.png */; };
@@ -135,6 +138,12 @@
 		A9528A4C17EB724200060B08 /* main_tile_default_pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = main_tile_default_pic.png; path = Images/main_tile_default_pic.png; sourceTree = "<group>"; };
 		A9528A4E17EB730500060B08 /* mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mask.png; path = Images/mask.png; sourceTree = "<group>"; };
 		A9528A4F17EB730500060B08 /* mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mask@2x.png"; path = "Images/mask@2x.png"; sourceTree = "<group>"; };
+		A954E69417F601B100BAF445 /* AJPlayerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJPlayerTableViewCell.h; path = Classes/TableViewCells/AJPlayerTableViewCell.h; sourceTree = "<group>"; };
+		A954E69517F601B100BAF445 /* AJPlayerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJPlayerTableViewCell.m; path = Classes/TableViewCells/AJPlayerTableViewCell.m; sourceTree = "<group>"; };
+		A954E69717F604E200BAF445 /* AJPlayersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJPlayersViewController.h; path = Classes/Controllers/AJPlayersViewController.h; sourceTree = "<group>"; };
+		A954E69817F604E200BAF445 /* AJPlayersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJPlayersViewController.m; path = Classes/Controllers/AJPlayersViewController.m; sourceTree = "<group>"; };
+		A954E69A17F606D100BAF445 /* AJPlayer+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "AJPlayer+Additions.h"; path = "Classes/Model/AJPlayer+Additions.h"; sourceTree = "<group>"; };
+		A954E69B17F606D100BAF445 /* AJPlayer+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "AJPlayer+Additions.m"; path = "Classes/Model/AJPlayer+Additions.m"; sourceTree = "<group>"; };
 		A962D66017F373E500E606B8 /* AJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJTableViewController.h; path = Classes/Controllers/AJTableViewController.h; sourceTree = "<group>"; };
 		A962D66117F373E500E606B8 /* AJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJTableViewController.m; path = Classes/Controllers/AJTableViewController.m; sourceTree = "<group>"; };
 		A962D66317F3743F00E606B8 /* nav-bar-clear-landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-clear-landscape.png"; sourceTree = "<group>"; };
@@ -143,8 +152,8 @@
 		A962D66617F3743F00E606B8 /* nav-bar-clear@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-bar-clear@2x.png"; sourceTree = "<group>"; };
 		A987B9E217ED677E0070CA82 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		A987B9E317ED677E0070CA82 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
-		A987B9E517ED7E9D0070CA82 /* AJTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJTextFieldTableViewCell.h; sourceTree = "<group>"; };
-		A987B9E617ED7E9D0070CA82 /* AJTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		A987B9E517ED7E9D0070CA82 /* AJTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJTextFieldTableViewCell.h; path = Classes/TableViewCells/AJTextFieldTableViewCell.h; sourceTree = "<group>"; };
+		A987B9E617ED7E9D0070CA82 /* AJTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJTextFieldTableViewCell.m; path = Classes/TableViewCells/AJTextFieldTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +258,8 @@
 				A962D66117F373E500E606B8 /* AJTableViewController.m */,
 				527EF9E517E9E16F00FBC5CE /* AJGamesTableViewController.h */,
 				527EF9E617E9E16F00FBC5CE /* AJGamesTableViewController.m */,
+				A954E69717F604E200BAF445 /* AJPlayersViewController.h */,
+				A954E69817F604E200BAF445 /* AJPlayersViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +269,8 @@
 			children = (
 				527EF9E817E9E33F00FBC5CE /* AJGameTableViewCell.h */,
 				527EF9E917E9E33F00FBC5CE /* AJGameTableViewCell.m */,
+				A954E69417F601B100BAF445 /* AJPlayerTableViewCell.h */,
+				A954E69517F601B100BAF445 /* AJPlayerTableViewCell.m */,
 				A987B9E517ED7E9D0070CA82 /* AJTextFieldTableViewCell.h */,
 				A987B9E617ED7E9D0070CA82 /* AJTextFieldTableViewCell.m */,
 				527F01DE17F440FF0077F704 /* AJSeparatorTableViewCell.h */,
@@ -273,10 +286,12 @@
 				A9528A3017EB68D800060B08 /* AJGame.m */,
 				A9528A3C17EB6AEF00060B08 /* AJGame+Additions.h */,
 				A9528A3D17EB6AEF00060B08 /* AJGame+Additions.m */,
-				A9528A3517EB68D800060B08 /* AJScore.h */,
-				A9528A3617EB68D800060B08 /* AJScore.m */,
 				A9528A3217EB68D800060B08 /* AJPlayer.h */,
 				A9528A3317EB68D800060B08 /* AJPlayer.m */,
+				A954E69A17F606D100BAF445 /* AJPlayer+Additions.h */,
+				A954E69B17F606D100BAF445 /* AJPlayer+Additions.m */,
+				A9528A3517EB68D800060B08 /* AJScore.h */,
+				A9528A3617EB68D800060B08 /* AJScore.m */,
 				A9528A2317EB66ED00060B08 /* Scores.xcdatamodeld */,
 			);
 			name = Model;
@@ -449,6 +464,9 @@
 				527F01BF17F412380077F704 /* UIBarButtonItem+Additions.m in Sources */,
 				527F01D517F416290077F704 /* AJViewController.m in Sources */,
 				527F01E017F440FF0077F704 /* AJSeparatorTableViewCell.m in Sources */,
+				A954E69617F601B100BAF445 /* AJPlayerTableViewCell.m in Sources */,
+				A954E69917F604E200BAF445 /* AJPlayersViewController.m in Sources */,
+				A954E69C17F606D100BAF445 /* AJPlayer+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

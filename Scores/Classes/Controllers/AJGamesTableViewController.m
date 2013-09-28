@@ -7,6 +7,8 @@
 //
 
 #import "AJGamesTableViewController.h"
+#import "AJPlayersViewController.h"
+
 #import "AJTextFieldTableViewCell.h"
 #import "AJGameTableViewCell.h"
 #import "AJGame+Additions.h"
@@ -18,10 +20,11 @@
 
 @interface AJGamesTableViewController () <UITextFieldDelegate>
 
+@property (nonatomic, strong) NSArray *games;
+
 @property (nonatomic, strong) UIBarButtonItem *editBarButtonItem;
 
 @property (nonatomic, assign) BOOL showsAddNewGameCell;
-@property (weak, nonatomic) IBOutlet UITextField *addNewGameTextField;
 
 @end
 
@@ -42,9 +45,6 @@
     
     self.navigationController.toolbarHidden = YES;
     [self loadDataAndUpdateUI:YES];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
-    [self.tableView setBackgroundView:imageView];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -147,7 +147,6 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     self.showsAddNewGameCell = NO;
-    [self.addNewGameTextField resignFirstResponder];
     
     NSString *text = textField.text;
     if (![NSString isNilOrEmpty:text]) {
@@ -163,6 +162,17 @@
     textField.text = @"";
     
     return YES;
+}
+
+#pragma mark - Overridden from base class
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"GamePlayers"]) {
+        if ([segue.destinationViewController respondsToSelector:@selector(setGame:)]) {
+            int rowIndex = [self.tableView indexPathForCell:(AJGameTableViewCell *)sender].row;
+            [(AJPlayersViewController *)segue.destinationViewController setGame:self.games[rowIndex]];
+        }
+    }
 }
 
 #pragma mark - Private methods
