@@ -21,6 +21,8 @@
 @interface AJPlayersViewController ()
 @property (nonatomic, strong) NSArray *players;
 @property (nonatomic, assign) BOOL showsAddNewPlayerCell;
+
+- (void)deletePlayerFromCellWithIndexPath:(NSIndexPath*)indexPath;
 @end
 
 @implementation AJPlayersViewController
@@ -78,6 +80,24 @@
     }
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 1);
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView.editing == UITableViewCellEditingStyleDelete) {
+        [self deletePlayerFromCellWithIndexPath:indexPath];
+    }
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 #pragma mark - TextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -105,6 +125,18 @@
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     [[(AJTextFieldTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] textField] becomeFirstResponder];
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+
+#pragma mark - Private methods
+
+- (void)deletePlayerFromCellWithIndexPath:(NSIndexPath*)indexPath {
+    [self.tableView beginUpdates];
+    [[AJScoresManager sharedInstance] deletePlayer:self.players[indexPath.row]];
+    [self loadDataAndUpdateUI:NO];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+    [self.tableView endUpdates];
+    
+    [self.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.3];
 }
 
 @end

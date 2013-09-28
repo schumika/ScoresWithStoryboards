@@ -158,12 +158,17 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gec-jx-jsD">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" id="Cgj-eT-X5z"/>
+                                                <constraint firstAttribute="width" constant="50" type="user" id="Cgj-eT-X5z"/>
                                                 <constraint firstAttribute="height" constant="50" id="HRZ-Ce-8yt"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="disclosure.png" translatesAutoresizingMaskIntoConstraints="NO" id="EW4-Kr-Vfn"/>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLf-py-s1u">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Player" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLf-py-s1u">
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suk-eQ-OWl">
                                             <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -173,15 +178,19 @@
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="MLf-py-s1u" firstAttribute="leading" secondItem="gec-jx-jsD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5Jh-wd-3xf"/>
-                                    <constraint firstItem="gec-jx-jsD" firstAttribute="centerY" secondItem="EW4-Kr-Vfn" secondAttribute="centerY" type="default" id="8Jp-g1-gfy"/>
-                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="trailing" secondItem="FUQ-C5-DBr" secondAttribute="trailing" type="default" id="LCs-Hw-dn4"/>
-                                    <constraint firstItem="gec-jx-jsD" firstAttribute="leading" secondItem="FUQ-C5-DBr" secondAttribute="leading" type="default" id="Lu2-Re-KSo"/>
-                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="top" secondItem="FUQ-C5-DBr" secondAttribute="top" constant="28" id="TzW-8U-7M6"/>
-                                    <constraint firstItem="MLf-py-s1u" firstAttribute="centerY" secondItem="FUQ-C5-DBr" secondAttribute="centerY" type="default" id="lFg-tD-KnL"/>
+                                    <constraint firstItem="gec-jx-jsD" firstAttribute="top" secondItem="FUQ-C5-DBr" secondAttribute="top" constant="13" id="5D8-0D-L9J"/>
+                                    <constraint firstItem="MLf-py-s1u" firstAttribute="leading" secondItem="gec-jx-jsD" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="5Jh-wd-3xf"/>
+                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="trailing" secondItem="FUQ-C5-DBr" secondAttribute="trailing" type="default" id="9C6-sn-o6b"/>
+                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="centerY" secondItem="FUQ-C5-DBr" secondAttribute="centerY" type="default" id="Dac-BB-4E9"/>
+                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="centerY" secondItem="MLf-py-s1u" secondAttribute="centerY" type="default" id="Fbv-WZ-Gm0"/>
+                                    <constraint firstItem="gec-jx-jsD" firstAttribute="leading" secondItem="FUQ-C5-DBr" secondAttribute="leading" type="user" id="Lu2-Re-KSo"/>
+                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="leading" secondItem="Suk-eQ-OWl" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="eaH-1D-s3A"/>
+                                    <constraint firstItem="Suk-eQ-OWl" firstAttribute="top" secondItem="FUQ-C5-DBr" secondAttribute="top" constant="20" type="default" id="sl2-4r-MyU"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="playerLabel" destination="MLf-py-s1u" id="4to-rT-eL7"/>
+                                    <outlet property="playerImageView" destination="gec-jx-jsD" id="itk-If-rfH"/>
+                                    <outlet property="playerLabel" destination="MLf-py-s1u" id="3Y4-ui-W4R"/>
+                                    <outlet property="totalLabel" destination="Suk-eQ-OWl" id="lmm-JK-IV0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
