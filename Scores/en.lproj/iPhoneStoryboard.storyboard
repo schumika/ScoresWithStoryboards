@@ -149,11 +149,11 @@
                                     <outlet property="textField" destination="y7Q-xf-7Ki" id="x18-Zc-q4S"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerCell" rowHeight="75" id="FUQ-C5-DBr" customClass="AJPlayerTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerCell" rowHeight="75" id="FUQ-C5-DBr" customClass="AJPlayerTableViewCell">
                                 <rect key="frame" x="0.0" y="97" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gec-jx-jsD">
@@ -191,6 +191,7 @@
                                     <outlet property="playerImageView" destination="gec-jx-jsD" id="itk-If-rfH"/>
                                     <outlet property="playerLabel" destination="MLf-py-s1u" id="3Y4-ui-W4R"/>
                                     <outlet property="totalLabel" destination="Suk-eQ-OWl" id="lmm-JK-IV0"/>
+                                    <segue destination="6St-dx-Rc0" kind="push" identifier="PlayerScores" id="qdD-Ka-ff7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -205,6 +206,66 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgg-xf-rOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1601" y="182"/>
+        </scene>
+        <!--Scores View Controller-->
+        <scene sceneID="ACg-QJ-acu">
+            <objects>
+                <tableViewController id="6St-dx-Rc0" customClass="AJScoresViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="mE0-xd-QIv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="ScoreCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="30" id="A4m-4o-HZG" customClass="AJScoreTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="30"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObG-AD-mNg">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1z-lj-3JN">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa3-8r-FVN">
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="qa3-8r-FVN" firstAttribute="baseline" secondItem="N1z-lj-3JN" secondAttribute="baseline" type="default" id="3Ur-n9-Wv7"/>
+                                    <constraint firstItem="ObG-AD-mNg" firstAttribute="top" secondItem="A4m-4o-HZG" secondAttribute="top" constant="4" id="DgF-ZG-dEZ"/>
+                                    <constraint firstItem="N1z-lj-3JN" firstAttribute="baseline" secondItem="ObG-AD-mNg" secondAttribute="baseline" type="default" id="EIl-YT-A4K"/>
+                                    <constraint firstItem="ObG-AD-mNg" firstAttribute="leading" secondItem="A4m-4o-HZG" secondAttribute="leading" type="default" id="bqM-vV-ZAr"/>
+                                    <constraint firstItem="qa3-8r-FVN" firstAttribute="trailing" secondItem="A4m-4o-HZG" secondAttribute="trailing" type="default" id="dJG-y0-JYr"/>
+                                    <constraint firstItem="N1z-lj-3JN" firstAttribute="centerX" secondItem="A4m-4o-HZG" secondAttribute="centerX" type="default" id="qBX-au-5PS"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="intermediateLabel" destination="qa3-8r-FVN" id="Hwy-bF-4du"/>
+                                    <outlet property="roundLabel" destination="ObG-AD-mNg" id="Reu-UC-Yng"/>
+                                    <outlet property="scoreLabel" destination="N1z-lj-3JN" id="6pc-er-NBe"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6St-dx-Rc0" id="7Gl-Nd-07y"/>
+                            <outlet property="delegate" destination="6St-dx-Rc0" id="I1y-09-1XE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="NI0-1a-Mfg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DFQ-sI-Zjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2098" y="182"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R20-CZ-pgM">

@@ -10,6 +10,7 @@
 #import "UIColor+Additions.h"
 #import "AJGame+Additions.h"
 #import "AJPlayer+Additions.h"
+#import "AJScore+Additions.h"
 
 @interface AJScoresManager ()
 
@@ -115,7 +116,7 @@
 
 - (NSArray *)getAllPlayersForGame:(AJGame *)game {
     NSError *error = nil;
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"AJPlayer"];
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"game.name = %@ AND game.rowId = %@", game.name, game.rowId];
     fetchRequest.predicate = predicate;
     fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES]];
@@ -143,6 +144,40 @@
     
     for (AJPlayer *player in playersForGame) {
         [[self managedObjectContext] deleteObject:player];
+    }
+    
+    [self saveContext];
+}
+
+- (NSArray *)getAllScoresForPlayer:(AJPlayer *)player {
+    NSError *error = nil;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Score"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"player.name = %@ AND player.rowId = %@", player.name, player.rowId];
+    fetchRequest.predicate = predicate;
+    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"round" ascending:YES]];
+    
+    return [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+}
+
+- (AJScore *)createScoreWithValue:(double)value inRound:(int)round forPlayer:(AJPlayer *)player {
+    AJScore *score = [AJScore createScoreWithValue:value inRound:round forPlayer:player];
+    
+    if (![self saveContext]) return nil;
+    
+    return score;
+}
+
+- (void)deleteScore:(AJScore *)score {
+    [[self managedObjectContext] deleteObject:score];
+    
+    [self saveContext];
+}
+
+- (void)deleteAllScoresForPlayer:(AJPlayer *)player {
+    NSArray *scoresForPlayer = [self getAllScoresForPlayer:player];
+    
+    for (AJScore *score in scoresForPlayer) {
+        [[self managedObjectContext] deleteObject:score];
     }
     
     [self saveContext];

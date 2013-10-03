@@ -8,6 +8,7 @@
 
 #import "AJPlayersViewController.h"
 
+#import "AJScoresViewController.h"
 #import "AJTextFieldTableViewCell.h"
 #import "AJPlayerTableViewCell.h"
 #import "AJScoresManager.h"
@@ -131,6 +132,17 @@
 
 - (IBAction)settingsButtonClicked:(id)sender {
     
+}
+
+#pragma mark - Overridden from base class
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"PlayerScores"]) {
+        if ([segue.destinationViewController respondsToSelector:@selector(setPlayer:)]) {
+            int rowIndex = [self.tableView indexPathForCell:(AJPlayerTableViewCell *)sender].row;
+            [(AJScoresViewController *)segue.destinationViewController setPlayer:self.players[rowIndex]];
+        }
+    }
 }
 
 #pragma mark - Private methods

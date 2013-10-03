@@ -10,7 +10,7 @@
             <objects>
                 <tableViewController id="Waw-Qa-Jrz" customClass="AJGamesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="PHO-Vb-VLW">
-                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -114,6 +114,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nl1-UI-H7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,7 +123,7 @@
         <!--Navigation Controller-->
         <scene sceneID="S4K-GL-TpD">
             <objects>
-                <navigationController id="IpM-bF-tuP" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" id="IpM-bF-tuP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jDO-XD-udM">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
@@ -156,7 +157,6 @@
             <relationships>
                 <relationship kind="action" name="addButtonClicked:"/>
                 <relationship kind="action" name="editButtonClicked:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="addNewGameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="AJSeparatorTableViewCell" superclassName="UITableViewCell">

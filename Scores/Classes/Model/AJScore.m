@@ -2,7 +2,7 @@
 //  AJScore.m
 //  Scores
 //
-//  Created by Anca Calugar on 9/19/13.
+//  Created by Anca Calugar on 10/3/13.
 //  Copyright (c) 2013 AJ. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 
 @dynamic rowID;
 @dynamic value;
+@dynamic round;
 @dynamic player;
 
 @end

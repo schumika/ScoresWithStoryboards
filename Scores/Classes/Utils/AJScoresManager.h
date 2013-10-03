@@ -10,6 +10,7 @@
 
 @class AJGame;
 @class AJPlayer;
+@class AJScore;
 
 @interface AJScoresManager : NSObject
 
@@ -26,6 +27,12 @@
 - (AJPlayer *)createPlayerWithName:(NSString *)playerName forGame:(AJGame *)game;
 - (void)deletePlayer:(AJPlayer *)player;
 - (void)deleteAllPlayersForGame:(AJGame *)game;
+
+// scores methods
+- (NSArray *)getAllScoresForPlayer:(AJPlayer *)player;
+- (AJScore *)createScoreWithValue:(double)value inRound:(int)round forPlayer:(AJPlayer *)player;
+- (void)deleteScore:(AJScore *)score;
+- (void)deleteAllScoresForPlayer:(AJPlayer *)player;
 
 // other methods
 - (BOOL)saveContext;
