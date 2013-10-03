@@ -36,7 +36,7 @@
     self.titleView.backgroundColor = [UIColor clearColor];
     self.titleView.lineBreakMode = NSLineBreakByTruncatingTail;
     self.titleView.textAlignment = NSTextAlignmentCenter;
-    self.titleView.font = [UIFont faranvaleFontWithSize:40.0];
+    self.titleView.font = [UIFont faranvaleFontWithSize:30.0];
     self.titleView.textColor = [UIColor AJGreenColor];
     self.navigationItem.titleView = self.titleView;
 }
