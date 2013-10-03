@@ -25,8 +25,15 @@
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage imageNamed:@"nav-bar-clear.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setBackgroundImage:[[UIImage imageNamed:@"nav-bar-clear-landscape.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)] forBarMetrics:UIBarMetricsLandscapePhone];
     
+    [self.navigationController.toolbar setBackgroundImage:[[UIImage imageNamed:@"toolbar-clear.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
+    [self.navigationController.toolbar setBackgroundImage:[[UIImage imageNamed:@"toolbar-clear-landscape.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)] forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsLandscapePhone];
+    
     if ([self.navigationController.navigationBar respondsToSelector:@selector(setShadowImage:)]) {
         [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    }
+    
+    if ([self.navigationController.toolbar respondsToSelector:@selector(setShadowImage:forToolbarPosition:)]) {
+        [self.navigationController.toolbar setShadowImage:[[UIImage alloc] init] forToolbarPosition:UIToolbarPositionAny];
     }
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem clearBackButtonItemWithTarget:self action:@selector(backButtonClicked:)];
@@ -46,6 +53,11 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
     [self.tableView setBackgroundView:imageView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {

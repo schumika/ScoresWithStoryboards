@@ -8,7 +8,7 @@
         <!--Games Table View Controller - Scores-->
         <scene sceneID="SIn-h2-lFn">
             <objects>
-                <tableViewController id="2TO-YW-IhU" customClass="AJGamesTableViewController" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="2TO-YW-IhU" customClass="AJGamesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="leo-Mq-vmo">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,7 +115,7 @@
             <objects>
                 <tableViewController id="hEO-dd-woW" customClass="AJPlayersViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="Lly-qH-CrI">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -178,7 +178,6 @@
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="gec-jx-jsD" firstAttribute="top" secondItem="FUQ-C5-DBr" secondAttribute="top" constant="13" id="5D8-0D-L9J"/>
                                     <constraint firstItem="MLf-py-s1u" firstAttribute="leading" secondItem="gec-jx-jsD" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="5Jh-wd-3xf"/>
                                     <constraint firstItem="EW4-Kr-Vfn" firstAttribute="trailing" secondItem="FUQ-C5-DBr" secondAttribute="trailing" type="default" id="9C6-sn-o6b"/>
                                     <constraint firstItem="EW4-Kr-Vfn" firstAttribute="centerY" secondItem="FUQ-C5-DBr" secondAttribute="centerY" type="default" id="Dac-BB-4E9"/>
@@ -186,6 +185,7 @@
                                     <constraint firstItem="gec-jx-jsD" firstAttribute="leading" secondItem="FUQ-C5-DBr" secondAttribute="leading" type="user" id="Lu2-Re-KSo"/>
                                     <constraint firstItem="EW4-Kr-Vfn" firstAttribute="leading" secondItem="Suk-eQ-OWl" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="eaH-1D-s3A"/>
                                     <constraint firstItem="Suk-eQ-OWl" firstAttribute="top" secondItem="FUQ-C5-DBr" secondAttribute="top" constant="20" type="default" id="sl2-4r-MyU"/>
+                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="centerY" secondItem="gec-jx-jsD" secondAttribute="centerY" type="default" id="vTv-0U-E7R"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="playerImageView" destination="gec-jx-jsD" id="itk-If-rfH"/>
@@ -200,6 +200,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2dc-zb-yw2"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgg-xf-rOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
