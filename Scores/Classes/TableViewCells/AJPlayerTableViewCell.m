@@ -20,7 +20,7 @@
 
 @implementation AJPlayerTableViewCell
 
--(void)awakeFromNib{
+- (void)awakeFromNib{
     [super awakeFromNib];
     
     if (CGRectGetHeight(self.contentView.frame) == 90.0) {
@@ -38,7 +38,8 @@
     self.playerLabel.textColor = [UIColor colorWithHexString:playerDictionary[kAJColorStringKey]];
     
     UIImage *playerImage = [UIImage imageWithData:playerDictionary[kAJPictureDataKey]];
-    [self.playerImageView setImage:[[playerImage resizeToNewSize:CGSizeMake(50.0, 50.0)]
-                                  applyMask:[UIImage imageNamed:@"mask.png"]]];
+    [self.playerImageView setImage:[[playerImage resizeToNewSize:CGSizeMake(65.0, 65.0)]
+                                  applyMask:[UIImage imageNamed:@"core_inbox_contact_photo_mask.png.png"]]];
 }
+
 @end

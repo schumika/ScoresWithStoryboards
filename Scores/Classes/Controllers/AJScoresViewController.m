@@ -16,13 +16,23 @@
 #import "AJScoreTableViewCell.h"
 
 #import "UIColor+Additions.h"
+#import "UIBarButtonItem+Additions.h"
+#import "NSString+Additions.h"
 
-@interface AJScoresViewController ()
+@interface AJScoresViewController () <UITextFieldDelegate>
 @property (nonatomic, strong) NSArray *scores;
 @property (nonatomic, assign) BOOL showsAddNewScoreCell;
 @end
 
-@implementation AJScoresViewController
+@implementation AJScoresViewController 
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem clearBarButtonItemWithTitle:@"+" target:self action:@selector(addButtonClicked:)];
+    self.toolbarItems = @[[UIBarButtonItem clearBarButtonItemWithTitle:@"Settings" target:self action:@selector(settingsButtonClicked:)]];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -56,18 +66,52 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"PlayerCell";
-    static NSString *NewGameCellIdentifier = @"NewPlayerCell";
+    static NSString *CellIdentifier = @"ScoreCell";
+    static NSString *NewScoreCellIdentifier = @"NewScoreCell";
     
     if (indexPath.section == 0) {
-        AJTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewGameCellIdentifier forIndexPath:indexPath];
+        AJTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewScoreCellIdentifier forIndexPath:indexPath];
         return cell;
     } else {
         AJScoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-        //[cell setScoreDictionary:[(AJPlayer *)self.scores[indexPath.row] toDictionary]];
+        [cell setScoreDictionary:[(AJScore *)self.scores[indexPath.row] toDictionary]];
         
         return cell;
     }
+}
+
+#pragma mark - Actions
+
+- (IBAction)addButtonClicked:(id)sender {
+    self.showsAddNewScoreCell = YES;
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    AJTextFieldTableViewCell *cell = (AJTextFieldTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [[cell textField] becomeFirstResponder];
+    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+}
+
+- (IBAction)settingsButtonClicked:(id)sender {
+    
+}
+
+#pragma mark - TextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    self.showsAddNewScoreCell = NO;
+    
+    NSString *text = textField.text;
+    if (![NSString isNilOrEmpty:text]) {
+        [[AJScoresManager sharedInstance] createScoreWithValue:textField.text.doubleValue inRound:([self.tableView numberOfRowsInSection:1]+1) forPlayer:self.player];
+        [textField setText:nil];
+        
+        [self loadDataAndUpdateUI:YES];
+    } else {
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    textField.text = @"";
+    
+    return YES;
 }
 
 

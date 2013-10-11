@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JQE-hu-vuC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JQE-hu-vuC">
     <dependencies>
         <development version="4600" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
@@ -149,17 +149,17 @@
                                     <outlet property="textField" destination="y7Q-xf-7Ki" id="x18-Zc-q4S"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerCell" rowHeight="75" id="FUQ-C5-DBr" customClass="AJPlayerTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayerCell" rowHeight="75" id="FUQ-C5-DBr" customClass="AJPlayerTableViewCell">
                                 <rect key="frame" x="0.0" y="97" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="74"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gec-jx-jsD">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="50" type="user" id="Cgj-eT-X5z"/>
-                                                <constraint firstAttribute="height" constant="50" id="HRZ-Ce-8yt"/>
+                                                <constraint firstAttribute="width" constant="65" id="H6q-bD-Z1M"/>
+                                                <constraint firstAttribute="height" constant="65" id="sLO-Q1-Vao"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="disclosure.png" translatesAutoresizingMaskIntoConstraints="NO" id="EW4-Kr-Vfn"/>
@@ -178,14 +178,14 @@
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="MLf-py-s1u" firstAttribute="leading" secondItem="gec-jx-jsD" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="5Jh-wd-3xf"/>
+                                    <constraint firstItem="MLf-py-s1u" firstAttribute="leading" secondItem="gec-jx-jsD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="4I6-dB-zRY"/>
                                     <constraint firstItem="EW4-Kr-Vfn" firstAttribute="trailing" secondItem="FUQ-C5-DBr" secondAttribute="trailing" type="default" id="9C6-sn-o6b"/>
-                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="centerY" secondItem="FUQ-C5-DBr" secondAttribute="centerY" type="default" id="Dac-BB-4E9"/>
                                     <constraint firstItem="EW4-Kr-Vfn" firstAttribute="centerY" secondItem="MLf-py-s1u" secondAttribute="centerY" type="default" id="Fbv-WZ-Gm0"/>
-                                    <constraint firstItem="gec-jx-jsD" firstAttribute="leading" secondItem="FUQ-C5-DBr" secondAttribute="leading" type="user" id="Lu2-Re-KSo"/>
+                                    <constraint firstItem="gec-jx-jsD" firstAttribute="centerY" secondItem="MLf-py-s1u" secondAttribute="centerY" type="default" id="Vze-6D-JA7"/>
                                     <constraint firstItem="EW4-Kr-Vfn" firstAttribute="leading" secondItem="Suk-eQ-OWl" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="eaH-1D-s3A"/>
+                                    <constraint firstItem="gec-jx-jsD" firstAttribute="leading" secondItem="FUQ-C5-DBr" secondAttribute="leading" type="default" id="nm9-sC-baB"/>
                                     <constraint firstItem="Suk-eQ-OWl" firstAttribute="top" secondItem="FUQ-C5-DBr" secondAttribute="top" constant="20" type="default" id="sl2-4r-MyU"/>
-                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="centerY" secondItem="gec-jx-jsD" secondAttribute="centerY" type="default" id="vTv-0U-E7R"/>
+                                    <constraint firstItem="MLf-py-s1u" firstAttribute="centerY" secondItem="FUQ-C5-DBr" secondAttribute="centerY" type="default" id="u4D-9Q-2va"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="playerImageView" destination="gec-jx-jsD" id="itk-If-rfH"/>
@@ -211,13 +211,42 @@
         <scene sceneID="ACg-QJ-acu">
             <objects>
                 <tableViewController id="6St-dx-Rc0" customClass="AJScoresViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="mE0-xd-QIv">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="30" sectionHeaderHeight="22" sectionFooterHeight="22" id="mE0-xd-QIv">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="NewScoreCell" rowHeight="60" id="nbN-T4-I4J" customClass="AJTextFieldTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Score..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YQm-cl-oWW">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="wzh-De-Up8"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="6St-dx-Rc0" id="0d4-Ib-J9d"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="YQm-cl-oWW" secondAttribute="trailing" constant="20" type="default" id="J4w-l5-NpR"/>
+                                    <constraint firstItem="YQm-cl-oWW" firstAttribute="centerY" secondItem="nbN-T4-I4J" secondAttribute="centerY" type="default" id="Rlh-gQ-YEo"/>
+                                    <constraint firstItem="YQm-cl-oWW" firstAttribute="leading" secondItem="nbN-T4-I4J" secondAttribute="leading" constant="20" type="default" id="ZDF-Om-KC3"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="textField" destination="YQm-cl-oWW" id="nhx-gh-NTZ"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="ScoreCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="30" id="A4m-4o-HZG" customClass="AJScoreTableViewCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="82" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>

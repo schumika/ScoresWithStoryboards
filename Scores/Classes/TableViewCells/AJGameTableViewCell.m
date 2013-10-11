@@ -43,8 +43,8 @@
     self.playersLabel.text = [NSString stringWithFormat:@"players: %d", ((NSNumber *)gameDictionary[kAJGameNumberOfPlayersKey]).intValue];
     
     UIImage *gameImage = [UIImage imageWithData:gameDictionary[kAJPictureDataKey]];
-    [self.gameImageView setImage:[[gameImage resizeToNewSize:CGSizeMake(50.0, 50.0)]
-                                  applyMask:[UIImage imageNamed:@"mask.png"]]];
+    [self.gameImageView setImage:[[gameImage resizeToNewSize:CGSizeMake(80.0, 80.0)]
+                                  applyMask:[UIImage imageNamed:@"core_inbox_contact_photo_mask.png"]]];
 }
 
 @end

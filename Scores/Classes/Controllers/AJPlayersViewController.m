@@ -70,10 +70,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"PlayerCell";
-    static NSString *NewGameCellIdentifier = @"NewPlayerCell";
+    static NSString *NewPlayerCellIdentifier = @"NewPlayerCell";
     
     if (indexPath.section == 0) {
-        AJTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewGameCellIdentifier forIndexPath:indexPath];
+        AJTextFieldTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NewPlayerCellIdentifier forIndexPath:indexPath];
         return cell;
     } else {
         AJPlayerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
@@ -126,7 +126,8 @@
 - (IBAction)addButtonClicked:(id)sender {
     self.showsAddNewPlayerCell = YES;
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-    [[(AJTextFieldTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] textField] becomeFirstResponder];
+    AJTextFieldTableViewCell *cell = (AJTextFieldTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [[cell textField] becomeFirstResponder];
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 

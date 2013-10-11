@@ -10,8 +10,6 @@
 
 @interface AJScoreTableViewCell : AJSeparatorTableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *roundLabel;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (weak, nonatomic) IBOutlet UILabel *intermediateLabel;
+@property (nonatomic, strong) NSDictionary *scoreDictionary;
 
 @end
