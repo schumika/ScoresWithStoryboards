@@ -36,6 +36,30 @@
     return total;
 }
 
+- (NSArray *)orderedScoresArray {
+    return [self orderedScoresArraySortedAscending:(self.sortOrder == AJScoresSortingByRoundASC)];
+    
+}
+
+- (NSArray *)orderedScoresArraySortedAscending:(BOOL)ascending {
+    NSMutableArray *orderedArray = [NSMutableArray arrayWithArray:[self.scores allObjects]];
+    
+    int playersSortingType = self.sortOrder;
+    
+    BOOL isSortingASC = (playersSortingType == AJScoresSortingByRoundASC || playersSortingType == AJScoresSortingByRoundDESC);
+    
+    [orderedArray sortUsingComparator:^NSComparisonResult(AJScore *score1, AJScore *score2) {
+        if (score1.round <  score2.round) {
+            return isSortingASC ? NSOrderedAscending : NSOrderedDescending;
+        } else {
+            return isSortingASC ? NSOrderedDescending : NSOrderedAscending;
+        }
+    }];
+    
+    return orderedArray;
+    
+}
+
 #pragma mark - Public methods
 
 - (NSDictionary *)toDictionary {
@@ -56,5 +80,36 @@
     
     return displayDictionary;
 }
+
+- (double)intermediateTotalAtRound:(int)row {
+    double total = 0.0;
+    
+    NSArray *scores = [self orderedScoresArraySortedAscending:YES];
+    int currentRow = row;
+    for (int rowIndex = 0; rowIndex < currentRow; rowIndex++) {
+        AJScore *score = scores[rowIndex];
+        total += score.value;
+    }
+    
+    return total;
+}
+
+- (void)updateRoundsForScores {
+    NSArray *orderedArray = [NSArray arrayWithArray:self.orderedScoresArray];
+    
+    int rounds = self.orderedScoresArray.count;
+    int scoresSortingType = self.sortOrder;
+    
+    [orderedArray enumerateObjectsUsingBlock:^(AJScore *score, NSUInteger scoreIndex, BOOL *stop) {
+        if (scoresSortingType == AJScoresSortingByRoundDESC) {
+            score.round = rounds - scoreIndex;
+        } else {
+            score.round = scoreIndex + 1;
+        }
+    }];
+    
+    [self.managedObjectContext save:nil];
+}
+
 
 @end

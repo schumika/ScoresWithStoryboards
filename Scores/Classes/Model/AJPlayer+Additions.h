@@ -16,4 +16,8 @@
 
 - (NSDictionary *)toDictionary;
 
+- (NSArray *)orderedScoresArray;
+- (double)intermediateTotalAtRound:(int)row;
+- (void)updateRoundsForScores;
+
 @end

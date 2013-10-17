@@ -68,9 +68,9 @@
     [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
     
     if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-        self.titleView.font = [UIFont faranvaleFontWithSize:30.0];
+        self.titleView.font = [UIFont faranvaleFontWithSize:20.0];
     } else {
-        self.titleView.font = [UIFont faranvaleFontWithSize:40.0];
+        self.titleView.font = [UIFont faranvaleFontWithSize:30.0];
     }
 }
 

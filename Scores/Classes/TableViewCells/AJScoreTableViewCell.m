@@ -39,12 +39,9 @@
 }
 
 - (void)setScoreDictionary:(NSDictionary *)scoreDictionary {
-//    self.playerLabel.text = playerDictionary[kAJNameKey];
-//    self.playerLabel.textColor = [UIColor colorWithHexString:playerDictionary[kAJColorStringKey]];
-//    
-//    UIImage *playerImage = [UIImage imageWithData:playerDictionary[kAJPictureDataKey]];
-//    [self.playerImageView setImage:[[playerImage resizeToNewSize:CGSizeMake(65.0, 65.0)]
-//                                    applyMask:[UIImage imageNamed:@"core_inbox_contact_photo_mask.png.png"]]];
+    self.roundLabel.text = [NSString stringWithFormat:@"%d", ((NSNumber *)scoreDictionary[kAJScoreRoundKey]).intValue];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%g",  ((NSNumber *)scoreDictionary[kAJScoreValueKey]).doubleValue];
+    self.intermediateLabel.text = [NSString stringWithFormat:@"%g",  ((NSNumber *)scoreDictionary[kAJScoreIntermediateTotal]).doubleValue];
 }
 
 @end

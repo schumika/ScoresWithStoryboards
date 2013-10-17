@@ -43,7 +43,7 @@
 #pragma mark - Private methods
 
 - (void)loadDataAndUpdateUI:(BOOL)updateUI {
-    self.scores = [[AJScoresManager sharedInstance] getAllScoresForPlayer:self.player];
+    self.scores = [self.player orderedScoresArray];
     self.titleViewText = self.player.name;
     self.titleViewColor = [UIColor colorWithHexString:self.player.color];
     

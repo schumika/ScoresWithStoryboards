@@ -27,7 +27,7 @@
     
     dictionary[kAJScoreValueKey] = @(self.value);
     dictionary[kAJScoreRoundKey] = @(self.round);
-    //dictionary[kAJScoreIntermediateTotal] = @([self.player intermediateTotalAtRound:self.round.intValue]);
+    dictionary[kAJScoreIntermediateTotal] = @([self.player intermediateTotalAtRound:self.round]);
     
     return dictionary;
 }

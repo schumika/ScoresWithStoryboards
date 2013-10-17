@@ -40,6 +40,8 @@
     UIImage *playerImage = [UIImage imageWithData:playerDictionary[kAJPictureDataKey]];
     [self.playerImageView setImage:[[playerImage resizeToNewSize:CGSizeMake(65.0, 65.0)]
                                   applyMask:[UIImage imageNamed:@"core_inbox_contact_photo_mask.png.png"]]];
+    
+    self.totalLabel.text = [NSString stringWithFormat:@"%g", [(NSNumber *)playerDictionary[kAJPlayerTotalScoresKey] doubleValue]];
 }
 
 @end

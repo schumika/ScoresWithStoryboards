@@ -87,7 +87,7 @@
 
 - (NSArray *)getGamesArray {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Game"];
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"rowId" ascending:NO]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"rowId" ascending:NO]];
     
     return [self.managedObjectContext executeFetchRequest:fetchRequest error:nil];
 }
@@ -96,7 +96,7 @@
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Game"];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"rowId = %d", rowId];
     fetchRequest.predicate = predicate;
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"rowId" ascending:NO]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"rowId" ascending:NO]];
     
     return [[self.managedObjectContext executeFetchRequest:fetchRequest error:nil] lastObject];
 }
@@ -119,7 +119,7 @@
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Player"];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"game.name = %@ AND game.rowId = %@", game.name, game.rowId];
     fetchRequest.predicate = predicate;
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"time" ascending:YES]];
     
     return [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
 }
@@ -154,7 +154,7 @@
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Score"];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"player.name = %@ AND player.rowId = %@", player.name, player.rowId];
     fetchRequest.predicate = predicate;
-    fetchRequest.sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"round" ascending:YES]];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"round" ascending:YES]];
     
     return [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
 }
