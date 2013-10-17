@@ -11,6 +11,7 @@
 #import "UIBarButtonItem+Additions.h"
 #import "UIFont+Additions.h"
 #import "UIColor+Additions.h"
+#import "UIDevice+Additions.h"
 
 @interface AJTableViewController ()
 @property (nonatomic, strong) UILabel *titleView;
@@ -22,10 +23,17 @@
 {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage imageNamed:@"nav-bar-clear.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage imageNamed:@"nav-bar-clear-landscape.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)]
-                                                  forBarMetrics:UIBarMetricsLandscapePhone];
+    if ([UIDevice isOS70OrGreater]) {
+        [self.navigationController.navigationBar setBackgroundImage:[[UIImage imageNamed:@"nav-bar-clear_ios7.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)]
+                                                      forBarMetrics:UIBarMetricsDefault];
+        [self.navigationController.navigationBar setBackgroundImage:[[UIImage imageNamed:@"nav-bar-clear-landscape_ios7.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)]
+                                                      forBarMetrics:UIBarMetricsLandscapePhone];
+    } else {
+        [self.navigationController.navigationBar setBackgroundImage:[[UIImage imageNamed:@"nav-bar-clear.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)]
+                                                      forBarMetrics:UIBarMetricsDefault];
+        [self.navigationController.navigationBar setBackgroundImage:[[UIImage imageNamed:@"nav-bar-clear-landscape.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)]
+                                                      forBarMetrics:UIBarMetricsLandscapePhone];
+    }
     
     [self.navigationController.toolbar setBackgroundImage:[[UIImage imageNamed:@"toolbar-clear.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 40.0, 0.0, 40.0)]
                                        forToolbarPosition:UIToolbarPositionAny barMetrics:UIBarMetricsDefault];
