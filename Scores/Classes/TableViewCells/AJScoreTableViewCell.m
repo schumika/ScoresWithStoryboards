@@ -39,9 +39,9 @@
 }
 
 - (void)setScoreDictionary:(NSDictionary *)scoreDictionary {
-    self.roundLabel.text = [NSString stringWithFormat:@"%d", ((NSNumber *)scoreDictionary[kAJScoreRoundKey]).intValue];
+    self.roundLabel.text = [NSString stringWithFormat:@"   %d", ((NSNumber *)scoreDictionary[kAJScoreRoundKey]).intValue];
     self.scoreLabel.text = [NSString stringWithFormat:@"%g",  ((NSNumber *)scoreDictionary[kAJScoreValueKey]).doubleValue];
-    self.intermediateLabel.text = [NSString stringWithFormat:@"%g",  ((NSNumber *)scoreDictionary[kAJScoreIntermediateTotal]).doubleValue];
+    self.intermediateLabel.text = [NSString stringWithFormat:@"%g   ",  ((NSNumber *)scoreDictionary[kAJScoreIntermediateTotal]).doubleValue];
 }
 
 @end
