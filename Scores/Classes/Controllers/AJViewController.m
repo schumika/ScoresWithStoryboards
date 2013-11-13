@@ -57,7 +57,10 @@
     self.titleView.font = [UIFont faranvaleFontWithSize:30.0];
     self.titleView.textColor = [UIColor AJGreenColor];
     self.navigationItem.titleView = self.titleView;
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
 }
+
 
 - (void)viewWillDisappear:(BOOL)animated
 {

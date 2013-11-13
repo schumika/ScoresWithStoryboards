@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="IpM-bF-tuP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch.iPad" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="IpM-bF-tuP">
     <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Games Table View Controller - Scores-->
@@ -18,10 +19,11 @@
                                 <rect key="frame" x="0.0" y="22" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Game Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="meu-Ik-vFi">
+                                            <rect key="frame" x="20" y="30" width="728" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="aa1-XX-HdD"/>
                                             </constraints>
@@ -48,15 +50,17 @@
                                 <rect key="frame" x="0.0" y="112" width="768" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="768" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCF-5t-Tb8">
+                                            <rect key="frame" x="108" y="7" width="109" height="54"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wfj-ZG-sg5">
+                                            <rect key="frame" x="108" y="51" width="61" height="39"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="39" id="yg9-st-WmS"/>
                                             </constraints>
@@ -65,12 +69,14 @@
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOW-Ef-uiu">
+                                            <rect key="frame" x="10" y="4" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="80" id="QDn-Yc-Taf"/>
                                                 <constraint firstAttribute="width" constant="80" id="o48-Sc-4sS"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="disclosure.png" translatesAutoresizingMaskIntoConstraints="NO" id="sjo-3P-PDz">
+                                            <rect key="frame" x="748" y="33" width="20" height="23"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="23" id="YYe-NA-Fc2"/>
                                             </constraints>
@@ -84,10 +90,10 @@
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="Wfj-ZG-sg5" secondAttribute="leading" type="default" id="HGQ-Je-zDD"/>
                                     <constraint firstItem="MOW-Ef-uiu" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" constant="4" id="ZyZ-iO-HoL"/>
                                     <constraint firstItem="sjo-3P-PDz" firstAttribute="trailing" secondItem="78G-iq-DKS" secondAttribute="trailing" type="default" id="Zzv-xG-p7H"/>
-                                    <constraint firstAttribute="bottom" secondItem="Wfj-ZG-sg5" secondAttribute="bottom" constant="1" id="c3D-Jn-N1R"/>
                                     <constraint firstItem="MOW-Ef-uiu" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="10" id="mHO-yP-hHz"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="108" id="nIC-HD-4mB"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" constant="7" id="xMF-tx-iUp"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wfj-ZG-sg5" secondAttribute="bottom" type="default" id="zc8-wi-9f5"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="disclosureIndicatorImageView" destination="sjo-3P-PDz" id="Lyk-Ew-yxb"/>
@@ -142,45 +148,6 @@
     <resources>
         <image name="disclosure.png" width="20" height="20"/>
     </resources>
-    <classes>
-        <class className="AJGameTableViewCell" superclassName="AJSeparatorTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGameTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="disclosureIndicatorImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="gameImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="gameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="playersLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AJGamesTableViewController" superclassName="AJTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJGamesTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="addButtonClicked:"/>
-                <relationship kind="action" name="editButtonClicked:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="AJSeparatorTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJSeparatorTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="customSeparatorView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="AJTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTableViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonClicked:"/>
-            </relationships>
-        </class>
-        <class className="AJTextFieldTableViewCell" superclassName="AJSeparatorTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AJTextFieldTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

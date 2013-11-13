@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		523EFC7818322E300031295D /* AJSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523EFC7718322E300031295D /* AJSettingsViewController.m */; };
+		52600CD418339E7D005E77AB /* UIButton+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52600CD318339E7D005E77AB /* UIButton+Additions.m */; };
 		527EF9C117E9DD7500FBC5CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EF9C017E9DD7500FBC5CE /* UIKit.framework */; };
 		527EF9C317E9DD7500FBC5CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EF9C217E9DD7500FBC5CE /* Foundation.framework */; };
 		527EF9C517E9DD7500FBC5CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EF9C417E9DD7500FBC5CE /* CoreGraphics.framework */; };
@@ -84,6 +86,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		523EFC7618322E300031295D /* AJSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJSettingsViewController.h; path = Classes/Controllers/AJSettingsViewController.h; sourceTree = "<group>"; };
+		523EFC7718322E300031295D /* AJSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJSettingsViewController.m; path = Classes/Controllers/AJSettingsViewController.m; sourceTree = "<group>"; };
+		52600CD218339E7D005E77AB /* UIButton+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+Additions.h"; path = "Classes/Categories/UIButton+Additions.h"; sourceTree = "<group>"; };
+		52600CD318339E7D005E77AB /* UIButton+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Additions.m"; path = "Classes/Categories/UIButton+Additions.m"; sourceTree = "<group>"; };
 		527EF9BD17E9DD7500FBC5CE /* Scores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		527EF9C017E9DD7500FBC5CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		527EF9C217E9DD7500FBC5CE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -294,6 +300,8 @@
 				A954E69817F604E200BAF445 /* AJPlayersViewController.m */,
 				52E5932017FDB6B100FD29F8 /* AJScoresViewController.h */,
 				52E5932117FDB6B100FD29F8 /* AJScoresViewController.m */,
+				523EFC7618322E300031295D /* AJSettingsViewController.h */,
+				523EFC7718322E300031295D /* AJSettingsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -361,6 +369,8 @@
 				A9528A4417EB6FB900060B08 /* UIColor+Additions.m */,
 				527F01BD17F412380077F704 /* UIBarButtonItem+Additions.h */,
 				527F01BE17F412380077F704 /* UIBarButtonItem+Additions.m */,
+				52600CD218339E7D005E77AB /* UIButton+Additions.h */,
+				52600CD318339E7D005E77AB /* UIButton+Additions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -507,6 +517,7 @@
 				527EF9CD17E9DD7500FBC5CE /* main.m in Sources */,
 				527EF9D117E9DD7500FBC5CE /* AJAppDelegate.m in Sources */,
 				527EF9E717E9E16F00FBC5CE /* AJGamesTableViewController.m in Sources */,
+				52600CD418339E7D005E77AB /* UIButton+Additions.m in Sources */,
 				527EF9EA17E9E33F00FBC5CE /* AJGameTableViewCell.m in Sources */,
 				52B924AC181017F900623CAF /* UIDevice+Additions.m in Sources */,
 				A9528A2517EB66ED00060B08 /* Scores.xcdatamodeld in Sources */,
@@ -516,6 +527,7 @@
 				A9528A3E17EB6AF000060B08 /* AJGame+Additions.m in Sources */,
 				A9528A4117EB6B6400060B08 /* AJDefines.m in Sources */,
 				A9528A4517EB6FB900060B08 /* UIColor+Additions.m in Sources */,
+				523EFC7818322E300031295D /* AJSettingsViewController.m in Sources */,
 				A9528A4817EB71DA00060B08 /* UIImage+Additions.m in Sources */,
 				A987B9E417ED677E0070CA82 /* NSString+Additions.m in Sources */,
 				A987B9E717ED7E9D0070CA82 /* AJTextFieldTableViewCell.m in Sources */,

@@ -15,13 +15,16 @@
 #import "AJGame+Additions.h"
 #import "AJPlayer+Additions.h"
 
+#import "UIFont+Additions.h"
 #import "UIColor+Additions.h"
+#import "UIButton+Additions.h"
 #import "NSString+Additions.h"
 #import "UIBarButtonItem+Additions.h"
 
 @interface AJPlayersViewController ()
 @property (nonatomic, strong) NSArray *players;
 @property (nonatomic, assign) BOOL showsAddNewPlayerCell;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
 
 - (void)deletePlayerFromCellWithIndexPath:(NSIndexPath*)indexPath;
 @end
@@ -33,13 +36,15 @@
     [super viewDidLoad];
 
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem clearBarButtonItemWithTitle:@"+" target:self action:@selector(addButtonClicked:)];
-    self.toolbarItems = @[[UIBarButtonItem clearBarButtonItemWithTitle:@"Settings" target:self action:@selector(settingsButtonClicked:)]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.navigationController.toolbarHidden = NO;
+    
+    [self.settingsBarButtonItem setCustomView:[UIButton clearButtonItemWithTitle:@"Settings" target:self.settingsBarButtonItem.target action:self.settingsBarButtonItem.action]];
+    
     [self loadDataAndUpdateUI:YES];
 }
 
@@ -131,9 +136,6 @@
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
-- (IBAction)settingsButtonClicked:(id)sender {
-    
-}
 
 #pragma mark - Overridden from base class
 
@@ -143,6 +145,8 @@
             int rowIndex = [self.tableView indexPathForCell:(AJPlayerTableViewCell *)sender].row;
             [(AJScoresViewController *)segue.destinationViewController setPlayer:self.players[rowIndex]];
         }
+    } else if ([segue.identifier isEqualToString:@"GameSettings"]) {
+        // set game dictionary
     }
 }
 
