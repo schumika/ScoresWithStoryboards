@@ -237,11 +237,53 @@
                     <view key="view" contentMode="scaleToFill" id="Cwu-XU-Sl0">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8v-EL-v9O">
+                                <rect key="frame" x="20" y="20" width="51" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZT-fI-wJQ">
+                                <rect key="frame" x="20" y="49" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vqo-VU-Eeu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iZT-fI-wJQ" firstAttribute="top" secondItem="d8v-EL-v9O" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Gnw-9z-AZ9"/>
+                            <constraint firstItem="d8v-EL-v9O" firstAttribute="leading" secondItem="Cwu-XU-Sl0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NHU-bR-B8a"/>
+                            <constraint firstItem="d8v-EL-v9O" firstAttribute="top" secondItem="Cwu-XU-Sl0" secondAttribute="top" constant="20" symbolic="YES" type="default" id="uqE-RP-CtO"/>
+                            <constraint firstItem="iZT-fI-wJQ" firstAttribute="leading" secondItem="d8v-EL-v9O" secondAttribute="leading" type="default" id="w7n-Yl-P0w"/>
+                            <constraint firstAttribute="trailing" secondItem="iZT-fI-wJQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="zaK-Xm-nDn"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MuW-dC-JBJ"/>
+                    <navigationItem key="navigationItem" title="Settings" id="MuW-dC-JBJ">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="MTP-L6-P1z">
+                            <connections>
+                                <action selector="cancelButtonClicked:" destination="pxz-Gg-QgR" id="yQE-ah-ni0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="58n-tN-Zp3">
+                            <connections>
+                                <action selector="doneButtonClicked:" destination="pxz-Gg-QgR" id="ifB-Vg-yAj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cancelBarButtonItem" destination="MTP-L6-P1z" id="8eM-2K-h7p"/>
+                        <outlet property="doneBarButtonItem" destination="58n-tN-Zp3" id="HUb-95-fvs"/>
+                        <outlet property="nameLabel" destination="d8v-EL-v9O" id="raZ-DF-s7B"/>
+                        <outlet property="nameTextField" destination="iZT-fI-wJQ" id="oh3-GI-Lo5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkj-gf-6iD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

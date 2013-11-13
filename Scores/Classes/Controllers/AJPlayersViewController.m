@@ -10,6 +10,7 @@
 
 #import "AJScoresViewController.h"
 #import "AJTextFieldTableViewCell.h"
+#import "AJSettingsViewController.h"
 #import "AJPlayerTableViewCell.h"
 #import "AJScoresManager.h"
 #import "AJGame+Additions.h"
@@ -146,7 +147,9 @@
             [(AJScoresViewController *)segue.destinationViewController setPlayer:self.players[rowIndex]];
         }
     } else if ([segue.identifier isEqualToString:@"GameSettings"]) {
-        // set game dictionary
+        if ([segue.destinationViewController respondsToSelector:@selector(setItemDictionary:)]) {
+            [(AJSettingsViewController *)segue.destinationViewController setItemDictionary:self.game.toDictionary];
+        }
     }
 }
 

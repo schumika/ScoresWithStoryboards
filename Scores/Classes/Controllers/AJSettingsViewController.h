@@ -11,4 +11,7 @@
 
 @interface AJSettingsViewController : AJViewController
 
+
+@property (nonatomic, strong) NSDictionary *itemDictionary;
+
 @end
