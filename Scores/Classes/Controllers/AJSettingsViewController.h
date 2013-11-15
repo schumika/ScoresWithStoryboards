@@ -9,9 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "AJViewController.h"
 
+
+@protocol AJSettingsViewControllerDelegate;
+
+
 @interface AJSettingsViewController : AJViewController
 
-
 @property (nonatomic, strong) NSDictionary *itemDictionary;
+@property (nonatomic, weak) id<AJSettingsViewControllerDelegate> delegate;
+
+@end
+
+
+@protocol AJSettingsViewControllerDelegate <NSObject>
+
+- (void)settingsViewController:(AJSettingsViewController *)settingsViewController didFinishEditingItemDictionary:(NSDictionary *)dictionary;
+- (void)settingsViewControllerDidCancelEditing:(AJSettingsViewController *)settingsViewController;
 
 @end

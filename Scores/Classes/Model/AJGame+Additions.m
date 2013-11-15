@@ -45,6 +45,12 @@
     return displayDictionary;
 }
 
+- (void)saveGamePropertiesFromDictionary:(NSDictionary *)dictionary {
+    self.name = dictionary[kAJNameKey];
+    self.color = dictionary[kAJColorStringKey];
+    self.imageData = dictionary[kAJPictureDataKey];
+}
+
 - (NSArray *)orderedPlayersArray {
     NSMutableArray *orderedArray = [NSMutableArray arrayWithArray:[self.players allObjects]];
     

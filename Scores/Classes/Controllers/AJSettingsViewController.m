@@ -16,6 +16,8 @@
 
 @interface AJSettingsViewController ()
 
+@property (nonatomic, strong) NSMutableDictionary *mutableItemDictionary;
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelBarButtonItem;
@@ -29,6 +31,7 @@
     [super viewDidLoad];
     
     self.titleViewText = @"Settings";
+    self.navigationItem.leftBarButtonItem = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,14 +42,14 @@
     self.nameLabel.font = [UIFont faranvaleFontWithSize:30.0];
     self.nameLabel.textColor = [UIColor AJBrownColor];
     
-    self.nameTextField.font = [UIFont faranvaleFontWithSize:30.0];
-    self.nameTextField.textColor = [UIColor AJBrownColor];
     
     self.cancelBarButtonItem.customView = [UIButton clearButtonItemWithTitle:@"Cancel" target:self.cancelBarButtonItem.target action:self.cancelBarButtonItem.action];
     self.doneBarButtonItem.customView = [UIButton clearButtonItemWithTitle:@"Done" target:self.doneBarButtonItem.target action:self.doneBarButtonItem.action];
     
     self.navigationItem.rightBarButtonItem = self.doneBarButtonItem;
     self.navigationItem.leftBarButtonItem = self.cancelBarButtonItem;
+    
+    self.mutableItemDictionary = [NSMutableDictionary dictionaryWithDictionary:self.itemDictionary];
     
     [self loadDataAndUpdateUI:YES];
 }
@@ -65,10 +68,20 @@
 
 - (IBAction)doneButtonClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+    
+    self.mutableItemDictionary[kAJNameKey] = self.nameTextField.text;
+    
+    if ([self.delegate respondsToSelector:@selector(settingsViewController:didFinishEditingItemDictionary:)]) {
+        [self.delegate settingsViewController:self didFinishEditingItemDictionary:self.mutableItemDictionary];
+    }
 }
 
 - (IBAction)cancelButtonClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
+    
+    if ([self.delegate respondsToSelector:@selector(settingsViewControllerDidCancelEditing:)]) {
+        [self.delegate settingsViewControllerDidCancelEditing:self];
+    }
 }
 
 @end

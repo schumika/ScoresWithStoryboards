@@ -7,10 +7,11 @@
 //
 
 #import "AJTableViewController.h"
+#import "AJSettingsViewController.h"
 
 @class AJGame;
 
-@interface AJPlayersViewController : AJTableViewController
+@interface AJPlayersViewController : AJTableViewController <AJSettingsViewControllerDelegate>
 
 @property (nonatomic, strong) AJGame *game;
 

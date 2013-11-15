@@ -149,6 +149,7 @@
     } else if ([segue.identifier isEqualToString:@"GameSettings"]) {
         if ([segue.destinationViewController respondsToSelector:@selector(setItemDictionary:)]) {
             [(AJSettingsViewController *)segue.destinationViewController setItemDictionary:self.game.toDictionary];
+            [(AJSettingsViewController *)segue.destinationViewController setDelegate:self];
         }
     }
 }
@@ -163,6 +164,16 @@
     [self.tableView endUpdates];
     
     [self.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.3];
+}
+
+#pragma mark - AJSettingsViewControllerDelegate methods
+
+- (void)settingsViewControllerDidCancelEditing:(AJSettingsViewController *)settingsViewController {
+    
+}
+
+- (void)settingsViewController:(AJSettingsViewController *)settingsViewController didFinishEditingItemDictionary:(NSDictionary *)dictionary {
+    [self.game saveGamePropertiesFromDictionary:dictionary];
 }
 
 @end

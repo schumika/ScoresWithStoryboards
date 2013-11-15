@@ -39,6 +39,9 @@
 		527F01E017F440FF0077F704 /* AJSeparatorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 527F01DF17F440FF0077F704 /* AJSeparatorTableViewCell.m */; };
 		52A6604C180834EF00E76A86 /* core_inbox_contact_photo_mask.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A6604A180834EF00E76A86 /* core_inbox_contact_photo_mask.png */; };
 		52A6604D180834EF00E76A86 /* core_inbox_contact_photo_mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A6604B180834EF00E76A86 /* core_inbox_contact_photo_mask@2x.png */; };
+		52AD3E8B18366834002C9874 /* round.png in Resources */ = {isa = PBXBuildFile; fileRef = 52AD3E8918366834002C9874 /* round.png */; };
+		52AD3E8C18366834002C9874 /* round@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52AD3E8A18366834002C9874 /* round@2x.png */; };
+		52AD3E8F18366901002C9874 /* AJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 52AD3E8E18366901002C9874 /* AJTextField.m */; };
 		52B924AC181017F900623CAF /* UIDevice+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52B924AB181017F900623CAF /* UIDevice+Additions.m */; };
 		52B924AE18101D8700623CAF /* nav-bar-clear_ios7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B924AD18101D8700623CAF /* nav-bar-clear_ios7@2x.png */; };
 		52B924B018101E1E00623CAF /* nav-bar-clear_ios7.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B924AF18101E1E00623CAF /* nav-bar-clear_ios7.png */; };
@@ -129,6 +132,10 @@
 		527F01DF17F440FF0077F704 /* AJSeparatorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJSeparatorTableViewCell.m; path = Classes/TableViewCells/AJSeparatorTableViewCell.m; sourceTree = "<group>"; };
 		52A6604A180834EF00E76A86 /* core_inbox_contact_photo_mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = core_inbox_contact_photo_mask.png; path = Images/core_inbox_contact_photo_mask.png; sourceTree = "<group>"; };
 		52A6604B180834EF00E76A86 /* core_inbox_contact_photo_mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "core_inbox_contact_photo_mask@2x.png"; path = "Images/core_inbox_contact_photo_mask@2x.png"; sourceTree = "<group>"; };
+		52AD3E8918366834002C9874 /* round.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = round.png; sourceTree = "<group>"; };
+		52AD3E8A18366834002C9874 /* round@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "round@2x.png"; sourceTree = "<group>"; };
+		52AD3E8D18366901002C9874 /* AJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJTextField.h; path = Classes/Widgets/AJTextField.h; sourceTree = "<group>"; };
+		52AD3E8E18366901002C9874 /* AJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJTextField.m; path = Classes/Widgets/AJTextField.m; sourceTree = "<group>"; };
 		52B924AA181017F900623CAF /* UIDevice+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+Additions.h"; path = "Classes/Categories/UIDevice+Additions.h"; sourceTree = "<group>"; };
 		52B924AB181017F900623CAF /* UIDevice+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+Additions.m"; path = "Classes/Categories/UIDevice+Additions.m"; sourceTree = "<group>"; };
 		52B924AD18101D8700623CAF /* nav-bar-clear_ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "nav-bar-clear_ios7@2x.png"; path = "Images/nav-bar-clear_ios7@2x.png"; sourceTree = "<group>"; };
@@ -245,6 +252,7 @@
 				527EF9D817E9DD7600FBC5CE /* iPhoneStoryboard.storyboard */,
 				527EF9E317E9DDB800FBC5CE /* iPadStoryboard.storyboard */,
 				A9528A2017EB65FE00060B08 /* Controllers */,
+				52AD3E9018366906002C9874 /* Widgets */,
 				A9528A2217EB662700060B08 /* Model */,
 				A9528A4217EB6F4E00060B08 /* Categories */,
 				A9528A3817EB693900060B08 /* Utils */,
@@ -276,6 +284,15 @@
 				527EF9D617E9DD7600FBC5CE /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		52AD3E9018366906002C9874 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				52AD3E8D18366901002C9874 /* AJTextField.h */,
+				52AD3E8E18366901002C9874 /* AJTextField.m */,
+			);
+			name = Widgets;
 			sourceTree = "<group>";
 		};
 		52C3988817F304C9006C08B2 /* Fonts */ = {
@@ -378,6 +395,8 @@
 		A9528A4917EB722F00060B08 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				52AD3E8918366834002C9874 /* round.png */,
+				52AD3E8A18366834002C9874 /* round@2x.png */,
 				52B924B118101FD700623CAF /* nav-bar-clear-landscape_ios7.png */,
 				52B924B218101FD700623CAF /* nav-bar-clear-landscape_ios7@2x.png */,
 				52B924AF18101E1E00623CAF /* nav-bar-clear_ios7.png */,
@@ -477,6 +496,7 @@
 				A907C84617EDBC2C009D1BFC /* background.png in Resources */,
 				A907C84717EDBC2C009D1BFC /* background@2x.png in Resources */,
 				A907C84A17EDBCC2009D1BFC /* separator.png in Resources */,
+				52AD3E8B18366834002C9874 /* round.png in Resources */,
 				A907C84B17EDBCC2009D1BFC /* separator@2x.png in Resources */,
 				52C3988717F304C4006C08B2 /* LDBrushStroke.ttf in Resources */,
 				52C3988D17F3079F006C08B2 /* Faranvale.otf in Resources */,
@@ -493,6 +513,7 @@
 				527F01D017F414D10077F704 /* icon_iPad@2x.png in Resources */,
 				527F01D117F414D10077F704 /* icon.png in Resources */,
 				527F01D217F414D10077F704 /* icon@2x.png in Resources */,
+				52AD3E8C18366834002C9874 /* round@2x.png in Resources */,
 				527F01D817F4178D0077F704 /* back.png in Resources */,
 				527F01D917F4178D0077F704 /* back@2x.png in Resources */,
 				527F01DC17F437B60077F704 /* disclosure.png in Resources */,
@@ -540,6 +561,7 @@
 				A954E69917F604E200BAF445 /* AJPlayersViewController.m in Sources */,
 				A954E69C17F606D100BAF445 /* AJPlayer+Additions.m in Sources */,
 				52E5932217FDB6B100FD29F8 /* AJScoresViewController.m in Sources */,
+				52AD3E8F18366901002C9874 /* AJTextField.m in Sources */,
 				52E5932517FDB7E600FD29F8 /* AJScoreTableViewCell.m in Sources */,
 				52E5932817FDBA8400FD29F8 /* AJScore+Additions.m in Sources */,
 				52E5932E17FDBB2500FD29F8 /* AJScore.m in Sources */,
