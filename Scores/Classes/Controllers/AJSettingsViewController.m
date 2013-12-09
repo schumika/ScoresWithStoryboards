@@ -64,6 +64,14 @@
     self.nameTextField.text = self.itemDictionary[kAJNameKey];
 }
 
+#pragma mark - UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
 #pragma mark - Button Actions
 
 - (IBAction)doneButtonClicked:(id)sender {

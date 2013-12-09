@@ -14,7 +14,7 @@
 
 // public methods
 - (NSDictionary *)toDictionary;
-- (void)saveGamePropertiesFromDictionary:(NSDictionary *)dictionary;
+- (void)setGamePropertiesFromDictionary:(NSDictionary *)dictionary;
 - (NSArray *)orderedPlayersArray;
 
 @end

@@ -45,7 +45,7 @@
     return displayDictionary;
 }
 
-- (void)saveGamePropertiesFromDictionary:(NSDictionary *)dictionary {
+- (void)setGamePropertiesFromDictionary:(NSDictionary *)dictionary {
     self.name = dictionary[kAJNameKey];
     self.color = dictionary[kAJColorStringKey];
     self.imageData = dictionary[kAJPictureDataKey];

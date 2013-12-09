@@ -173,7 +173,8 @@
 }
 
 - (void)settingsViewController:(AJSettingsViewController *)settingsViewController didFinishEditingItemDictionary:(NSDictionary *)dictionary {
-    [self.game saveGamePropertiesFromDictionary:dictionary];
+    [self.game setGamePropertiesFromDictionary:dictionary];
+    [[AJScoresManager sharedInstance] saveContext];
 }
 
 @end

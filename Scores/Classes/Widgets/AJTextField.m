@@ -25,6 +25,10 @@
     return CGRectInset(bounds, 10.0, 0.0);
 }
 
+- (CGRect)editingRectForBounds:(CGRect)bounds; {
+    return CGRectInset(bounds, 10.0, 0.0);
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
