@@ -13,6 +13,8 @@
 @property (nonatomic, strong) UIImage *itemImage;
 @property (nonatomic, strong) UIColor *itemColor;
 
+@property (weak, nonatomic) IBOutlet UIButton *pictureButton;
+
 - (void)resignNameFieldFirstResponder;
 
 @end

@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet AJTextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *pictureLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *pictureImageView;
 @property (weak, nonatomic) IBOutlet UILabel *colorLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *outlineImageView;
 
@@ -47,6 +46,7 @@
     self.pictureLabel.attributedText = [self.pictureLabel.text attributtedStringWithSectionAttributes];
     self.colorLabel.attributedText = [self.colorLabel.text attributtedStringWithSectionAttributes];
     [self.nameTextField setTextFontSize:20.0];
+    [self.pictureButton setBackgroundColor:[UIColor clearColor]];
     
     self.outlineImageView.image = [[UIImage imageNamed:@"round.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 15.0, 12.0, 15.0)
                                                                                     resizingMode:UIImageResizingModeStretch];
@@ -73,7 +73,7 @@
 
 - (void)setItemImage:(UIImage *)itemImage {
     _itemImage = itemImage;
-    self.pictureImageView.image = itemImage;
+    [self.pictureButton setBackgroundImage:itemImage forState:UIControlStateNormal];
 }
 
 - (void)setItemColor:(UIColor *)itemColor {
@@ -110,6 +110,5 @@
 - (IBAction)pencilButtonClicked:(AJPencilButton *)sender {
     [self setItemColor:sender.color];
 }
-
 
 @end

@@ -17,7 +17,9 @@
 
 #import "AJDefines.h"
 
-@interface AJSettingsViewController ()
+#define SELECT_PICTURE_ACTION_SHEET_TAG    (1)
+
+@interface AJSettingsViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *mutableItemDictionary;
 
@@ -70,6 +72,7 @@
     
     self.mutableItemDictionary[kAJNameKey] = topCell.itemName;
     self.mutableItemDictionary[kAJColorStringKey] = [topCell.itemColor toHexString:YES];
+    self.mutableItemDictionary[kAJPictureDataKey] = UIImagePNGRepresentation(topCell.itemImage);
     
     if ([self.delegate respondsToSelector:@selector(settingsViewController:didFinishEditingItemDictionary:)]) {
         [self.delegate settingsViewController:self didFinishEditingItemDictionary:self.mutableItemDictionary];
@@ -84,6 +87,56 @@
     }
 }
 
+- (IBAction)pictureButtonClicked:(UIButton *)sender {
+    
+    UIActionSheet *setPictureActionSheet = nil;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        setPictureActionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take picture", @"Choose picture", nil];
+    } else {
+        setPictureActionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                            delegate:self
+                                                   cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Choose picture", nil];
+    }
+    setPictureActionSheet.tag = SELECT_PICTURE_ACTION_SHEET_TAG;
+    [setPictureActionSheet showInView:self.view];
+}
+
+#pragma mark - UIActionSheetDelegate methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (actionSheet.tag == SELECT_PICTURE_ACTION_SHEET_TAG) {
+        if (buttonIndex != actionSheet.cancelButtonIndex) {
+            UIImagePickerController *imagePickerController = [[UIImagePickerController alloc] init];
+            imagePickerController.allowsEditing = YES;
+            imagePickerController.delegate = self;
+            if (buttonIndex == (actionSheet.numberOfButtons - 2)) {
+                NSLog(@"choose picture");
+                imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            } else {
+                NSLog(@"take picture");
+                imagePickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
+            }
+            
+            [self presentViewController:imagePickerController animated:YES completion:NULL];
+        }
+    }
+}
+
+#pragma mark - UIImagePickerControllerDelegate methods
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+
+    AJSettingsTopTableViewCell *topCell = (AJSettingsTopTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [topCell setItemImage:info[@"UIImagePickerControllerEditedImage"]];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
 
 #pragma mark - UITableViewDataSource methods
 
@@ -105,6 +158,8 @@
         cell.itemName = self.itemDictionary[kAJNameKey];
         cell.itemImage = [UIImage imageWithData:self.itemDictionary[kAJPictureDataKey]];
         cell.itemColor = [UIColor colorWithHexString:self.itemDictionary[kAJColorStringKey]];
+        
+        [cell.pictureButton addTarget:self action:@selector(pictureButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
         
         aCell = cell;
     } else {

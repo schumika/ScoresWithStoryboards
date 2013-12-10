@@ -13,7 +13,7 @@
 @protocol AJSettingsViewControllerDelegate;
 
 
-@interface AJSettingsViewController : AJTableViewController
+@interface AJSettingsViewController : AJTableViewController <UIActionSheetDelegate>
 
 @property (nonatomic, strong) NSDictionary *itemDictionary;
 @property (nonatomic, weak) id<AJSettingsViewControllerDelegate> delegate;
