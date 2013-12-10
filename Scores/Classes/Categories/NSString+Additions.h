@@ -15,4 +15,7 @@
 + (NSString *)upArrow;
 + (NSString *)downArrow;
 
+- (NSAttributedString *)attributtedStringWithFontSize:(CGFloat)fontSize andTextColor:(UIColor *)textColor;
+- (NSAttributedString *)attributtedStringWithSectionAttributes;
+
 @end

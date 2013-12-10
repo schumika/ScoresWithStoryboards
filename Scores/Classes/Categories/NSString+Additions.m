@@ -7,6 +7,8 @@
 //
 
 #import "NSString+Additions.h"
+#import "UIFont+Additions.h"
+#import "UIColor+Additions.h"
 
 @implementation NSString (Additions)
 
@@ -26,6 +28,19 @@
 
 + (NSString *)downArrow {
     return @"\u2193";
+}
+
+- (NSAttributedString *)attributtedStringWithFontSize:(CGFloat)fontSize andTextColor:(UIColor *)textColor {
+    NSMutableAttributedString *attributtedString = [[NSMutableAttributedString alloc] initWithString:self];
+    
+    [attributtedString addAttribute:NSForegroundColorAttributeName value:textColor range:NSMakeRange(0.0, attributtedString.string.length)];
+    [attributtedString addAttribute:NSFontAttributeName value:[UIFont faranvaleFontWithSize:fontSize] range:NSMakeRange(0.0, attributtedString.string.length)];
+    
+    return attributtedString;
+}
+
+- (NSAttributedString *)attributtedStringWithSectionAttributes {
+    return [self attributtedStringWithFontSize:30.0 andTextColor:[UIColor AJBrownColor]];
 }
 
 @end

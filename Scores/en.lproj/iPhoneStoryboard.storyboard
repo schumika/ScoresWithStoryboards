@@ -259,13 +259,17 @@
             <objects>
                 <viewController title="Settings" id="pxz-Gg-QgR" customClass="AJSettingsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cwu-XU-Sl0">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8v-EL-v9O">
-                                <rect key="frame" x="42" y="76" width="51" height="21"/>
+                                <rect key="frame" x="43" y="76" width="51" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" type="user" id="7av-v3-Rta"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" type="user" id="Nts-Ql-pLX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -281,14 +285,165 @@
                                     <outlet property="delegate" destination="pxz-Gg-QgR" id="ex3-jn-CCf"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lER-mp-57V">
+                                <rect key="frame" x="43" y="171" width="47" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AqT-Fb-n0j" customClass="AJPencilButton">
+                                <rect key="frame" x="20" y="200" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="0tq-yC-zNN"/>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="ta2-Tb-j4B"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="2ZL-c2-vDy"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0CV-0s-cjR" customClass="AJPencilButton">
+                                <rect key="frame" x="73" y="200" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="MOl-Rf-cTb"/>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="iZM-ds-QOr"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="iIM-eF-hZR"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwy-jr-nw6" customClass="AJPencilButton">
+                                <rect key="frame" x="126" y="200" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="8g6-1G-a4B"/>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="od0-9e-dSG"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="KdJ-gc-87s"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksX-ES-kRK" customClass="AJPencilButton">
+                                <rect key="frame" x="179" y="200" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="lNR-GW-gKC"/>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="tOp-7M-5pr"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="4yc-eq-XqW"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ex-dU-lNM" customClass="AJPencilButton">
+                                <rect key="frame" x="232" y="200" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="AW6-RY-sP5"/>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="FgA-nq-xmH"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="Els-oD-uw0"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YW6-m6-oFc" customClass="AJPencilButton">
+                                <rect key="frame" x="43" y="248" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="a30-uc-IZh"/>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="j2w-1S-yaO"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="fp5-a8-wts"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rAw-Rh-qOm" customClass="AJPencilButton">
+                                <rect key="frame" x="96" y="248" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="eAS-kh-BN7"/>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="p52-1B-myg"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="cI6-o6-SNf"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sv9-q8-zit" customClass="AJPencilButton">
+                                <rect key="frame" x="149" y="248" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="kSK-BH-hxh"/>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="oeO-w9-k5H"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="SLm-QM-PVx"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fsb-zV-eFM" customClass="AJPencilButton">
+                                <rect key="frame" x="202" y="248" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="7WE-XH-Dn6"/>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="fW9-Qm-8Md"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="nAc-bh-buw"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpX-sg-1BU" customClass="AJPencilButton">
+                                <rect key="frame" x="255" y="248" width="45" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="NKD-f2-ds0"/>
+                                    <constraint firstAttribute="width" constant="45" type="user" id="Ut4-Iy-D9b"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="pencilButtonClicked:" destination="pxz-Gg-QgR" eventType="touchUpInside" id="yyA-5E-3gp"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d8v-EL-v9O" firstAttribute="leading" secondItem="Cwu-XU-Sl0" secondAttribute="leading" constant="42" id="FlD-cH-hEF"/>
+                            <constraint firstItem="rAw-Rh-qOm" firstAttribute="leading" secondItem="YW6-m6-oFc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="1kd-We-4sa"/>
+                            <constraint firstItem="0CV-0s-cjR" firstAttribute="top" secondItem="lER-mp-57V" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="244-ph-nSW"/>
+                            <constraint firstItem="Fsb-zV-eFM" firstAttribute="leading" secondItem="sv9-q8-zit" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="43L-CG-B2B"/>
+                            <constraint firstItem="lER-mp-57V" firstAttribute="leading" secondItem="d8v-EL-v9O" secondAttribute="leading" type="user" id="5eZ-xu-E6L"/>
+                            <constraint firstItem="sv9-q8-zit" firstAttribute="top" secondItem="hwy-jr-nw6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7su-HK-7hh"/>
+                            <constraint firstItem="lER-mp-57V" firstAttribute="top" secondItem="Cwu-XU-Sl0" secondAttribute="top" constant="171" type="user" id="92k-TV-yVC"/>
+                            <constraint firstItem="hwy-jr-nw6" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0CV-0s-cjR" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="AUy-Ed-Ej5"/>
+                            <constraint firstItem="2ex-dU-lNM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ksX-ES-kRK" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="KYK-UQ-XGe"/>
+                            <constraint firstItem="Fsb-zV-eFM" firstAttribute="top" secondItem="ksX-ES-kRK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="SXy-fH-DJ0"/>
+                            <constraint firstItem="iZT-fI-wJQ" firstAttribute="leading" secondItem="AqT-Fb-n0j" secondAttribute="leading" type="default" id="UiI-oY-9cP"/>
+                            <constraint firstItem="Fsb-zV-eFM" firstAttribute="top" secondItem="2ex-dU-lNM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VNt-64-P3u"/>
+                            <constraint firstItem="bpX-sg-1BU" firstAttribute="top" secondItem="2ex-dU-lNM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WQK-xY-0zc"/>
+                            <constraint firstItem="rAw-Rh-qOm" firstAttribute="top" secondItem="0CV-0s-cjR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WTR-6b-AGg"/>
+                            <constraint firstItem="bpX-sg-1BU" firstAttribute="trailing" secondItem="iZT-fI-wJQ" secondAttribute="trailing" type="default" id="ZTY-xA-umK"/>
+                            <constraint firstItem="rAw-Rh-qOm" firstAttribute="top" secondItem="hwy-jr-nw6" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="a9D-8K-6JJ"/>
+                            <constraint firstAttribute="trailing" secondItem="2ex-dU-lNM" secondAttribute="trailing" constant="43" type="user" id="avF-aw-gLx"/>
                             <constraint firstItem="d8v-EL-v9O" firstAttribute="top" secondItem="Cwu-XU-Sl0" secondAttribute="top" constant="76" id="bMx-k2-SuI"/>
+                            <constraint firstItem="ksX-ES-kRK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hwy-jr-nw6" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="bQ8-xc-WlQ"/>
+                            <constraint firstItem="sv9-q8-zit" firstAttribute="top" secondItem="ksX-ES-kRK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dJ3-f1-af6"/>
+                            <constraint firstItem="YW6-m6-oFc" firstAttribute="top" secondItem="AqT-Fb-n0j" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="g0N-cV-cIL"/>
+                            <constraint firstItem="YW6-m6-oFc" firstAttribute="leading" secondItem="lER-mp-57V" secondAttribute="leading" type="user" id="hjq-u1-RWw"/>
+                            <constraint firstItem="bpX-sg-1BU" firstAttribute="leading" secondItem="Fsb-zV-eFM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="hpb-sh-VnF"/>
                             <constraint firstItem="iZT-fI-wJQ" firstAttribute="top" secondItem="d8v-EL-v9O" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="iFQ-KR-Ryj"/>
-                            <constraint firstAttribute="trailing" secondItem="iZT-fI-wJQ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="wEN-i3-fH6"/>
-                            <constraint firstItem="iZT-fI-wJQ" firstAttribute="leading" secondItem="Cwu-XU-Sl0" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yaH-gb-Ip3"/>
+                            <constraint firstItem="AqT-Fb-n0j" firstAttribute="leading" secondItem="Cwu-XU-Sl0" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="mfu-kr-kTA"/>
+                            <constraint firstItem="sv9-q8-zit" firstAttribute="leading" secondItem="rAw-Rh-qOm" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="s9p-Vh-MDs"/>
+                            <constraint firstItem="AqT-Fb-n0j" firstAttribute="top" secondItem="lER-mp-57V" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="sOA-4P-0gA"/>
+                            <constraint firstItem="d8v-EL-v9O" firstAttribute="leading" secondItem="Cwu-XU-Sl0" secondAttribute="leading" constant="43" type="user" id="wix-3l-Gcd"/>
+                            <constraint firstItem="0CV-0s-cjR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AqT-Fb-n0j" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="x5x-zH-hfg"/>
+                            <constraint firstItem="YW6-m6-oFc" firstAttribute="leading" secondItem="Cwu-XU-Sl0" secondAttribute="leading" constant="43" type="user" id="zOO-uV-aag"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="MuW-dC-JBJ">
@@ -303,13 +458,23 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="cancelBarButtonItem" destination="MTP-L6-P1z" id="8eM-2K-h7p"/>
+                        <outlet property="colorLabel" destination="lER-mp-57V" id="Nx0-Im-5mj"/>
                         <outlet property="doneBarButtonItem" destination="58n-tN-Zp3" id="HUb-95-fvs"/>
                         <outlet property="nameLabel" destination="d8v-EL-v9O" id="raZ-DF-s7B"/>
                         <outlet property="nameTextField" destination="iZT-fI-wJQ" id="oh3-GI-Lo5"/>
+                        <outlet property="pencilButton1" destination="AqT-Fb-n0j" id="rkE-J8-zPt"/>
+                        <outlet property="pencilButton10" destination="bpX-sg-1BU" id="anx-ln-GUQ"/>
+                        <outlet property="pencilButton2" destination="0CV-0s-cjR" id="5e1-1j-hmr"/>
+                        <outlet property="pencilButton3" destination="hwy-jr-nw6" id="uAe-hx-80J"/>
+                        <outlet property="pencilButton4" destination="ksX-ES-kRK" id="Dyp-ED-5o7"/>
+                        <outlet property="pencilButton5" destination="2ex-dU-lNM" id="H3g-Qi-eyH"/>
+                        <outlet property="pencilButton6" destination="YW6-m6-oFc" id="SGa-4R-Hmz"/>
+                        <outlet property="pencilButton7" destination="rAw-Rh-qOm" id="oDL-ig-06q"/>
+                        <outlet property="pencilButton8" destination="sv9-q8-zit" id="3CV-65-AdR"/>
+                        <outlet property="pencilButton9" destination="Fsb-zV-eFM" id="KHs-2X-JM8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkj-gf-6iD" userLabel="First Responder" sceneMemberID="firstResponder"/>
