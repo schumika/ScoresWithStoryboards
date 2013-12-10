@@ -37,17 +37,17 @@
     [super viewWillAppear:animated];
     
     self.navigationController.toolbarHidden = NO;
-    [self loadDataAndUpdateUI:YES];
+    [self updateUIAndLoadTableData:YES];
 }
 
 #pragma mark - Private methods
 
-- (void)loadDataAndUpdateUI:(BOOL)updateUI {
+- (void)updateUIAndLoadTableData:(BOOL)loadData {
     self.scores = [self.player orderedScoresArray];
     self.titleViewText = self.player.name;
     self.titleViewColor = [UIColor colorWithHexString:self.player.color];
     
-    if (updateUI) {
+    if (loadData) {
         if (self.tableView.hidden == NO) {
             [self.tableView reloadData];
         }
@@ -104,7 +104,7 @@
         [[AJScoresManager sharedInstance] createScoreWithValue:textField.text.doubleValue inRound:([self.tableView numberOfRowsInSection:1]+1) forPlayer:self.player];
         [textField setText:nil];
         
-        [self loadDataAndUpdateUI:YES];
+        [self updateUIAndLoadTableData:YES];
     } else {
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }

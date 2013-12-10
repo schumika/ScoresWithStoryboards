@@ -46,17 +46,17 @@
     
     [self.settingsBarButtonItem setCustomView:[UIButton clearButtonItemWithTitle:@"Settings" target:self.settingsBarButtonItem.target action:self.settingsBarButtonItem.action]];
     
-    [self loadDataAndUpdateUI:YES];
+    [self updateUIAndLoadTableData:YES];
 }
 
 #pragma mark - Private methods
 
-- (void)loadDataAndUpdateUI:(BOOL)updateUI {
+- (void)updateUIAndLoadTableData:(BOOL)loadData {
     self.players = self.game.orderedPlayersArray;
     self.titleViewText = self.game.name;
     self.titleViewColor = [UIColor colorWithHexString:self.game.color];
     
-    if (updateUI) {
+    if (loadData) {
         if (self.tableView.hidden == NO) {
             [self.tableView reloadData];
         }
@@ -117,7 +117,7 @@
         [[AJScoresManager sharedInstance] createPlayerWithName:text forGame:self.game];
         [textField setText:nil];
         
-        [self loadDataAndUpdateUI:YES];
+        [self updateUIAndLoadTableData:YES];
     } else {
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
@@ -147,9 +147,10 @@
             [(AJScoresViewController *)segue.destinationViewController setPlayer:self.players[rowIndex]];
         }
     } else if ([segue.identifier isEqualToString:@"GameSettings"]) {
-        if ([segue.destinationViewController respondsToSelector:@selector(setItemDictionary:)]) {
-            [(AJSettingsViewController *)segue.destinationViewController setItemDictionary:self.game.toDictionary];
-            [(AJSettingsViewController *)segue.destinationViewController setDelegate:self];
+        UIViewController *topViewController = [(UINavigationController *)segue.destinationViewController topViewController];
+        if ([topViewController respondsToSelector:@selector(setItemDictionary:)]) {
+            [(AJSettingsViewController *)topViewController setItemDictionary:self.game.toDictionary];
+            [(AJSettingsViewController *)topViewController setDelegate:self];
         }
     }
 }
@@ -159,7 +160,7 @@
 - (void)deletePlayerFromCellWithIndexPath:(NSIndexPath*)indexPath {
     [self.tableView beginUpdates];
     [[AJScoresManager sharedInstance] deletePlayer:self.players[indexPath.row]];
-    [self loadDataAndUpdateUI:NO];
+    [self updateUIAndLoadTableData:NO];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
     [self.tableView endUpdates];
     
@@ -174,6 +175,7 @@
 
 - (void)settingsViewController:(AJSettingsViewController *)settingsViewController didFinishEditingItemDictionary:(NSDictionary *)dictionary {
     [self.game setGamePropertiesFromDictionary:dictionary];
+    [self updateUIAndLoadTableData:NO];
     [[AJScoresManager sharedInstance] saveContext];
 }
 

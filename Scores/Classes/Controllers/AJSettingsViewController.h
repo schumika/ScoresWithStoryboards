@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AJViewController.h"
+#import "AJTableViewController.h"
 
 
 @protocol AJSettingsViewControllerDelegate;
 
 
-@interface AJSettingsViewController : AJViewController
+@interface AJSettingsViewController : AJTableViewController
 
 @property (nonatomic, strong) NSDictionary *itemDictionary;
 @property (nonatomic, weak) id<AJSettingsViewControllerDelegate> delegate;

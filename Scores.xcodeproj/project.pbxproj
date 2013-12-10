@@ -29,6 +29,7 @@
 		523CAC9718561A6000560A8C /* pencil_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 523CAC8318561A6000560A8C /* pencil_yellow.png */; };
 		523CAC9818561A6000560A8C /* pencil_yellow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 523CAC8418561A6000560A8C /* pencil_yellow@2x.png */; };
 		523EFC7818322E300031295D /* AJSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523EFC7718322E300031295D /* AJSettingsViewController.m */; };
+		524A8F501857402A00AFFC45 /* AJSettingsTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 524A8F4F1857402A00AFFC45 /* AJSettingsTopTableViewCell.m */; };
 		52600CD418339E7D005E77AB /* UIButton+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 52600CD318339E7D005E77AB /* UIButton+Additions.m */; };
 		527EF9C117E9DD7500FBC5CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EF9C017E9DD7500FBC5CE /* UIKit.framework */; };
 		527EF9C317E9DD7500FBC5CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 527EF9C217E9DD7500FBC5CE /* Foundation.framework */; };
@@ -134,6 +135,8 @@
 		523CAC8418561A6000560A8C /* pencil_yellow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pencil_yellow@2x.png"; sourceTree = "<group>"; };
 		523EFC7618322E300031295D /* AJSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJSettingsViewController.h; path = Classes/Controllers/AJSettingsViewController.h; sourceTree = "<group>"; };
 		523EFC7718322E300031295D /* AJSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJSettingsViewController.m; path = Classes/Controllers/AJSettingsViewController.m; sourceTree = "<group>"; };
+		524A8F4E1857402A00AFFC45 /* AJSettingsTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AJSettingsTopTableViewCell.h; path = Classes/TableViewCells/AJSettingsTopTableViewCell.h; sourceTree = "<group>"; };
+		524A8F4F1857402A00AFFC45 /* AJSettingsTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AJSettingsTopTableViewCell.m; path = Classes/TableViewCells/AJSettingsTopTableViewCell.m; sourceTree = "<group>"; };
 		52600CD218339E7D005E77AB /* UIButton+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+Additions.h"; path = "Classes/Categories/UIButton+Additions.h"; sourceTree = "<group>"; };
 		52600CD318339E7D005E77AB /* UIButton+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIButton+Additions.m"; path = "Classes/Categories/UIButton+Additions.m"; sourceTree = "<group>"; };
 		527EF9BD17E9DD7500FBC5CE /* Scores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scores.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -377,6 +380,8 @@
 				A954E69517F601B100BAF445 /* AJPlayerTableViewCell.m */,
 				52E5932317FDB7E600FD29F8 /* AJScoreTableViewCell.h */,
 				52E5932417FDB7E600FD29F8 /* AJScoreTableViewCell.m */,
+				524A8F4E1857402A00AFFC45 /* AJSettingsTopTableViewCell.h */,
+				524A8F4F1857402A00AFFC45 /* AJSettingsTopTableViewCell.m */,
 				A987B9E517ED7E9D0070CA82 /* AJTextFieldTableViewCell.h */,
 				A987B9E617ED7E9D0070CA82 /* AJTextFieldTableViewCell.m */,
 				527F01DE17F440FF0077F704 /* AJSeparatorTableViewCell.h */,
@@ -629,6 +634,7 @@
 				A9528A2517EB66ED00060B08 /* Scores.xcdatamodeld in Sources */,
 				A9528A3117EB68D800060B08 /* AJGame.m in Sources */,
 				A9528A3417EB68D800060B08 /* AJPlayer.m in Sources */,
+				524A8F501857402A00AFFC45 /* AJSettingsTopTableViewCell.m in Sources */,
 				A9528A3B17EB695F00060B08 /* AJScoresManager.m in Sources */,
 				A9528A3E17EB6AF000060B08 /* AJGame+Additions.m in Sources */,
 				A9528A4117EB6B6400060B08 /* AJDefines.m in Sources */,

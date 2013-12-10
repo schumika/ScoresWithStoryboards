@@ -40,7 +40,7 @@
 }
 
 - (NSAttributedString *)attributtedStringWithSectionAttributes {
-    return [self attributtedStringWithFontSize:30.0 andTextColor:[UIColor AJBrownColor]];
+    return [self attributtedStringWithFontSize:20.0 andTextColor:[UIColor AJBrownColor]];
 }
 
 @end

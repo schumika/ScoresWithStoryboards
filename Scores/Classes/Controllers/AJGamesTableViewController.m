@@ -44,7 +44,7 @@
     [super viewWillAppear:animated];
     
     self.navigationController.toolbarHidden = YES;
-    [self loadDataAndUpdateUI:YES];
+    [self updateUIAndLoadTableData:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -105,7 +105,7 @@
     [self setGames:mutableArray];
     
     [self updateRowIdsForGames];
-    [self loadDataAndUpdateUI:YES];
+    [self updateUIAndLoadTableData:YES];
 }
 
 
@@ -154,7 +154,7 @@
         [[AJScoresManager sharedInstance] addGameWithName:text andRowId:maxNo+1];
         [textField setText:nil];
         
-        [self loadDataAndUpdateUI:YES];
+        [self updateUIAndLoadTableData:YES];
     } else {
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
     }
@@ -177,9 +177,9 @@
 
 #pragma mark - Private methods
 
-- (void)loadDataAndUpdateUI:(BOOL)updateUI {
+- (void)updateUIAndLoadTableData:(BOOL)loadData {
     self.games = [[AJScoresManager sharedInstance] getGamesArray];
-    if (updateUI) {
+    if (loadData) {
         [self.tableView reloadData];
     }
 }
@@ -199,7 +199,7 @@
 - (void)deleteGameFromCellWithIndexPath:(NSIndexPath*)indexPath {
     [self.tableView beginUpdates];
     [[AJScoresManager sharedInstance] deleteGame:self.games[indexPath.row]];
-    [self loadDataAndUpdateUI:NO];
+    [self updateUIAndLoadTableData:NO];
     [self updateRowIdsForGames];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
     [self.tableView endUpdates];
