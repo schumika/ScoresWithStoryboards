@@ -87,12 +87,17 @@
 
 #pragma mark - UITableViewDataSource methods
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return (section == 0) ? 1 : 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *TopCellIdentifier = @"SettingsTopCellIdentifier";
+    static NSString *SimpleCellIdentifier = @"SimpleCellIdentifier";
     
     UITableViewCell *aCell = nil;
     if (indexPath.section == 0) {
@@ -102,8 +107,34 @@
         cell.itemColor = [UIColor colorWithHexString:self.itemDictionary[kAJColorStringKey]];
         
         aCell = cell;
+    } else {
+        AJSeparatorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleCellIdentifier forIndexPath:indexPath];
+        if (!cell) {
+            cell = [[AJSeparatorTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:SimpleCellIdentifier];
+        }
+        
+        NSString *cellText = nil;
+        switch (indexPath.row) {
+            case 0:
+                cellText = @"Delete all players";
+                break;
+            case 1:
+                cellText = @"Reset game scores";
+                break;
+            default:
+                cellText = @"Share scores";
+                break;
+        }
+        
+        cell.textLabel.attributedText = [cellText attributtedStringWithFontSize:20.0 andTextColor:[UIColor AJBrownColor]];
+        
+        aCell = cell;
     }
     return aCell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 0) ? 262.0 : 50.0;
 }
 
 @end

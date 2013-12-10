@@ -10,4 +10,6 @@
 
 @interface AJTextField : UITextField
 
+@property (nonatomic, assign) CGFloat textFontSize;
+
 @end

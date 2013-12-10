@@ -7,6 +7,7 @@
 //
 
 #import "AJSettingsTopTableViewCell.h"
+#import "AJTextField.h"
 #import "AJPencilButton.h"
 
 #import "NSString+Additions.h"
@@ -15,7 +16,7 @@
 
 @interface AJSettingsTopTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet AJTextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UILabel *pictureLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *pictureImageView;
 @property (weak, nonatomic) IBOutlet UILabel *colorLabel;
@@ -45,6 +46,7 @@
     self.nameLabel.attributedText = [self.nameLabel.text attributtedStringWithSectionAttributes];
     self.pictureLabel.attributedText = [self.pictureLabel.text attributtedStringWithSectionAttributes];
     self.colorLabel.attributedText = [self.colorLabel.text attributtedStringWithSectionAttributes];
+    [self.nameTextField setTextFontSize:20.0];
     
     self.outlineImageView.image = [[UIImage imageNamed:@"round.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 15.0, 12.0, 15.0)
                                                                                     resizingMode:UIImageResizingModeStretch];
@@ -92,6 +94,8 @@
     if (!hasFoundColor) {
         [(AJPencilButton *)self.pencilsArray[2] setSelected:YES];
     }
+    
+    self.nameTextField.textColor = itemColor;
 }
 
 #pragma mark - Public methods

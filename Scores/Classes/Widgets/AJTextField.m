@@ -17,8 +17,12 @@
     self.background = [[UIImage imageNamed:@"round.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 15.0, 12.0, 15.0)
                                                                         resizingMode:UIImageResizingModeStretch];
     
-    self.font = [UIFont faranvaleFontWithSize:25.0];
     self.textColor = [UIColor AJBrownColor];
+}
+
+- (void)setTextFontSize:(CGFloat)textFontSize {
+    _textFontSize = textFontSize;
+    self.font = [UIFont faranvaleFontWithSize:textFontSize];
 }
 
 - (CGRect)textRectForBounds:(CGRect)bounds {
