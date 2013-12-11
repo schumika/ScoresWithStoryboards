@@ -247,7 +247,7 @@
                     <navigationItem key="navigationItem" id="2dc-zb-yw2"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="settingsBarButtonItem" destination="aZ3-9P-N4E" id="1JG-Nb-fFQ"/>
+                        <outlet property="settingsBarButtonItem" destination="aZ3-9P-N4E" id="Le2-T6-gI6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgg-xf-rOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -598,7 +598,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EzS-gv-Cm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2653" y="920"/>
+            <point key="canvasLocation" x="2749" y="1046"/>
         </scene>
         <!--Scores View Controller-->
         <scene sceneID="ACg-QJ-acu">
@@ -689,7 +689,17 @@
                             <outlet property="delegate" destination="6St-dx-Rc0" id="I1y-09-1XE"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Settings" id="f8c-NU-mHk">
+                            <connections>
+                                <segue destination="OJS-Jf-E9o" kind="modal" identifier="PlayerSettings" id="Y8b-wg-oow"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="NI0-1a-Mfg"/>
+                    <connections>
+                        <outlet property="settingsBarButtonItem" destination="f8c-NU-mHk" id="2Ch-fF-eIT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFQ-sI-Zjz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -733,7 +743,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAy-Ua-WTW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="920"/>
+            <point key="canvasLocation" x="2274" y="1046"/>
         </scene>
     </scenes>
     <resources>
@@ -744,4 +754,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Y8b-wg-oow"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -81,6 +81,12 @@
     return displayDictionary;
 }
 
+- (void)setPlayerPropertiesFromDictionary:(NSDictionary *)dictionary {
+    self.name = dictionary[kAJNameKey];
+    self.color = dictionary[kAJColorStringKey];
+    self.imageData = dictionary[kAJPictureDataKey];
+}
+
 - (double)intermediateTotalAtRound:(int)row {
     double total = 0.0;
     

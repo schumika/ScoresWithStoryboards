@@ -14,14 +14,17 @@
 #import "AJScoresManager.h"
 #import "AJTextFieldTableViewCell.h"
 #import "AJScoreTableViewCell.h"
+#import "AJSettingsViewController.h"
 
 #import "UIColor+Additions.h"
 #import "UIBarButtonItem+Additions.h"
 #import "NSString+Additions.h"
+#import "UIButton+Additions.h"
 
-@interface AJScoresViewController () <UITextFieldDelegate>
+@interface AJScoresViewController () <UITextFieldDelegate, AJSettingsViewControllerDelegate>
 @property (nonatomic, strong) NSArray *scores;
 @property (nonatomic, assign) BOOL showsAddNewScoreCell;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
 @end
 
 @implementation AJScoresViewController 
@@ -30,13 +33,13 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem clearBarButtonItemWithTitle:@"+" target:self action:@selector(addButtonClicked:)];
-    self.toolbarItems = @[[UIBarButtonItem clearBarButtonItemWithTitle:@"Settings" target:self action:@selector(settingsButtonClicked:)]];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     self.navigationController.toolbarHidden = NO;
+    [self.settingsBarButtonItem setCustomView:[UIButton clearButtonItemWithTitle:@"Settings" target:self.settingsBarButtonItem.target action:self.settingsBarButtonItem.action]];
     [self updateUIAndLoadTableData:YES];
 }
 
@@ -114,5 +117,28 @@
     return YES;
 }
 
+#pragma mark - Overridden from base class
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"PlayerSettings"]) {
+        UIViewController *topViewController = [(UINavigationController *)segue.destinationViewController topViewController];
+        if ([topViewController respondsToSelector:@selector(setItemDictionary:)]) {
+            [(AJSettingsViewController *)topViewController setItemDictionary:self.player.toDictionary];
+            [(AJSettingsViewController *)topViewController setDelegate:self];
+        }
+    }
+}
+
+#pragma mark - AJSettingsViewControllerDelegate methods
+
+- (void)settingsViewControllerDidCancelEditing:(AJSettingsViewController *)settingsViewController {
+    
+}
+
+- (void)settingsViewController:(AJSettingsViewController *)settingsViewController didFinishEditingItemDictionary:(NSDictionary *)dictionary {
+    [self.player setPlayerPropertiesFromDictionary:dictionary];
+    [self updateUIAndLoadTableData:NO];
+    [[AJScoresManager sharedInstance] saveContext];
+}
 
 @end

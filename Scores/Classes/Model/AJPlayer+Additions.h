@@ -15,6 +15,7 @@
 + (AJPlayer *)createPlayerWithName:(NSString *)name forGame:(AJGame *)game;
 
 - (NSDictionary *)toDictionary;
+- (void)setPlayerPropertiesFromDictionary:(NSDictionary *)dictionary;
 
 - (NSArray *)orderedScoresArray;
 - (double)intermediateTotalAtRound:(int)row;
