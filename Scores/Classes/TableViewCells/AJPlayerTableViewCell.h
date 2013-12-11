@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSDictionary *playerDictionary;
 
+- (void)flipTotalViewAnimated:(BOOL)animated;
+
 @end

@@ -165,10 +165,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gec-jx-jsD">
-                                            <rect key="frame" x="0.0" y="5" width="65" height="65"/>
+                                            <rect key="frame" x="0.0" y="6" width="65" height="64"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="65" id="H6q-bD-Z1M"/>
-                                                <constraint firstAttribute="height" constant="65" id="gVO-KJ-KZd"/>
+                                                <constraint firstAttribute="height" constant="64" id="ZPc-gF-KzL"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="disclosure.png" translatesAutoresizingMaskIntoConstraints="NO" id="EW4-Kr-Vfn">
@@ -186,14 +186,18 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suk-eQ-OWl">
+                                        <label opaque="NO" clipsSubviews="YES" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suk-eQ-OWl">
                                             <rect key="frame" x="247" y="20" width="45" height="33"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="45" id="cCy-wB-Jk0"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="IPn-YC-xQL" appends="YES" id="N8c-5i-XRw"/>
+                                            </connections>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 rounds played" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTO-o0-ZQZ">
                                             <rect key="frame" x="73" y="49" width="166" height="21"/>
@@ -205,25 +209,59 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k53-30-Fbb" customClass="AJTextField">
+                                            <rect key="frame" x="203" y="6" width="97" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="dG6-rp-tYv"/>
+                                                <constraint firstAttribute="width" constant="97" id="jXZ-KV-1Xu"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irp-Cb-OF9">
+                                            <rect key="frame" x="203" y="42" width="97" height="28"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="28" id="LHD-0t-cFK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <state key="normal" title="Done">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="doneAddingScoreButtonClicked:" destination="hEO-dd-woW" eventType="touchUpInside" id="YP9-hJ-xdo"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="MLf-py-s1u" firstAttribute="leading" secondItem="gec-jx-jsD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="4I6-dB-zRY"/>
                                     <constraint firstItem="tTO-o0-ZQZ" firstAttribute="bottom" secondItem="gec-jx-jsD" secondAttribute="bottom" type="default" id="859-Mj-aVC"/>
-                                    <constraint firstItem="gec-jx-jsD" firstAttribute="centerY" secondItem="FUQ-C5-DBr" secondAttribute="centerY" type="default" id="8c4-nK-sRe"/>
                                     <constraint firstItem="EW4-Kr-Vfn" firstAttribute="trailing" secondItem="FUQ-C5-DBr" secondAttribute="trailing" type="default" id="9C6-sn-o6b"/>
+                                    <constraint firstItem="k53-30-Fbb" firstAttribute="top" secondItem="gec-jx-jsD" secondAttribute="top" type="default" id="E13-J0-w83"/>
                                     <constraint firstItem="MLf-py-s1u" firstAttribute="baseline" secondItem="Suk-eQ-OWl" secondAttribute="baseline" type="default" id="Hba-vl-5b4"/>
                                     <constraint firstItem="tTO-o0-ZQZ" firstAttribute="leading" secondItem="gec-jx-jsD" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Nsr-3l-w6h"/>
-                                    <constraint firstItem="EW4-Kr-Vfn" firstAttribute="top" secondItem="FUQ-C5-DBr" secondAttribute="top" constant="28" id="PGl-cj-oFp"/>
                                     <constraint firstItem="Suk-eQ-OWl" firstAttribute="leading" secondItem="tTO-o0-ZQZ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="RuW-Ko-14k"/>
+                                    <constraint firstItem="Irp-Cb-OF9" firstAttribute="bottom" secondItem="tTO-o0-ZQZ" secondAttribute="bottom" type="default" id="dMc-We-Phy"/>
                                     <constraint firstItem="EW4-Kr-Vfn" firstAttribute="leading" secondItem="Suk-eQ-OWl" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="eaH-1D-s3A"/>
+                                    <constraint firstItem="gec-jx-jsD" firstAttribute="top" secondItem="FUQ-C5-DBr" secondAttribute="top" constant="6" id="fbn-CG-Yo9"/>
+                                    <constraint firstAttribute="trailing" secondItem="k53-30-Fbb" secondAttribute="trailing" constant="20" type="default" id="j5D-3h-OWK"/>
                                     <constraint firstItem="gec-jx-jsD" firstAttribute="leading" secondItem="FUQ-C5-DBr" secondAttribute="leading" type="default" id="nm9-sC-baB"/>
                                     <constraint firstItem="Suk-eQ-OWl" firstAttribute="leading" secondItem="MLf-py-s1u" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="sbb-E8-qxV"/>
                                     <constraint firstItem="Suk-eQ-OWl" firstAttribute="top" secondItem="FUQ-C5-DBr" secondAttribute="top" constant="20" type="default" id="sl2-4r-MyU"/>
+                                    <constraint firstItem="Irp-Cb-OF9" firstAttribute="trailing" secondItem="k53-30-Fbb" secondAttribute="trailing" type="default" id="ufj-XT-q2z"/>
+                                    <constraint firstItem="Irp-Cb-OF9" firstAttribute="leading" secondItem="k53-30-Fbb" secondAttribute="leading" type="default" id="vz9-1u-yeb"/>
+                                    <constraint firstItem="gec-jx-jsD" firstAttribute="centerY" secondItem="EW4-Kr-Vfn" secondAttribute="centerY" type="default" id="wsR-nA-VkW"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="addScoreTextField" destination="k53-30-Fbb" id="pAN-mM-LY1"/>
+                                    <outlet property="doneButton" destination="Irp-Cb-OF9" id="pPg-Ps-eFW"/>
                                     <outlet property="playerImageView" destination="gec-jx-jsD" id="itk-If-rfH"/>
                                     <outlet property="playerLabel" destination="MLf-py-s1u" id="3Y4-ui-W4R"/>
                                     <outlet property="roundsPlayedLabel" destination="tTO-o0-ZQZ" id="0bJ-P1-Abd"/>
@@ -251,6 +289,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgg-xf-rOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" delaysTouchesBegan="YES" delaysTouchesEnded="NO" numberOfTapsRequired="2" id="IPn-YC-xQL">
+                    <connections>
+                        <action selector="tapGestureHandler:" destination="hEO-dd-woW" id="U6m-V7-tCD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1601" y="182"/>
         </scene>
@@ -755,6 +798,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Y8b-wg-oow"/>
+        <segue reference="kUK-NP-ncF"/>
     </inferredMetricsTieBreakers>
 </document>

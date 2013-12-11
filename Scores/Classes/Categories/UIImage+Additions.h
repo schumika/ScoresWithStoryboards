@@ -16,5 +16,7 @@
 - (UIImage*)resizeToNewSize:(CGSize)newSize;
 - (UIImage*)applyMask:(UIImage*)mask;
 
++ (UIImage *)roundedCornersStretchebleImage;
+
 @end
 

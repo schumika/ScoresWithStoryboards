@@ -10,6 +10,7 @@
 #import "AJTextField.h"
 #import "AJPencilButton.h"
 
+#import "UIImage+Additions.h"
 #import "NSString+Additions.h"
 #import "UIColor+Additions.h"
 
@@ -48,8 +49,7 @@
     [self.nameTextField setTextFontSize:20.0];
     [self.pictureButton setBackgroundColor:[UIColor clearColor]];
     
-    self.outlineImageView.image = [[UIImage imageNamed:@"round.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 15.0, 12.0, 15.0)
-                                                                                    resizingMode:UIImageResizingModeStretch];
+    self.outlineImageView.image = [UIImage roundedCornersStretchebleImage];
 
     self.pencilButton1.color = [UIColor blackColor];
     self.pencilButton2.color = [UIColor blueColor];

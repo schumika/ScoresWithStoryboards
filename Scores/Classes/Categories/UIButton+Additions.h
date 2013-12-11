@@ -10,6 +10,7 @@
 
 @interface UIButton (Additions)
 
-+ (UIButton *)clearButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action;
++ (UIButton *)clearButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action;
+- (void)setRoundedBackgroundStyle;
 
 @end

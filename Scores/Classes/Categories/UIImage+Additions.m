@@ -63,4 +63,9 @@
 	return retimage;
 }
 
++ (UIImage *)roundedCornersStretchebleImage {
+    return [[UIImage imageNamed:@"round.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 15.0, 12.0, 15.0)
+                                                      resizingMode:UIImageResizingModeStretch];
+}
+
 @end

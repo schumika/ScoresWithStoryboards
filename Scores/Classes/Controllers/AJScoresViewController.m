@@ -39,7 +39,7 @@
     [super viewWillAppear:animated];
     
     self.navigationController.toolbarHidden = NO;
-    [self.settingsBarButtonItem setCustomView:[UIButton clearButtonItemWithTitle:@"Settings" target:self.settingsBarButtonItem.target action:self.settingsBarButtonItem.action]];
+    [self.settingsBarButtonItem setCustomView:[UIButton clearButtonWithTitle:@"Settings" target:self.settingsBarButtonItem.target action:self.settingsBarButtonItem.action]];
     [self updateUIAndLoadTableData:YES];
 }
 

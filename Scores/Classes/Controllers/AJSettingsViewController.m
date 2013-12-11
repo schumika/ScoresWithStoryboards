@@ -40,8 +40,8 @@
     
     self.navigationController.toolbarHidden = YES;
    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[UIButton clearButtonItemWithTitle:@"Done" target:self action:@selector(doneButtonClicked:)]];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[UIButton clearButtonItemWithTitle:@"Cancel" target:self action:@selector(cancelButtonClicked:)]];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[UIButton clearButtonWithTitle:@"Done" target:self action:@selector(doneButtonClicked:)]];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:[UIButton clearButtonWithTitle:@"Cancel" target:self action:@selector(cancelButtonClicked:)]];
     
     self.mutableItemDictionary = [NSMutableDictionary dictionaryWithDictionary:self.itemDictionary];
 }

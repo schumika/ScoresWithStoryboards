@@ -8,12 +8,13 @@
 
 #import "UIButton+Additions.h"
 
+#import "UIImage+Additions.h"
 #import "UIColor+Additions.h"
 #import "UIFont+Additions.h"
 
 @implementation UIButton (Additions)
 
-+ (UIButton *)clearButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action {
++ (UIButton *)clearButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action {
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setTitleColor:[UIColor AJGreenColor] forState:UIControlStateNormal];
@@ -24,6 +25,13 @@
     button.frame = CGRectMake(0, 0, MAX(30.0, buttonSize.width), 30);
     
     return button;
+}
+
+- (void)setRoundedBackgroundStyle {
+    [self setBackgroundImage:[UIImage roundedCornersStretchebleImage] forState:UIControlStateNormal];
+    [self setBackgroundColor:[UIColor clearColor]];
+    self.titleLabel.font = [UIFont faranvaleFontWithSize:20.0];
+    [self setTitleColor:[UIColor AJBrownColor] forState:UIControlStateNormal];
 }
 
 @end

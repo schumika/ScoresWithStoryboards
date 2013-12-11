@@ -7,16 +7,20 @@
 //
 
 #import "AJPlayerTableViewCell.h"
+#import "AJTextField.h"
 
 #import "UIFont+Additions.h"
 #import "UIColor+Additions.h"
 #import "UIImage+Additions.h"
+#import "UIButton+Additions.h"
 
 @interface AJPlayerTableViewCell ()
 @property (weak, nonatomic) IBOutlet UILabel *playerLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *playerImageView;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UILabel *roundsPlayedLabel;
+@property (weak, nonatomic) IBOutlet AJTextField *addScoreTextField;
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
 @end
 
 @implementation AJPlayerTableViewCell
@@ -33,6 +37,8 @@
     }
     self.totalLabel.textColor = [UIColor AJBrownColor];
     self.roundsPlayedLabel.textColor = [UIColor lightGrayColor];
+    [self.addScoreTextField setTextFontSize:20.0];
+    [self.doneButton setRoundedBackgroundStyle];
 }
 
 - (void)setPlayerDictionary:(NSDictionary *)playerDictionary {
@@ -48,6 +54,16 @@
     self.roundsPlayedLabel.text = [NSString stringWithFormat:@"%d %@ played", nrOfRounds, (nrOfRounds == 1) ? @"round" : @"rounds"];
 }
 
-
+- (void)flipTotalViewAnimated:(BOOL)animated {
+    if (self.totalLabel.hidden) {
+        self.totalLabel.hidden = NO;
+        self.addScoreTextField.hidden = YES;
+        self.doneButton.hidden = YES;
+    } else {
+        self.totalLabel.hidden = YES;
+        self.addScoreTextField.hidden = NO;
+        self.doneButton.hidden = NO;
+    }
+}
 
 @end

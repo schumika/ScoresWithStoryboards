@@ -41,7 +41,7 @@
 #pragma mark - Public methods
 
 + (UIBarButtonItem *)clearBarButtonItemWithTitle:(NSString *)title target:(id)target action:(SEL)action {
-    return [[UIBarButtonItem alloc] initWithCustomView:[UIButton clearButtonItemWithTitle:title target:target action:action]];
+    return [[UIBarButtonItem alloc] initWithCustomView:[UIButton clearButtonWithTitle:title target:target action:action]];
 }
 
 + (UIBarButtonItem *)clearBarButtonItemWithImage:(UIImage *)image target:(id)target action:(SEL)action {

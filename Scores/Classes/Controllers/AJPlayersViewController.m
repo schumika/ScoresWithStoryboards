@@ -26,6 +26,7 @@
 @property (nonatomic, strong) NSArray *players;
 @property (nonatomic, assign) BOOL showsAddNewPlayerCell;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
+@property (nonatomic, strong) NSIndexPath *indexPathOfSelectedCell;
 
 - (void)deletePlayerFromCellWithIndexPath:(NSIndexPath*)indexPath;
 @end
@@ -44,7 +45,7 @@
     
     self.navigationController.toolbarHidden = NO;
     
-    [self.settingsBarButtonItem setCustomView:[UIButton clearButtonItemWithTitle:@"Settings" target:self.settingsBarButtonItem.target action:self.settingsBarButtonItem.action]];
+    [self.settingsBarButtonItem setCustomView:[UIButton clearButtonWithTitle:@"Settings" target:self.settingsBarButtonItem.target action:self.settingsBarButtonItem.action]];
     
     [self updateUIAndLoadTableData:YES];
 }
@@ -137,6 +138,11 @@
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
+- (IBAction)doneAddingScoreButtonClicked:(UIButton *)sender {
+    // some more stuff..
+    [(AJPlayerTableViewCell *)[self.tableView cellForRowAtIndexPath:self.indexPathOfSelectedCell] flipTotalViewAnimated:YES];
+    self.indexPathOfSelectedCell = nil;
+}
 
 #pragma mark - Overridden from base class
 
@@ -177,6 +183,31 @@
     [self.game setGamePropertiesFromDictionary:dictionary];
     [self updateUIAndLoadTableData:NO];
     [[AJScoresManager sharedInstance] saveContext];
+}
+
+#pragma mark - UITapGestureRecognizer methods
+
+- (IBAction)tapGestureHandler:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        CGPoint p = [sender locationInView:self.tableView];
+        
+        if (self.indexPathOfSelectedCell != nil) {
+            [(AJPlayerTableViewCell *)[self.tableView cellForRowAtIndexPath:self.indexPathOfSelectedCell] flipTotalViewAnimated:YES];
+        }
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:p];
+        if (indexPath == nil) {
+            NSLog(@"double tap on table view but not on a row");
+        } else {
+            NSLog(@"double tap on table view at row %d", indexPath.row);
+            
+            AJPlayerTableViewCell *playerCell = (AJPlayerTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+            [playerCell flipTotalViewAnimated:YES];
+        }
+        
+        self.indexPathOfSelectedCell = indexPath;
+        
+    }
 }
 
 @end

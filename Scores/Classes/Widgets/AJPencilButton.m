@@ -8,6 +8,7 @@
 
 #import "AJPencilButton.h"
 #import "UIColor+Additions.h"
+#import "UIImage+Additions.h"
 
 @implementation AJPencilButton
 
@@ -33,9 +34,7 @@
 
 - (void)setSelected:(BOOL)selected {
     if (selected) {
-        [self setBackgroundImage:[[UIImage imageNamed:@"round.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 15.0, 12.0, 15.0)
-                                                                                   resizingMode:UIImageResizingModeStretch]
-                        forState:UIControlStateNormal];
+        [self setBackgroundImage:[UIImage roundedCornersStretchebleImage] forState:UIControlStateNormal];
     } else {
         [self setBackgroundImage:nil forState:UIControlStateNormal];
     }

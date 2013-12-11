@@ -8,16 +8,17 @@
 
 #import "AJTextField.h"
 
+#import "UIImage+Additions.h"
 #import "UIFont+Additions.h"
 #import "UIColor+Additions.h"
 
 @implementation AJTextField
 
 - (void)awakeFromNib {
-    self.background = [[UIImage imageNamed:@"round.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(12.0, 15.0, 12.0, 15.0)
-                                                                        resizingMode:UIImageResizingModeStretch];
+    self.background = [UIImage roundedCornersStretchebleImage];
     
     self.textColor = [UIColor AJBrownColor];
+    self.backgroundColor = [UIColor clearColor];
 }
 
 - (void)setTextFontSize:(CGFloat)textFontSize {
@@ -32,14 +33,5 @@
 - (CGRect)editingRectForBounds:(CGRect)bounds; {
     return CGRectInset(bounds, 10.0, 0.0);
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end
