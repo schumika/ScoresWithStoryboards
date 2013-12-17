@@ -15,12 +15,14 @@
 #import "UIButton+Additions.h"
 
 @interface AJPlayerTableViewCell ()
-@property (weak, nonatomic) IBOutlet UILabel *playerLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *playerImageView;
-@property (weak, nonatomic) IBOutlet UILabel *totalLabel;
-@property (weak, nonatomic) IBOutlet UILabel *roundsPlayedLabel;
-@property (weak, nonatomic) IBOutlet AJTextField *addScoreTextField;
-@property (weak, nonatomic) IBOutlet UIButton *doneButton;
+@property (weak, nonatomic)     IBOutlet UILabel *playerLabel;
+@property (weak, nonatomic)     IBOutlet UIImageView *playerImageView;
+@property (strong, nonatomic)   IBOutlet UILabel *totalLabel;
+@property (weak, nonatomic)     IBOutlet UILabel *roundsPlayedLabel;
+@property (weak, nonatomic)     IBOutlet AJTextField *addScoreTextField;
+@property (weak, nonatomic)     IBOutlet UIButton *doneButton;
+@property (strong, nonatomic)   IBOutlet UIView *containerView;
+@property (weak, nonatomic)     IBOutlet UIView *mainPanel;
 @end
 
 @implementation AJPlayerTableViewCell
@@ -55,15 +57,27 @@
 }
 
 - (void)flipTotalViewAnimated:(BOOL)animated {
-    if (self.totalLabel.hidden) {
-        self.totalLabel.hidden = NO;
-        self.addScoreTextField.hidden = YES;
-        self.doneButton.hidden = YES;
-    } else {
-        self.totalLabel.hidden = YES;
-        self.addScoreTextField.hidden = NO;
-        self.doneButton.hidden = NO;
-    }
+    [UIView transitionWithView:self.mainPanel
+                      duration:0.5
+                       options:(self.displaysBackPanel ? UIViewAnimationOptionTransitionFlipFromRight : UIViewAnimationOptionTransitionFlipFromLeft)
+                    animations:^{
+                        if (self.displaysBackPanel) {
+                            self.containerView.hidden = YES;
+                            self.addScoreTextField.text = nil;
+                            self.totalLabel.hidden = NO;
+                        } else {
+                            self.containerView.hidden = NO;
+                            [self.addScoreTextField becomeFirstResponder];
+                            self.totalLabel.hidden = YES;
+                        }
+                    }
+                    completion:^(BOOL finished){
+                        self.displaysBackPanel = !self.displaysBackPanel;
+                    }];
+}
+
+- (NSString *)textInAddScoreTextfield {
+    return self.addScoreTextField.text;
 }
 
 @end

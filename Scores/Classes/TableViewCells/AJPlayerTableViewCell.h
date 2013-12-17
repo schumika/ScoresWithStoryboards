@@ -11,7 +11,9 @@
 @interface AJPlayerTableViewCell : AJSeparatorTableViewCell
 
 @property (nonatomic, strong) NSDictionary *playerDictionary;
+@property (nonatomic, assign) BOOL displaysBackPanel;
 
 - (void)flipTotalViewAnimated:(BOOL)animated;
+- (NSString *)textInAddScoreTextfield;
 
 @end

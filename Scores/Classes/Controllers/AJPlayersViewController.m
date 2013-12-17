@@ -139,8 +139,19 @@
 }
 
 - (IBAction)doneAddingScoreButtonClicked:(UIButton *)sender {
-    // some more stuff..
-    [(AJPlayerTableViewCell *)[self.tableView cellForRowAtIndexPath:self.indexPathOfSelectedCell] flipTotalViewAnimated:YES];
+    AJPlayerTableViewCell *selectedCell = (AJPlayerTableViewCell *)[self.tableView cellForRowAtIndexPath:self.indexPathOfSelectedCell];
+    
+    NSString *text = [selectedCell textInAddScoreTextfield];
+    if (![NSString isNilOrEmpty:text]) {
+        AJPlayer *selectedPlayer = self.players[self.indexPathOfSelectedCell.row];
+        [[AJScoresManager sharedInstance] createScoreWithValue:text.doubleValue inRound:([selectedPlayer.scores count]+1) forPlayer:selectedPlayer];
+        [self updateUIAndLoadTableData:YES];
+    } else {
+        [self.tableView reloadRowsAtIndexPaths:@[self.indexPathOfSelectedCell] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    [selectedCell flipTotalViewAnimated:YES];
+    [selectedCell endEditing:YES];
     self.indexPathOfSelectedCell = nil;
 }
 
