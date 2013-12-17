@@ -83,6 +83,21 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 1);
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView.editing == UITableViewCellEditingStyleDelete) {
+        [self deleteScoreFromCellWithIndexPath:indexPath];
+    }
+}
+
 #pragma mark - Actions
 
 - (IBAction)addButtonClicked:(id)sender {
@@ -91,10 +106,6 @@
     AJTextFieldTableViewCell *cell = (AJTextFieldTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     [[cell textField] becomeFirstResponder];
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-}
-
-- (IBAction)settingsButtonClicked:(id)sender {
-    
 }
 
 #pragma mark - TextFieldDelegate
@@ -140,5 +151,20 @@
     [self updateUIAndLoadTableData:NO];
     [[AJScoresManager sharedInstance] saveContext];
 }
+
+#pragma mark - Private methods
+
+- (void)deleteScoreFromCellWithIndexPath:(NSIndexPath*)indexPath {
+    [self.tableView beginUpdates];
+    [[AJScoresManager sharedInstance] deleteScore:self.scores[indexPath.row]];
+    [self updateUIAndLoadTableData:NO];
+    [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+    [self.tableView endUpdates];
+    
+    [self.player updateRoundsForScores];
+    
+    [self.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:0.3];
+}
+
 
 @end
