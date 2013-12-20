@@ -37,7 +37,7 @@
 }
 
 - (NSArray *)orderedScoresArray {
-    return [self orderedScoresArraySortedAscending:(self.sortOrder == AJScoresSortingByRoundASC)];
+    return [self orderedScoresArraySortedAscending:(self.sortOrder == AJScoresSortingByRoundDESC)];
     
 }
 

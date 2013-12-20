@@ -212,7 +212,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="97" height="70"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="k53-30-Fbb" customClass="AJTextField">
+                                                        <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="k53-30-Fbb" customClass="AJTextField">
                                                             <rect key="frame" x="0.0" y="4" width="97" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -718,32 +718,63 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1z-lj-3JN">
-                                            <rect key="frame" x="146" y="4" width="29" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qa3-8r-FVN">
                                             <rect key="frame" x="291" y="4" width="29" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9y-xQ-Fn4">
+                                            <rect key="frame" x="112" y="0.0" width="97" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <textField hidden="YES" opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fbc-uU-Yhg" customClass="AJTextField">
+                                                    <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="pUS-Lv-igA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="6St-dx-Rc0" id="1TR-o5-AOD"/>
+                                                    </connections>
+                                                </textField>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1z-lj-3JN">
+                                                    <rect key="frame" x="34" y="4" width="29" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="N1z-lj-3JN" firstAttribute="centerY" secondItem="Q9y-xQ-Fn4" secondAttribute="centerY" type="default" id="0F5-NN-48k"/>
+                                                <constraint firstAttribute="trailing" secondItem="fbc-uU-Yhg" secondAttribute="trailing" type="default" id="EmZ-ud-KBr"/>
+                                                <constraint firstItem="fbc-uU-Yhg" firstAttribute="top" secondItem="Q9y-xQ-Fn4" secondAttribute="top" type="default" id="QoC-a7-uQ4"/>
+                                                <constraint firstItem="fbc-uU-Yhg" firstAttribute="leading" secondItem="Q9y-xQ-Fn4" secondAttribute="leading" type="default" id="X7T-8b-Ket"/>
+                                                <constraint firstItem="N1z-lj-3JN" firstAttribute="centerX" secondItem="fbc-uU-Yhg" secondAttribute="centerX" type="default" id="cmf-aA-W98"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="qa3-8r-FVN" firstAttribute="baseline" secondItem="N1z-lj-3JN" secondAttribute="baseline" type="default" id="3Ur-n9-Wv7"/>
+                                    <constraint firstItem="qa3-8r-FVN" firstAttribute="centerY" secondItem="Q9y-xQ-Fn4" secondAttribute="centerY" type="default" id="3nj-3f-qEY"/>
+                                    <constraint firstItem="Q9y-xQ-Fn4" firstAttribute="centerX" secondItem="A4m-4o-HZG" secondAttribute="centerX" type="default" id="AEO-mX-8Mg"/>
                                     <constraint firstItem="ObG-AD-mNg" firstAttribute="top" secondItem="A4m-4o-HZG" secondAttribute="top" constant="4" id="DgF-ZG-dEZ"/>
-                                    <constraint firstItem="N1z-lj-3JN" firstAttribute="baseline" secondItem="ObG-AD-mNg" secondAttribute="baseline" type="default" id="EIl-YT-A4K"/>
+                                    <constraint firstAttribute="trailing" secondItem="qa3-8r-FVN" secondAttribute="trailing" type="default" id="JCW-wF-WgV"/>
+                                    <constraint firstItem="Q9y-xQ-Fn4" firstAttribute="top" secondItem="A4m-4o-HZG" secondAttribute="top" type="default" id="KBN-SH-Mqx"/>
+                                    <constraint firstItem="Q9y-xQ-Fn4" firstAttribute="leading" secondItem="A4m-4o-HZG" secondAttribute="leading" constant="112" id="Nqe-Vn-T8i"/>
+                                    <constraint firstItem="qa3-8r-FVN" firstAttribute="baseline" secondItem="ObG-AD-mNg" secondAttribute="baseline" type="default" id="aTa-0x-4KY"/>
                                     <constraint firstItem="ObG-AD-mNg" firstAttribute="leading" secondItem="A4m-4o-HZG" secondAttribute="leading" type="default" id="bqM-vV-ZAr"/>
-                                    <constraint firstItem="qa3-8r-FVN" firstAttribute="trailing" secondItem="A4m-4o-HZG" secondAttribute="trailing" type="default" id="dJG-y0-JYr"/>
-                                    <constraint firstItem="N1z-lj-3JN" firstAttribute="centerX" secondItem="A4m-4o-HZG" secondAttribute="centerX" type="default" id="qBX-au-5PS"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="editScoreTextField" destination="fbc-uU-Yhg" id="ygp-hH-rUd"/>
                                     <outlet property="intermediateLabel" destination="qa3-8r-FVN" id="Hwy-bF-4du"/>
+                                    <outlet property="mainPannel" destination="Q9y-xQ-Fn4" id="xwN-Ft-qoc"/>
                                     <outlet property="roundLabel" destination="ObG-AD-mNg" id="Reu-UC-Yng"/>
                                     <outlet property="scoreLabel" destination="N1z-lj-3JN" id="6pc-er-NBe"/>
                                 </connections>

@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSArray *scores;
 @property (nonatomic, assign) BOOL showsAddNewScoreCell;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsBarButtonItem;
+@property (nonatomic, strong) NSIndexPath *indexPathOfSelectedCell;
 @end
 
 @implementation AJScoresViewController 
@@ -85,6 +86,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (self.indexPathOfSelectedCell != nil) {
+        [(AJScoreTableViewCell *)[self.tableView cellForRowAtIndexPath:self.indexPathOfSelectedCell] flipTotalViewAnimated:YES];
+    }
+    
+    [(AJScoreTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath] flipTotalViewAnimated:YES];
+    self.indexPathOfSelectedCell = indexPath;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,21 +119,37 @@
 #pragma mark - TextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    self.showsAddNewScoreCell = NO;
-    
-    NSString *text = textField.text;
-    if (![NSString isNilOrEmpty:text]) {
-        [[AJScoresManager sharedInstance] createScoreWithValue:textField.text.doubleValue inRound:([self.tableView numberOfRowsInSection:1]+1) forPlayer:self.player];
-        [textField setText:nil];
+    if (textField.tag == 1) {
+        double enteredValue = [textField.text doubleValue];
+        AJScore *currentScore = self.scores[self.indexPathOfSelectedCell.row];
+        if (enteredValue != currentScore.value) {
+            currentScore.value = enteredValue;
+            [[AJScoresManager sharedInstance] saveContext];
+            [self updateUIAndLoadTableData:YES];
+        }
         
-        [self updateUIAndLoadTableData:YES];
+        [(AJScoreTableViewCell *)[self.tableView cellForRowAtIndexPath:self.indexPathOfSelectedCell] flipTotalViewAnimated:YES];
+        self.indexPathOfSelectedCell = nil;
+        [textField resignFirstResponder];
+        
+        return YES;
     } else {
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+        self.showsAddNewScoreCell = NO;
+        
+        NSString *text = textField.text;
+        if (![NSString isNilOrEmpty:text]) {
+            [[AJScoresManager sharedInstance] createScoreWithValue:textField.text.doubleValue inRound:([self.tableView numberOfRowsInSection:1]+1) forPlayer:self.player];
+            [textField setText:nil];
+            
+            [self updateUIAndLoadTableData:YES];
+        } else {
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+        }
+        
+        textField.text = @"";
+        
+        return YES;
     }
-    
-    textField.text = @"";
-    
-    return YES;
 }
 
 #pragma mark - Overridden from base class

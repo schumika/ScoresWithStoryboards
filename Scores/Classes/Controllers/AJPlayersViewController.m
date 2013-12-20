@@ -111,21 +111,29 @@
 #pragma mark - TextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    self.showsAddNewPlayerCell = NO;
-    
-    NSString *text = textField.text;
-    if (![NSString isNilOrEmpty:text]) {
-        [[AJScoresManager sharedInstance] createPlayerWithName:text forGame:self.game];
-        [textField setText:nil];
+    if (textField.tag == 1) {
+        [self addButtonClicked:nil];
+        self.indexPathOfSelectedCell = nil;
+        [textField resignFirstResponder];
         
-        [self updateUIAndLoadTableData:YES];
+        return YES;
     } else {
-        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-    }
-    
-    textField.text = @"";
-    
-    return YES;
+        self.showsAddNewPlayerCell = NO;
+        
+        NSString *text = textField.text;
+        if (![NSString isNilOrEmpty:text]) {
+            [[AJScoresManager sharedInstance] createPlayerWithName:text forGame:self.game];
+            [textField setText:nil];
+            
+            [self updateUIAndLoadTableData:YES];
+        } else {
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+        }
+        
+        textField.text = @"";
+        
+        return YES;
+        }
 }
 
 #pragma mark - Actions

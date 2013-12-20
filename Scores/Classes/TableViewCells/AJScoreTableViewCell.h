@@ -12,4 +12,7 @@
 
 @property (nonatomic, strong) NSDictionary *scoreDictionary;
 
+- (void)flipTotalViewAnimated:(BOOL)animated;
+- (NSString *)textInAddScoreTextfield;
+
 @end
