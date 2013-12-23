@@ -26,7 +26,7 @@
                                             <rect key="frame" x="20" y="30" width="728" height="30"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="aa1-XX-HdD"/>
+                                                <constraint firstAttribute="height" constant="30" id="02Z-Md-zWi"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -89,8 +89,8 @@
                                 <constraints>
                                     <constraint firstItem="MOW-Ef-uiu" firstAttribute="centerY" secondItem="sjo-3P-PDz" secondAttribute="centerY" type="default" id="Be4-8T-LRU"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="Wfj-ZG-sg5" secondAttribute="leading" type="default" id="HGQ-Je-zDD"/>
+                                    <constraint firstAttribute="trailing" secondItem="sjo-3P-PDz" secondAttribute="trailing" id="UR8-fg-Vgv"/>
                                     <constraint firstItem="MOW-Ef-uiu" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" constant="4" id="ZyZ-iO-HoL"/>
-                                    <constraint firstItem="sjo-3P-PDz" firstAttribute="trailing" secondItem="78G-iq-DKS" secondAttribute="trailing" type="default" id="Zzv-xG-p7H"/>
                                     <constraint firstItem="MOW-Ef-uiu" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="10" id="mHO-yP-hHz"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="leading" secondItem="78G-iq-DKS" secondAttribute="leading" constant="108" id="nIC-HD-4mB"/>
                                     <constraint firstItem="TCF-5t-Tb8" firstAttribute="top" secondItem="78G-iq-DKS" secondAttribute="top" constant="7" id="xMF-tx-iUp"/>
@@ -101,6 +101,7 @@
                                     <outlet property="gameImageView" destination="MOW-Ef-uiu" id="DFh-ns-kX5"/>
                                     <outlet property="gameLabel" destination="TCF-5t-Tb8" id="TCT-E6-fdm"/>
                                     <outlet property="playersLabel" destination="Wfj-ZG-sg5" id="1iy-1z-1X0"/>
+                                    <segue destination="tTW-NP-WL7" kind="push" identifier="GamePlayers" id="UcJ-af-U0x"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -121,22 +122,77 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nl1-UI-H7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1612" y="-683"/>
         </scene>
+        <!--Players View Controller-->
+        <scene sceneID="Pxx-WN-hUn">
+            <objects>
+                <tableViewController id="tTW-NP-WL7" customClass="AJPlayersViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0rh-uS-2MM">
+                        <rect key="frame" x="0.0" y="64" width="768" height="916"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewPlayerCell" rowHeight="90" id="RQS-zS-dSf" customClass="AJTextFieldTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="768" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Player Name..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9sm-fu-oP8">
+                                            <rect key="frame" x="20" y="30" width="728" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="vxf-sH-WoE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="tTW-NP-WL7" id="QxL-Ij-tPy"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="9sm-fu-oP8" firstAttribute="leading" secondItem="RQS-zS-dSf" secondAttribute="leading" constant="20" type="default" id="JUa-Nr-8kc"/>
+                                    <constraint firstItem="9sm-fu-oP8" firstAttribute="top" secondItem="RQS-zS-dSf" secondAttribute="top" constant="30" id="Mrm-Up-naQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="9sm-fu-oP8" secondAttribute="trailing" constant="20" type="default" id="Xk6-WR-kOi"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="textField" destination="9sm-fu-oP8" id="6jF-qp-rli"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tTW-NP-WL7" id="fa9-3X-jJS"/>
+                            <outlet property="delegate" destination="tTW-NP-WL7" id="3la-E4-sNt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lSs-j4-6lC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SL1-Yf-vaU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2598" y="-683"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="S4K-GL-TpD">
             <objects>
-                <navigationController hidesBottomBarWhenPushed="YES" id="IpM-bF-tuP" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" toolbarHidden="NO" id="IpM-bF-tuP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jDO-XD-udM">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="jyf-Bq-dRg">
+                        <rect key="frame" x="0.0" y="980" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Waw-Qa-Jrz" kind="relationship" relationship="rootViewController" id="PGi-X4-GyJ"/>
                     </connections>
