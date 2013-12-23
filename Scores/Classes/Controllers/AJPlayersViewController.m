@@ -133,7 +133,7 @@
         textField.text = @"";
         
         return YES;
-        }
+    }
 }
 
 #pragma mark - Actions
