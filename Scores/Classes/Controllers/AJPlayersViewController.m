@@ -112,7 +112,7 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField.tag == 1) {
-        [self addButtonClicked:nil];
+        [self doneAddingScoreButtonClicked:nil];
         self.indexPathOfSelectedCell = nil;
         [textField resignFirstResponder];
         
