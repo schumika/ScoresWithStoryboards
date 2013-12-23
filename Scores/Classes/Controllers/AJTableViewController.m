@@ -82,6 +82,10 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    [cell setBackgroundColor:[UIColor clearColor]];
+}
+
 #pragma mark - UI related
 
 - (void)setTitleViewText:(NSString *)titleViewText {
