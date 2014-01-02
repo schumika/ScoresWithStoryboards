@@ -25,7 +25,7 @@
     [super awakeFromNib];
     
     if (CGRectGetHeight(self.contentView.frame) == 90.0) {
-        self.gameLabel.font = [UIFont faranvaleFontWithSize:40.0];
+        self.gameLabel.font = [UIFont faranvaleFontWithSize:60.0];
     } else {
         self.gameLabel.font = [UIFont faranvaleFontWithSize:30.0];
     }
@@ -44,7 +44,7 @@
     
     UIImage *gameImage = [UIImage imageWithData:gameDictionary[kAJPictureDataKey]];
     [self.gameImageView setImage:[[gameImage resizeToNewSize:CGSizeMake(80.0, 80.0)]
-                                  applyMask:[UIImage imageNamed:@"core_inbox_contact_photo_mask.png"]]];
+                                  applyMask:[[UIImage imageNamed:@"mask.png"] resizableImageWithCapInsets:UIEdgeInsetsMake(30.0, 30.0, 30.0, 30.0)]]];
 }
 
 @end
